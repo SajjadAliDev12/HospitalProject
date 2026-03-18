@@ -20,11 +20,16 @@ namespace Hospital.API.Controllers
         
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<IEnumerable<DepartmentDto>>> GetDepartments()
+        public async Task<ActionResult<IEnumerable<DepartmentDto>>> GetDepartments([FromQuery] bool? IsDeleted)
         {
-            var departments = await _context.Departments.AsNoTracking()
+            IQueryable<Department> query = _context.Departments.IgnoreQueryFilters().AsNoTracking();
+            if(IsDeleted.HasValue)
+            {
+                query = query.Where(e => e.isDeleted == IsDeleted.Value);
+            }
+            var departments = await query
             .Select(d => new DepartmentDto
             {
                 Id = d.Id,
@@ -36,10 +41,11 @@ namespace Hospital.API.Controllers
         }
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<DepartmentDto>> GetDepartment(int id)
         {
-            var department = await _context.Departments.FindAsync(id);
+            var department = await _context.Departments.IgnoreQueryFilters().FirstOrDefaultAsync(d => d.Id == id);
             if (department == null) return NotFound();
 
             return Ok(new DepartmentDto { Id = department.Id, Name = department.Name, IsDeleted = department.isDeleted });
@@ -81,14 +87,15 @@ namespace Hospital.API.Controllers
             await _context.SaveChangesAsync();
             return Ok($"Department with id = {Id} deleted!");
         }
-        [HttpPut("{id}")] // نضع الـ id فقط في الرابط
+        [HttpPut("{id}")] 
         [Authorize(Roles = "Admin")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<DepartmentDto>> EditDepartment(int id, [FromBody] DepartmentDto departmentDto)
         {
             
-            var department = await _context.Departments.FindAsync(id); 
+            var department = await _context.Departments.IgnoreQueryFilters().FirstOrDefaultAsync(d => d.Id == id); 
 
     if (department == null)
                 return NotFound($"القسم رقم {id} غير موجود.");
