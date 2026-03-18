@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\pc\\source\\repos\\hospitalproject\\hospital.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\pc\\source\\repos\\hospitalproject\\hospital.core\\dtos\\employeesimpledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\employeesimpledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\pc\\source\\repos\\hospitalproject\\hospital.core\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\pc\\source\\repos\\hospitalproject\\hospital.core\\models\\jobtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\jobtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,8 +42,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeSimpleDTO.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\EmployeeSimpleDTO.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\EmployeeSimpleDTO.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\EmployeeSimpleDTO.cs",
+              "RelativeToolTip": "Hospital.Core\\DTOs\\EmployeeSimpleDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:45:00.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\Employee.cs",
+              "RelativeToolTip": "Hospital.Core\\Models\\Employee.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:43:52.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "Hospital.API\\Controllers\\EmployeesController.cs",
+              "ToolTip": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\EmployeesController.cs",
+              "RelativeToolTip": "Hospital.API\\Controllers\\EmployeesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T13:33:38.451Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -40,14 +91,14 @@
               "RelativeDocumentMoniker": "Hospital.API\\Controllers\\DepartmentsController.cs",
               "ToolTip": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\DepartmentsController.cs",
               "RelativeToolTip": "Hospital.API\\Controllers\\DepartmentsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAmpmZmZkjwCcAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T22:43:42.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "JobTitle.cs",
               "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\JobTitle.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\Models\\JobTitle.cs",
@@ -55,11 +106,12 @@
               "RelativeToolTip": "Hospital.Core\\Models\\JobTitle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T21:26:46.912Z"
+              "WhenOpened": "2026-03-16T21:26:46.912Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "AuditLog.cs",
               "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\AuditLog.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\Models\\AuditLog.cs",
@@ -71,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "TransferLog.cs",
               "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\TransferLog.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\Models\\TransferLog.cs",
@@ -83,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Department.cs",
               "DocumentMoniker": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\Department.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\Models\\Department.cs",

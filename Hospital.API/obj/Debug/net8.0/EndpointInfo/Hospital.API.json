@@ -261,6 +261,83 @@
             }
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Departments"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DepartmentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DepartmentDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/Departments/{Id}": {
@@ -326,69 +403,46 @@
         }
       }
     },
-    "/api/Departments/{Id},{DepartmentDto}": {
-      "put": {
+    "/api/Employees": {
+      "get": {
         "tags": [
-          "Departments"
+          "Employees"
         ],
         "parameters": [
           {
-            "name": "Id",
-            "in": "path",
-            "required": true,
+            "name": "IsDeleted",
+            "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "DepartmentDto",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
+              "type": "boolean"
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DepartmentDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DepartmentDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/DepartmentDto"
-              }
-            }
-          }
-        },
         "responses": {
-          "202": {
-            "description": "Accepted"
-          },
-          "401": {
-            "description": "Unauthorized",
+          "200": {
+            "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeSimpleDTO"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeSimpleDTO"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeSimpleDTO"
+                  }
                 }
               }
             }
@@ -412,6 +466,9 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -577,6 +634,42 @@
               "$ref": "#/components/schemas/Absent"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeSimpleDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "hireDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "gender": {
+            "$ref": "#/components/schemas/enGender"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "departmentID": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

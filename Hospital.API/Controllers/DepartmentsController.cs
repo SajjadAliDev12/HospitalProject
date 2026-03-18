@@ -24,7 +24,7 @@ namespace Hospital.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<DepartmentDto>>> GetDepartments()
         {
-            var departments = await _context.Departments
+            var departments = await _context.Departments.AsNoTracking()
             .Select(d => new DepartmentDto
             {
                 Id = d.Id,

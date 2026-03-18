@@ -145,6 +145,46 @@
   },
   {
     "ContainingType": "Hospital.API.Controllers.DepartmentsController",
+    "Method": "EditDepartment",
+    "RelativePath": "api/Departments/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "departmentDto",
+        "Type": "Hospital.Core.DTOs.DepartmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Hospital.Core.DTOs.DepartmentDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Hospital.API.Controllers.DepartmentsController",
     "Method": "DeleteDepartment",
     "RelativePath": "api/Departments/{Id}",
     "HttpMethod": "DELETE",
@@ -184,43 +224,28 @@
     ]
   },
   {
-    "ContainingType": "Hospital.API.Controllers.DepartmentsController",
-    "Method": "EditDepartment",
-    "RelativePath": "api/Departments/{Id},{DepartmentDto}",
-    "HttpMethod": "PUT",
+    "ContainingType": "Hospital.API.Controllers.EmployeesController",
+    "Method": "GetEmployees",
+    "RelativePath": "api/Employees",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "department",
-        "Type": "Hospital.Core.DTOs.DepartmentDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "DepartmentDto",
-        "Type": "",
-        "IsRequired": true
+        "Name": "IsDeleted",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 202
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Hospital.Core.DTOs.EmployeeSimpleDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
-        "StatusCode": 401
+        "StatusCode": 200
       },
       {
         "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
@@ -230,6 +255,11 @@
           "text/json"
         ],
         "StatusCode": 404
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
       }
     ]
   }
