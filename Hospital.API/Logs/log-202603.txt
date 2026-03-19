@@ -1,0 +1,31 @@
+2026-03-19 22:34:54.779 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-19 22:34:55.211 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-19 22:34:55.780 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-19 22:34:55.832 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-19 22:34:55.834 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-19 22:34:55.847 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-19 22:34:56.033 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-19 22:34:56.034 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-19 22:34:56.074 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-19 22:34:56.075 +03:00 [INF] Hosting environment: Development
+2026-03-19 22:34:56.075 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-19 22:34:57.215 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-19 22:34:57.440 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 230.452ms
+2026-03-19 22:34:57.450 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-19 22:34:57.468 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 18.0475ms
+2026-03-19 22:34:57.490 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-19 22:34:57.533 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.4047ms
+2026-03-19 22:34:57.580 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-19 22:34:57.637 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.2089ms

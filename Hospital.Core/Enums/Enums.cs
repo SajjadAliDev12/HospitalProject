@@ -13,6 +13,6 @@ namespace Hospital.Core.Enums
     public enum enLeaveType { Hourly , SickLeave , Motherhood , Normal , AfterBirth , Yearly , WithOutSalary};
     public enum enCertificate { HighSchool , institute ,  Collage , Master , PHD , Prof};
     public enum enRole { Admin , Manager , User };
-    public enum enAuditType { Transfer , Leave , Absent , ChangeShift , Add , Remove }
+    public enum enAuditType {Add , Edit , Delete , Transfer , Leave , Absent};
     
 }

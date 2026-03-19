@@ -46,7 +46,7 @@ namespace Hospital.API.Controllers
         public async Task<ActionResult<DepartmentDto>> GetDepartment(int id)
         {
             var department = await _context.Departments.IgnoreQueryFilters().FirstOrDefaultAsync(d => d.Id == id);
-            if (department == null) return NotFound();
+            if (department == null) return NotFound(new { message = "لم يتم العثور على القسم المحدد" });
 
             return Ok(new DepartmentDto { Id = department.Id, Name = department.Name, IsDeleted = department.isDeleted });
         }
@@ -55,7 +55,7 @@ namespace Hospital.API.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [Authorize(Roles = "Admin,Manager")]
-        public async Task<ActionResult<Department>> PostDepartment(CreateDepartmentDto departmentDto)
+        public async Task<ActionResult<DepartmentDto>> PostDepartment(CreateDepartmentDto departmentDto)
         {
             try
             {
@@ -66,11 +66,17 @@ namespace Hospital.API.Controllers
                 };
                 _context.Departments.Add(department);
                 await _context.SaveChangesAsync();
-                return CreatedAtAction("GetDepartment", new { id = department.Id }, department);
+                var resultDto = new DepartmentDto
+                {
+                    Id = department.Id,
+                    Name = department.Name,
+                    IsDeleted = department.isDeleted
+                };
+                return CreatedAtAction("GetDepartment", new { id = department.Id },resultDto);
             }
             catch (Exception ex)
             {
-                return StatusCode((int)HttpStatusCode.InternalServerError, "حدث خطأ أثناء حفظ القسم.");
+                return StatusCode((int)HttpStatusCode.InternalServerError,new {message = "حدث خطأ في معالجة البيانات"});
             }
         }
         [HttpDelete("{Id}")]
@@ -82,10 +88,10 @@ namespace Hospital.API.Controllers
         {
             var department = await _context.Departments.FindAsync(Id);
             if (department == null)
-                return NotFound($"Department with Id = {Id} is not found");
+                return NotFound(new { message = "لم يتم العثور على القسم المحدد" });
             department.isDeleted = true;
             await _context.SaveChangesAsync();
-            return Ok($"Department with id = {Id} deleted!");
+            return Ok();
         }
         [HttpPut("{id}")] 
         [Authorize(Roles = "Admin")]
@@ -98,7 +104,7 @@ namespace Hospital.API.Controllers
             var department = await _context.Departments.IgnoreQueryFilters().FirstOrDefaultAsync(d => d.Id == id); 
 
     if (department == null)
-                return NotFound($"القسم رقم {id} غير موجود.");
+                return NotFound(new { message = "لم يتم العثور على القسم المحدد" });
 
             
              department.Name = departmentDto.Name; 

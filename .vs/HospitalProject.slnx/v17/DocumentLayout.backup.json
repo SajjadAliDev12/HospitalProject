@@ -3,12 +3,108 @@
   "WorkspaceRootPath": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\controllers\\auditlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\auditlogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\auditlogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\auditlogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\controllers\\jobtitlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\jobtitlescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\controllers\\absentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\absentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\controllers\\leavescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\leavescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\employeesimpledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\employeesimpledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\transferlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\transferlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\transferlogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\transferlogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\controllers\\transferlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\transferlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\jobtitledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\jobtitledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\jobtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\jobtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\absentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\absentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\absent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\absent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\leavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\leavedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\leave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\leave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\employeefulldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\employeefulldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\createemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\createemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\createdepartmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,20 +115,8 @@
       "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\departmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\data\\dbseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|solutionrelative:hospital.api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F645DDAB-FB23-4C32-909F-63EE4BBD6634}|Hospital.API\\Hospital.API.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -41,22 +125,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\transferlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\transferlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\leave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\leave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\absent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|solutionrelative:hospital.core\\models\\absent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{58E641BD-4E2B-4BB8-BB64-187280D07B99}|Hospital.Core\\Hospital.Core.csproj|c:\\users\\scorp\\source\\repos\\hospitalproject\\hospital.core\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,7 +138,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 26,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,20 +150,241 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "Hospital.API\\Middleware\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "Hospital.API\\Middleware\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T19:28:57.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuditLogsController.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\AuditLogsController.cs",
+              "RelativeDocumentMoniker": "Hospital.API\\Controllers\\AuditLogsController.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\AuditLogsController.cs",
+              "RelativeToolTip": "Hospital.API\\Controllers\\AuditLogsController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T19:02:14.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuditLogDTO.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\AuditLogDTO.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\AuditLogDTO.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\AuditLogDTO.cs",
+              "RelativeToolTip": "Hospital.Core\\DTOs\\AuditLogDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T18:58:27.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuditLog.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\AuditLog.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\Models\\AuditLog.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\AuditLog.cs",
+              "RelativeToolTip": "Hospital.Core\\Models\\AuditLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T18:57:31.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EmployeeSimpleDTO.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\EmployeeSimpleDTO.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\EmployeeSimpleDTO.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\EmployeeSimpleDTO.cs",
+              "RelativeToolTip": "Hospital.Core\\DTOs\\EmployeeSimpleDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T18:30:24.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "JobTitlesController.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\JobTitlesController.cs",
+              "RelativeDocumentMoniker": "Hospital.API\\Controllers\\JobTitlesController.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\JobTitlesController.cs",
+              "RelativeToolTip": "Hospital.API\\Controllers\\JobTitlesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T18:04:03.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "JobTitleDTO.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\JobTitleDTO.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\JobTitleDTO.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\JobTitleDTO.cs",
+              "RelativeToolTip": "Hospital.Core\\DTOs\\JobTitleDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T18:01:07.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "JobTitle.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\JobTitle.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\Models\\JobTitle.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\JobTitle.cs",
+              "RelativeToolTip": "Hospital.Core\\Models\\JobTitle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:55:21.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AbsentsController.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\AbsentsController.cs",
+              "RelativeDocumentMoniker": "Hospital.API\\Controllers\\AbsentsController.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\AbsentsController.cs",
+              "RelativeToolTip": "Hospital.API\\Controllers\\AbsentsController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAwwIcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T01:30:21.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AbsentDTO.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\AbsentDTO.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\AbsentDTO.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\AbsentDTO.cs",
+              "RelativeToolTip": "Hospital.Core\\DTOs\\AbsentDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T01:27:16.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LeavesController.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\LeavesController.cs",
+              "RelativeDocumentMoniker": "Hospital.API\\Controllers\\LeavesController.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\LeavesController.cs",
+              "RelativeToolTip": "Hospital.API\\Controllers\\LeavesController.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAcwKAAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T01:11:20.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LeaveDTO.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\LeaveDTO.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\LeaveDTO.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\LeaveDTO.cs",
+              "RelativeToolTip": "Hospital.Core\\DTOs\\LeaveDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T01:08:32.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TransferLogController.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\TransferLogController.cs",
+              "RelativeDocumentMoniker": "Hospital.API\\Controllers\\TransferLogController.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\TransferLogController.cs",
+              "RelativeToolTip": "Hospital.API\\Controllers\\TransferLogController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAIwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T00:59:02.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TransferLogDto.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\TransferLogDto.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\TransferLogDto.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\TransferLogDto.cs",
+              "RelativeToolTip": "Hospital.Core\\DTOs\\TransferLogDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T00:57:51.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CreateEmployeeDTO.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\CreateEmployeeDTO.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\CreateEmployeeDTO.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\CreateEmployeeDTO.cs",
+              "RelativeToolTip": "Hospital.Core\\DTOs\\CreateEmployeeDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T00:23:59.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\Employee.cs",
+              "RelativeToolTip": "Hospital.Core\\Models\\Employee.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAYwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T00:18:04.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EmployeeFullDTO.cs",
+              "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\EmployeeFullDTO.cs",
+              "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\EmployeeFullDTO.cs",
+              "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\EmployeeFullDTO.cs",
+              "RelativeToolTip": "Hospital.Core\\DTOs\\EmployeeFullDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T00:04:45.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "EmployeesController.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\EmployeesController.cs",
               "RelativeDocumentMoniker": "Hospital.API\\Controllers\\EmployeesController.cs",
               "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\EmployeesController.cs",
               "RelativeToolTip": "Hospital.API\\Controllers\\EmployeesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-18T21:24:17.106Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 27,
               "Title": "DepartmentDto.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\DepartmentDto.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\DepartmentDto.cs",
@@ -108,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 26,
               "Title": "CreateDepartmentDto.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\CreateDepartmentDto.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\CreateDepartmentDto.cs",
@@ -121,20 +410,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 18,
               "Title": "DepartmentsController.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\DepartmentsController.cs",
               "RelativeDocumentMoniker": "Hospital.API\\Controllers\\DepartmentsController.cs",
               "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\DepartmentsController.cs",
               "RelativeToolTip": "Hospital.API\\Controllers\\DepartmentsController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAABkAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowGoAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-17T19:56:08.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Hospital.API\\Controllers\\AuthController.cs",
@@ -142,11 +431,12 @@
               "RelativeToolTip": "Hospital.API\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T19:01:32.488Z"
+              "WhenOpened": "2026-03-17T19:01:32.488Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 30,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\DTOs\\LoginDto.cs",
@@ -154,11 +444,12 @@
               "RelativeToolTip": "Hospital.Core\\DTOs\\LoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T18:57:51.154Z"
+              "WhenOpened": "2026-03-17T18:57:51.154Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 29,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\appsettings.json",
               "RelativeDocumentMoniker": "Hospital.API\\appsettings.json",
@@ -166,31 +457,34 @@
               "RelativeToolTip": "Hospital.API\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-17T18:38:26.969Z"
+              "WhenOpened": "2026-03-17T18:38:26.969Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Program.cs",
               "RelativeDocumentMoniker": "Hospital.API\\Program.cs",
               "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Program.cs",
               "RelativeToolTip": "Hospital.API\\Program.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAwB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T18:34:26.5Z"
+              "WhenOpened": "2026-03-17T18:34:26.5Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 28,
               "Title": "DbSeeder.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Data\\DbSeeder.cs",
               "RelativeDocumentMoniker": "Hospital.API\\Data\\DbSeeder.cs",
               "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Data\\DbSeeder.cs",
               "RelativeToolTip": "Hospital.API\\Data\\DbSeeder.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwCYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-17T18:19:10.708Z"
+              "WhenOpened": "2026-03-17T18:19:10.708Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -200,49 +494,53 @@
               "RelativeDocumentMoniker": "Hospital.Core\\Models\\TransferLog.cs",
               "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\TransferLog.cs",
               "RelativeToolTip": "Hospital.Core\\Models\\TransferLog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T19:18:56.039Z"
+              "WhenOpened": "2026-03-16T19:18:56.039Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "Absent.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\Absent.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\Models\\Absent.cs",
               "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\Absent.cs",
               "RelativeToolTip": "Hospital.Core\\Models\\Absent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T19:17:51.054Z"
+              "WhenOpened": "2026-03-16T19:17:51.054Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "Leave.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\Leave.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\Models\\Leave.cs",
               "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\Leave.cs",
               "RelativeToolTip": "Hospital.Core\\Models\\Leave.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T19:17:08.834Z"
+              "WhenOpened": "2026-03-16T19:17:08.834Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Hospital.API\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.API\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Hospital.API\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAhwCMAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T19:01:29.55Z"
+              "WhenOpened": "2026-03-16T19:01:29.55Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 31,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\Models\\ApplicationUser.cs",
@@ -250,19 +548,21 @@
               "RelativeToolTip": "Hospital.Core\\Models\\ApplicationUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T14:18:45.933Z"
+              "WhenOpened": "2026-03-16T14:18:45.933Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 3,
               "Title": "Enums.cs",
               "DocumentMoniker": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Enums\\Enums.cs",
               "RelativeDocumentMoniker": "Hospital.Core\\Enums\\Enums.cs",
               "ToolTip": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Enums\\Enums.cs",
               "RelativeToolTip": "Hospital.Core\\Enums\\Enums.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T13:50:46.36Z"
+              "WhenOpened": "2026-03-16T13:50:46.36Z",
+              "EditorCaption": ""
             }
           ]
         }

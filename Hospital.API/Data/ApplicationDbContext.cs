@@ -1,13 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Hospital.Core.Enums;
 using Hospital.Core.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 
 namespace Hospital.API.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options , IHttpContextAccessor httpContextAccessor) : base(options) { _httpContextAccessor = httpContextAccessor; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Leave> Leaves { get; set; }
@@ -33,6 +36,39 @@ namespace Hospital.API.Data
             builder.Entity<TransferLog>().HasOne(t => t.NewDepartment).WithMany().HasForeignKey(t => t.NewDepartmentId).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<TransferLog>().HasOne(t => t.Employee).WithMany().HasForeignKey(t => t.EmployeeId).OnDelete(DeleteBehavior.NoAction);
 
+        }
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "System";
+
+            var entries = ChangeTracker.Entries()
+                .Where(e => e.Entity is not AuditLog &&
+                           (e.State == EntityState.Added || e.State == EntityState.Modified || e.State == EntityState.Deleted))
+                .ToList();
+
+            foreach (var entry in entries)
+            {
+                var auditLog = new AuditLog
+                {
+                    Date = DateTime.Now,
+                    UserId = userId,
+                    Type = entry.Entity switch
+                    {
+                        TransferLog => enAuditType.Transfer,
+                        Leave => enAuditType.Leave,
+                        Absent => enAuditType.Absent,
+                        _ => entry.State switch
+                        {
+                            EntityState.Added => enAuditType.Add,
+                            EntityState.Modified => enAuditType.Edit,
+                            EntityState.Deleted => enAuditType.Delete,
+                            _ => enAuditType.Add
+                        }
+                    }
+                };
+                AuditLogs.Add(auditLog);
+            }
+            return await base.SaveChangesAsync(cancellationToken);
         }
     }
 }

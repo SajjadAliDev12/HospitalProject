@@ -307,3 +307,12 @@ C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\runtim
 C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\pc\source\repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Serilog.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API\bin\Debug\net8.0\Serilog.Sinks.File.dll

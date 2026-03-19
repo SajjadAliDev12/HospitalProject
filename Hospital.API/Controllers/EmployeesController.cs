@@ -1,6 +1,8 @@
 ﻿using Hospital.API.Data;
 using Hospital.Core.DTOs;
+using Hospital.Core.Enums;
 using Hospital.Core.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -48,12 +50,133 @@ namespace Hospital.API.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<EmployeeSimpleDTO>> GetEmployee(int Id)
+        public async Task<ActionResult<EmployeeFullDTO>> GetEmployee(int Id)
         {
             var employee = await _dbContext.Employees.IgnoreQueryFilters().FirstOrDefaultAsync(e => e.Id == Id);
             if (employee == null)
-                return NotFound("Employee Not Found");
-            return Ok(new EmployeeSimpleDTO { Id = employee.Id , BirthDate = employee.BirthDate , Gender = employee.Gender , DepartmentID = employee.DepartmentId , HireDate = employee.HireDate , IsDeleted = employee.isDeleted , Name = employee.Name , PhoneNumber = employee.PhoneNumber});
+                return NotFound(new { message = "لم يتم العثور على الموظف المحدد" });
+            return Ok(new EmployeeFullDTO
+            {
+                Name = employee.Name,
+                BirthDate = employee.BirthDate,
+                IsDeleted = employee.isDeleted,
+                HireDate = employee.HireDate,
+                CertificateType = Convert.ToInt32(employee.CertificateType),
+                DepartmentId = employee.DepartmentId,
+                Id = employee.Id,
+                JobStatus = Convert.ToInt32(employee.JobStatus),
+                LeaveBalance = employee.LeaveBalance,
+                JobTitleId = employee.JobTitleId,
+                PhoneNumber = employee.PhoneNumber,
+                Address = employee.Address,
+                ShiftType = Convert.ToInt32(employee.ShiftType),
+                Gender = Convert.ToInt32(employee.Gender)
+            });
+        }
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Authorize(Roles = "Admin,Manager")]
+        public async Task<ActionResult> PostEmployee([FromBody] CreateEmployeeDto dto)
+        {
+            
+            if (!await _dbContext.Departments.AnyAsync(d => d.Id == dto.DepartmentId))
+                return BadRequest(new { message = "لم يتم العثور على القسم المحدد" });
+
+            if (!await _dbContext.JobTitles.AnyAsync(j => j.Id == dto.JobTitleId))
+                return BadRequest(new { message = "لم يتم العثور على العنوان الوظيفي المحدد" });
+            var employee = new Employee
+            {
+                Name = dto.Name,
+                BirthDate = dto.BirthDate,
+                HireDate = dto.HireDate,
+                DepartmentId = dto.DepartmentId,
+                JobTitleId = dto.JobTitleId,
+                ShiftType = (enShiftType)dto.ShiftType,
+                Gender = (enGender)dto.Gender,
+                CertificateType = (enCertificate)dto.CertificateType,
+                LeaveBalance = dto.LeaveBalance,
+                Address = dto.Address,
+                PhoneNumber = dto.PhoneNumber,
+                JobStatus = (enJobStatus)dto.JobStatus,
+                isDeleted = false
+            };
+
+            try
+            {
+                _dbContext.Employees.Add(employee);
+                await _dbContext.SaveChangesAsync();
+
+                
+                return CreatedAtAction(nameof(GetEmployee), new { id = employee.Id }, new { employee.Id, employee.Name });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new {message = "حدث خطأ اثناء معالجة البيانات"});
+            }
+        }
+        [HttpPut("{id}")]
+        [Authorize(Roles = "Admin,Manager")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult> PutEmployee(int id, [FromBody] EmployeeFullDTO dto)
+        {
+            if (id != dto.Id) return BadRequest(new { message = "الرقم الوظيفي غير متطابق" });
+            var employee = await _dbContext.Employees.IgnoreQueryFilters().FirstOrDefaultAsync(e => e.Id == id);
+            if (employee == null) return NotFound(new { message = "لم يتم العثور على الموظف المحدد" });
+            if (!await _dbContext.Departments.AnyAsync(d => d.Id == dto.DepartmentId))
+                return BadRequest(new { message = "لم يتم العثور على القسم المحدد" });
+            if (!await _dbContext.JobTitles.AnyAsync(j => j.Id == dto.JobTitleId))
+                return BadRequest(new { message = "لم يتم العثور على العنوان الوظيفي المحدد" });
+            employee.Name = dto.Name;
+            employee.BirthDate = dto.BirthDate;
+            employee.HireDate = dto.HireDate;
+            employee.DepartmentId = dto.DepartmentId;
+            employee.JobTitleId = dto.JobTitleId;
+            employee.ShiftType = (enShiftType)dto.ShiftType;
+            employee.Gender = (enGender)dto.Gender;
+            employee.CertificateType = (enCertificate)dto.CertificateType;
+            employee.LeaveBalance = dto.LeaveBalance;
+            employee.Address = dto.Address;
+            employee.PhoneNumber = dto.PhoneNumber;
+            employee.JobStatus = (enJobStatus)dto.JobStatus;
+            employee.isDeleted = dto.IsDeleted; 
+
+            try
+            {
+                await _dbContext.SaveChangesAsync();
+                return Ok(dto); 
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new {message = "حدث خطأ اثناء معالجة البيانات"});
+            }
+        }
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            var employee = await _dbContext.Employees.FindAsync(id);
+            if (employee == null) return NotFound(new { message = "لم يتم العثور على الموظف المحدد" });
+
+            employee.isDeleted = true;
+
+            try
+            {
+                await _dbContext.SaveChangesAsync();
+                return Ok(new { message = $"تم حذف الموظف رقم {id} بنجاح" });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { message = "حدث خطأ اثناء معالجة البيانات" });
+            }
         }
     }
 }
