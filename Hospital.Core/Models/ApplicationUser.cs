@@ -13,5 +13,7 @@ namespace Hospital.Core.Models
         public string FullName { get; set; }
         public int? EmployeeId { get; set; }
         public Employee Employee { get; set; }
+        public bool IsDeleted { get; set; } = false;
+        public bool IsActive { get; set; } = true;
     }
 }
