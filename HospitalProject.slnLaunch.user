@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Hospital.API\\Hospital.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Hospital.Desktop\\Hospital.Desktop.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

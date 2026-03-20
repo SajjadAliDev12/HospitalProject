@@ -78,3 +78,12 @@ C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\bin\Debug\net8.0-wi
 C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\bin\Debug\net8.0-windows\Serilog.Sinks.Console.dll
 C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\bin\Debug\net8.0-windows\Serilog.Sinks.Debug.dll
 C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\bin\Debug\net8.0-windows\Serilog.Sinks.File.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\LoginView.baml
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\LoginView.g.cs
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\bin\Debug\net8.0-windows\Hospital.Desktop.dll.config
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\App.baml
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\UsersView.baml
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\UsersView.g.cs
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs

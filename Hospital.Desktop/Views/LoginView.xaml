@@ -1,0 +1,30 @@
+﻿<Window x:Class="Hospital.Desktop.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="تسجيل الدخول - نظام أدارة الموظفين" Height="450" Width="400"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" FlowDirection="RightToLeft" Loaded="Window_Loaded">
+
+    <Grid Margin="30">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="تسجيل الدخول" FontSize="28" FontWeight="Bold" 
+                       HorizontalAlignment="Center" Margin="0,0,0,30"/>
+
+            <TextBlock Text="اسم المستخدم" Margin="0,10,0,5"/>
+            <TextBox Text="{Binding Username}" Height="35" Padding="5" VerticalContentAlignment="Center"/>
+
+            <TextBlock Text="كلمة المرور" Margin="0,15,0,5"/>
+            <PasswordBox Name="txtPassword" Height="35" Padding="5" VerticalContentAlignment="Center"/>
+            <CheckBox Content="تذكر بياناتي" 
+          IsChecked="{Binding IsRememberMe}" 
+          Margin="0,10,0,0" 
+          FlowDirection="RightToLeft"/>
+            <Button Content="دخول" Command="{Binding LoginCommand}" IsDefault="True"
+                    CommandParameter="{Binding ElementName=txtPassword}"
+                    Height="40" Margin="0,30,0,0" Background="#2196F3" 
+                    Foreground="White" FontWeight="Bold"/>
+
+            <TextBlock Text="{Binding ErrorMessage}" Foreground="Red" 
+                       HorizontalAlignment="Center" Margin="0,15,0,0" TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+</Window>
