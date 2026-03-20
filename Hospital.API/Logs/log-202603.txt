@@ -1255,3 +1255,1538 @@ WHERE [a].[UserId] = @__userId_0
 2026-03-20 04:42:59.407 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.9334ms
 2026-03-20 04:42:59.465 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
 2026-03-20 04:42:59.550 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 85.3396ms
+2026-03-20 16:35:42.216 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 16:35:42.762 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 16:35:43.597 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:35:43.657 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:35:43.659 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:35:43.675 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 16:35:44.052 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 16:35:44.053 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 16:35:44.103 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 16:35:44.104 +03:00 [INF] Hosting environment: Development
+2026-03-20 16:35:44.105 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 16:35:44.687 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 16:35:44.940 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 262.6989ms
+2026-03-20 16:35:44.996 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 16:35:44.996 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 16:35:45.004 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 8.6497ms
+2026-03-20 16:35:45.063 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.362ms
+2026-03-20 16:35:45.090 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 16:35:45.168 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 78.8087ms
+2026-03-20 16:35:47.353 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 16:35:47.427 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:35:47.442 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 16:35:47.513 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 16:35:47.598 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 16:35:47.625 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 16:35:47.636 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 189.2856ms
+2026-03-20 16:35:47.637 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:35:47.642 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 288.9768ms
+2026-03-20 16:38:44.251 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 16:38:44.647 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 16:38:45.337 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:38:45.399 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:38:45.402 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:38:45.418 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 16:38:45.652 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 16:38:45.653 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 16:38:45.716 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 16:38:45.717 +03:00 [INF] Hosting environment: Development
+2026-03-20 16:38:45.718 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 16:38:45.988 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 16:38:46.158 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 173.6443ms
+2026-03-20 16:38:46.214 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 16:38:46.214 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 16:38:46.234 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 19.7564ms
+2026-03-20 16:38:46.260 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.4453ms
+2026-03-20 16:38:46.287 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 16:38:46.366 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 78.7426ms
+2026-03-20 16:38:48.918 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 16:38:48.975 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:38:48.992 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 16:38:49.058 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 16:38:49.141 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 16:38:49.168 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 16:38:49.178 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 181.6074ms
+2026-03-20 16:38:49.179 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:38:49.184 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 265.3327ms
+2026-03-20 16:42:05.844 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 16:42:06.246 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 16:42:06.879 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:42:06.934 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:42:06.937 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:42:06.950 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 16:42:07.183 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 16:42:07.184 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 16:42:07.233 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 16:42:07.233 +03:00 [INF] Hosting environment: Development
+2026-03-20 16:42:07.234 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 16:42:07.657 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 16:42:07.822 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 168.0962ms
+2026-03-20 16:42:07.881 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 16:42:07.881 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 16:42:07.902 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 21.3958ms
+2026-03-20 16:42:07.929 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.8617ms
+2026-03-20 16:42:07.956 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 16:42:08.007 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 51.6489ms
+2026-03-20 16:42:09.895 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 16:42:09.943 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:42:09.956 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 16:42:10.031 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 16:42:10.120 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 16:42:10.144 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 16:42:10.152 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 192.3874ms
+2026-03-20 16:42:10.153 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:42:10.158 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 262.8978ms
+2026-03-20 16:44:29.259 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 16:44:29.671 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 16:44:30.353 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:44:30.406 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:44:30.408 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:44:30.419 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 16:44:30.637 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 16:44:30.638 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 16:44:30.710 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 16:44:30.711 +03:00 [INF] Hosting environment: Development
+2026-03-20 16:44:30.711 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 16:44:30.744 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 16:44:30.839 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:44:30.859 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 16:44:30.951 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 16:44:31.005 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 16:44:31.094 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 16:44:31.131 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 16:44:31.145 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 281.869ms
+2026-03-20 16:44:31.147 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:44:31.155 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 415.9251ms
+2026-03-20 16:44:31.172 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 167.5292ms
+2026-03-20 16:44:31.230 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 16:44:31.230 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 16:44:31.243 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 12.845ms
+2026-03-20 16:44:31.271 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.4317ms
+2026-03-20 16:44:31.303 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 16:44:31.374 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 71.6243ms
+2026-03-20 16:45:34.149 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 16:45:34.559 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 16:45:35.216 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:45:35.269 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:45:35.272 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:45:35.282 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 16:45:35.483 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 16:45:35.485 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 16:45:35.534 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 16:45:35.535 +03:00 [INF] Hosting environment: Development
+2026-03-20 16:45:35.536 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 16:45:35.837 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 16:45:36.001 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 168.5397ms
+2026-03-20 16:45:36.011 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 16:45:36.024 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 13.0307ms
+2026-03-20 16:45:36.029 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 16:45:36.062 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.8185ms
+2026-03-20 16:45:36.114 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 16:45:36.168 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.3889ms
+2026-03-20 16:45:37.980 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 16:45:38.034 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:45:38.046 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 16:45:38.108 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 16:45:38.193 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 16:45:38.219 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 16:45:38.230 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 180.6262ms
+2026-03-20 16:45:38.231 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:45:38.235 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 255.1648ms
+2026-03-20 16:47:17.903 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 16:47:18.460 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 16:47:19.007 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:47:19.055 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:47:19.058 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:47:19.068 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 16:47:19.242 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 16:47:19.242 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 16:47:19.292 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 16:47:19.293 +03:00 [INF] Hosting environment: Development
+2026-03-20 16:47:19.294 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 16:47:19.773 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 16:47:19.773 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 16:47:19.920 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:47:19.941 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 16:47:20.001 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 232.7884ms
+2026-03-20 16:47:20.005 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 16:47:20.015 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 10.3547ms
+2026-03-20 16:47:20.031 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 16:47:20.037 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 16:47:20.081 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.7853ms
+2026-03-20 16:47:20.123 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 16:47:20.177 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 16:47:20.186 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 62.9743ms
+2026-03-20 16:47:20.213 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 16:47:20.226 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 279.7187ms
+2026-03-20 16:47:20.227 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:47:20.232 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 466.0502ms
+2026-03-20 16:50:42.463 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 16:50:43.038 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 16:50:43.599 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:50:43.658 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:50:43.661 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 16:50:43.672 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 16:50:43.869 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 16:50:43.870 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 16:50:43.930 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 16:50:43.931 +03:00 [INF] Hosting environment: Development
+2026-03-20 16:50:43.932 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 16:50:44.255 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 16:50:44.255 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 16:50:44.390 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:50:44.410 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 16:50:44.469 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 220.441ms
+2026-03-20 16:50:44.473 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 16:50:44.483 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 10.9957ms
+2026-03-20 16:50:44.503 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 16:50:44.506 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 16:50:44.560 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.8283ms
+2026-03-20 16:50:44.596 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 16:50:44.645 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 16:50:44.664 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 68.3583ms
+2026-03-20 16:50:44.679 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 16:50:44.688 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 273.0426ms
+2026-03-20 16:50:44.690 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 16:50:44.695 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 446.5285ms
+2026-03-20 17:26:30.196 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 17:26:30.684 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 17:26:31.403 +03:00 [INF] Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:26:31.453 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:26:31.455 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:26:31.467 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 17:26:31.662 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 17:26:31.663 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 17:26:31.705 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 17:26:31.706 +03:00 [INF] Hosting environment: Development
+2026-03-20 17:26:31.707 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 17:26:32.174 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 17:26:32.363 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 194.0384ms
+2026-03-20 17:26:32.369 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 17:26:32.379 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 9.7035ms
+2026-03-20 17:26:32.396 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 17:26:32.437 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.1896ms
+2026-03-20 17:26:32.488 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 17:26:32.542 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.2901ms
+2026-03-20 17:26:34.859 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 17:26:34.923 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:26:34.936 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:26:35.004 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:26:35.095 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 17:26:35.122 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 17:26:35.130 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 191.4632ms
+2026-03-20 17:26:35.131 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:26:35.137 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 278.1443ms
+2026-03-20 17:26:37.698 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:26:37.730 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:26:37.735 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:26:37.790 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:26:37.793 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:26:37.798 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 61.3928ms
+2026-03-20 17:26:37.799 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:26:37.801 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 103.1952ms
+2026-03-20 17:26:48.389 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:26:48.394 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:26:48.395 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:26:48.401 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:26:48.403 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:26:48.404 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 7.5917ms
+2026-03-20 17:26:48.405 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:26:48.406 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 16.8429ms
+2026-03-20 17:26:48.973 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:26:48.975 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:26:48.976 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:26:48.980 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:26:48.982 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:26:48.984 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.5909ms
+2026-03-20 17:26:48.985 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:26:48.986 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 13.0908ms
+2026-03-20 17:27:34.253 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:27:34.260 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:27:34.261 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:27:34.277 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:27:34.278 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:27:34.279 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 17.3557ms
+2026-03-20 17:27:34.280 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:27:34.281 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 27.4ms
+2026-03-20 17:27:38.089 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:27:38.091 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:27:38.092 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:27:38.096 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:27:38.098 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:27:38.099 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.3479ms
+2026-03-20 17:27:38.100 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:27:38.100 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 11.0609ms
+2026-03-20 17:35:19.188 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 17:35:19.719 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 17:35:20.336 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:35:20.387 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:35:20.390 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:35:20.403 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 17:35:20.581 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 17:35:20.581 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 17:35:20.626 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 17:35:20.627 +03:00 [INF] Hosting environment: Development
+2026-03-20 17:35:20.627 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 17:35:20.874 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 17:35:21.063 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 198.3345ms
+2026-03-20 17:35:21.070 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 17:35:21.082 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 12.0254ms
+2026-03-20 17:35:21.099 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 17:35:21.145 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 45.3299ms
+2026-03-20 17:35:21.202 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 17:35:21.275 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 72.9593ms
+2026-03-20 17:35:23.710 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 17:35:23.779 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:35:23.792 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:35:23.859 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:35:23.947 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 17:35:23.976 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 17:35:23.987 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 191.2069ms
+2026-03-20 17:35:23.989 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:35:23.993 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 283.9198ms
+2026-03-20 17:35:26.149 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:35:26.182 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:35:26.187 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:35:26.237 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:35:26.239 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:35:26.243 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 54.8751ms
+2026-03-20 17:35:26.245 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:35:26.245 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 96.4084ms
+2026-03-20 17:39:17.375 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 17:39:17.760 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 17:39:18.483 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:39:18.540 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:39:18.546 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:39:18.559 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 17:39:18.780 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 17:39:18.781 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 17:39:18.829 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 17:39:18.833 +03:00 [INF] Hosting environment: Development
+2026-03-20 17:39:18.834 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 17:39:19.123 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 17:39:19.319 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 199.6658ms
+2026-03-20 17:39:19.345 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 17:39:19.379 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 17:39:19.379 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 17:39:19.403 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 23.3452ms
+2026-03-20 17:39:19.431 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:39:19.439 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.2689ms
+2026-03-20 17:39:19.450 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:39:19.468 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 17:39:19.546 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 77.8039ms
+2026-03-20 17:39:19.546 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:39:19.669 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 17:39:19.701 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 17:39:19.712 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 258.7462ms
+2026-03-20 17:39:19.714 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:39:19.718 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 373.8546ms
+2026-03-20 17:39:21.929 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:39:21.964 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:39:21.969 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:39:22.018 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:39:22.020 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:39:22.025 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 55.0525ms
+2026-03-20 17:39:22.026 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:39:22.027 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 98.3731ms
+2026-03-20 17:41:25.586 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:41:25.592 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:41:25.593 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:41:25.612 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:41:25.614 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:41:25.615 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 20.8765ms
+2026-03-20 17:41:25.616 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:41:25.617 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 31.8729ms
+2026-03-20 17:41:26.157 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:41:26.160 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:41:26.161 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:41:26.165 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:41:26.168 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:41:26.169 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.7126ms
+2026-03-20 17:41:26.170 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:41:26.170 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 13.3367ms
+2026-03-20 17:41:27.925 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:41:27.927 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:41:27.928 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:41:27.932 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:41:27.934 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:41:27.935 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.0116ms
+2026-03-20 17:41:27.936 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:41:27.937 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 11.7796ms
+2026-03-20 17:42:08.590 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 17:42:09.006 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 17:42:09.568 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:42:09.624 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:42:09.628 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:42:09.643 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 17:42:09.824 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 17:42:09.825 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 17:42:09.867 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 17:42:09.867 +03:00 [INF] Hosting environment: Development
+2026-03-20 17:42:09.868 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 17:42:10.289 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 17:42:10.387 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:42:10.413 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:42:10.529 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 17:42:10.540 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:42:10.690 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 17:42:10.729 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 198.9926ms
+2026-03-20 17:42:10.735 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 17:42:10.743 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 17:42:10.746 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 10.9571ms
+2026-03-20 17:42:10.757 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 338.6665ms
+2026-03-20 17:42:10.760 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:42:10.763 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 17:42:10.767 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 484.1068ms
+2026-03-20 17:42:10.802 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.4277ms
+2026-03-20 17:42:10.874 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 17:42:10.948 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.9859ms
+2026-03-20 17:42:27.287 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:42:27.329 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:42:27.334 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:42:27.380 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:42:27.383 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:42:27.387 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 52.0539ms
+2026-03-20 17:42:27.388 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:42:27.389 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 101.5689ms
+2026-03-20 17:43:50.673 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 17:43:51.078 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 17:43:51.667 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:43:51.717 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:43:51.720 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:43:51.733 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 17:43:51.977 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 17:43:51.978 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 17:43:52.046 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 17:43:52.048 +03:00 [INF] Hosting environment: Development
+2026-03-20 17:43:52.049 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 17:43:52.237 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 17:43:52.304 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:43:52.318 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:43:52.384 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:43:52.495 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 17:43:52.523 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 17:43:52.541 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 218.7057ms
+2026-03-20 17:43:52.545 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:43:52.555 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 320.3461ms
+2026-03-20 17:43:52.583 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 17:43:52.805 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 222.5203ms
+2026-03-20 17:43:52.814 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 17:43:52.825 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 11.3515ms
+2026-03-20 17:43:52.849 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 17:43:52.888 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.0184ms
+2026-03-20 17:43:52.940 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 17:43:53.019 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 79.2112ms
+2026-03-20 17:44:45.639 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - application/json 179
+2026-03-20 17:44:45.653 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-03-20 17:44:45.656 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-03-20 17:44:45.657 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - 401 0 null 19.9857ms
+2026-03-20 17:45:11.204 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:45:11.236 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:11.241 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:45:11.299 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:45:11.301 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:45:11.306 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 63.1516ms
+2026-03-20 17:45:11.307 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:11.308 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 103.7605ms
+2026-03-20 17:45:21.438 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - application/json 179
+2026-03-20 17:45:21.441 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 17:45:21.445 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(Hospital.Core.DTOs.UserViewDTO) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:45:21.458 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:45:21.463 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:45:21.582 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Int32), @p22='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [EmployeeId] = @p4, [FullName] = @p5, [IsActive] = @p6, [IsDeleted] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+INSERT INTO [AuditLogs] ([Date], [Type], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p20, @p21, @p22);
+2026-03-20 17:45:21.618 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 17:45:21.621 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 17:45:21.624 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API) in 176.9633ms
+2026-03-20 17:45:21.625 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 17:45:21.626 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - 200 null application/json; charset=utf-8 188.0905ms
+2026-03-20 17:45:26.898 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:45:26.900 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:26.901 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:45:26.905 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:45:26.907 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:45:26.908 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.4077ms
+2026-03-20 17:45:26.909 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:26.910 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 12.2709ms
+2026-03-20 17:45:31.754 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:45:31.756 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:31.757 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:45:31.760 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:45:31.763 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:45:31.764 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.5776ms
+2026-03-20 17:45:31.765 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:31.765 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 11.1912ms
+2026-03-20 17:45:52.170 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - application/json 180
+2026-03-20 17:45:52.181 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 17:45:52.182 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(Hospital.Core.DTOs.UserViewDTO) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:45:52.192 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:45:52.200 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:45:52.204 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Int32), @p22='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [EmployeeId] = @p4, [FullName] = @p5, [IsActive] = @p6, [IsDeleted] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+INSERT INTO [AuditLogs] ([Date], [Type], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p20, @p21, @p22);
+2026-03-20 17:45:52.207 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 17:45:52.208 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 17:45:52.209 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API) in 25.2709ms
+2026-03-20 17:45:52.210 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 17:45:52.211 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - 200 null application/json; charset=utf-8 42.3925ms
+2026-03-20 17:45:55.709 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:45:55.711 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:55.712 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:45:55.724 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:45:55.726 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:45:55.727 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 14.2004ms
+2026-03-20 17:45:55.728 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:55.728 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 19.8046ms
+2026-03-20 17:45:56.277 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:45:56.279 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:56.280 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:45:56.293 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:45:56.295 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:45:56.296 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 14.3511ms
+2026-03-20 17:45:56.297 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:56.298 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 20.8103ms
+2026-03-20 17:45:56.670 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:45:56.672 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:56.672 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:45:56.690 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:45:56.691 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:45:56.692 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 18.8875ms
+2026-03-20 17:45:56.693 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:45:56.694 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 24.651ms
+2026-03-20 17:46:03.263 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - application/json 179
+2026-03-20 17:46:03.265 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 17:46:03.266 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(Hospital.Core.DTOs.UserViewDTO) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:46:03.278 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:46:03.282 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:46:03.291 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Int32), @p22='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [EmployeeId] = @p4, [FullName] = @p5, [IsActive] = @p6, [IsDeleted] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+INSERT INTO [AuditLogs] ([Date], [Type], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p20, @p21, @p22);
+2026-03-20 17:46:03.297 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 17:46:03.299 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 17:46:03.300 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API) in 32.4529ms
+2026-03-20 17:46:03.301 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 17:46:03.302 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - 200 null application/json; charset=utf-8 39.1633ms
+2026-03-20 17:46:05.726 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:46:05.728 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:46:05.729 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:46:05.734 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:46:05.736 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:46:05.737 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.6059ms
+2026-03-20 17:46:05.738 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:46:05.738 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 12.3799ms
+2026-03-20 17:46:12.375 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:46:12.378 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:46:12.378 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:46:12.383 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:46:12.385 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:46:12.385 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.1202ms
+2026-03-20 17:46:12.386 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:46:12.387 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 11.8399ms
+2026-03-20 17:51:22.814 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 17:51:23.227 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 17:51:23.880 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:51:23.960 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:51:23.964 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 17:51:23.984 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 17:51:24.212 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 17:51:24.213 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 17:51:24.263 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 17:51:24.263 +03:00 [INF] Hosting environment: Development
+2026-03-20 17:51:24.264 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 17:51:24.761 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 17:51:24.761 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 17:51:24.913 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:51:24.938 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:51:25.004 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 250.8126ms
+2026-03-20 17:51:25.012 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 17:51:25.024 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 12.1782ms
+2026-03-20 17:51:25.043 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 17:51:25.046 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 17:51:25.104 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.9906ms
+2026-03-20 17:51:25.150 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 17:51:25.199 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 17:51:25.236 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 17:51:25.248 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 97.7839ms
+2026-03-20 17:51:25.253 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 309.9735ms
+2026-03-20 17:51:25.256 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 17:51:25.263 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 505.0498ms
+2026-03-20 17:51:26.609 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 17:51:26.642 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:51:26.648 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 17:51:26.698 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 17:51:26.700 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 17:51:26.705 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 55.8045ms
+2026-03-20 17:51:26.706 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 17:51:26.707 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 98.3408ms
+2026-03-20 18:11:01.466 +03:00 [INF] User profile is available. Using 'C:\Users\scorp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-20 18:11:01.866 +03:00 [WRN] Entity 'Employee' has a global query filter defined and is the required end of a relationship with the entity 'TransferLog'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-03-20 18:11:02.631 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 18:11:02.683 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 18:11:02.686 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-20 18:11:02.697 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-20 18:11:02.919 +03:00 [INF] Now listening on: https://localhost:7278
+2026-03-20 18:11:02.919 +03:00 [INF] Now listening on: http://localhost:5180
+2026-03-20 18:11:02.964 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-20 18:11:02.965 +03:00 [INF] Hosting environment: Development
+2026-03-20 18:11:02.966 +03:00 [INF] Content root path: C:\Users\scorp\Source\Repos\HospitalProject\Hospital.API
+2026-03-20 18:11:03.470 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 18:11:03.518 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/index.html - null null
+2026-03-20 18:11:03.637 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:11:03.661 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:03.731 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/index.html - 200 null text/html;charset=utf-8 212.7588ms
+2026-03-20 18:11:03.765 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:11:03.783 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-20 18:11:03.783 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/_vs/browserLink - null null
+2026-03-20 18:11:03.793 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_framework/aspnetcore-browser-refresh.js - 200 16509 application/javascript; charset=utf-8 9.3204ms
+2026-03-20 18:11:03.826 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.0783ms
+2026-03-20 18:11:03.855 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - null null
+2026-03-20 18:11:03.900 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 18:11:03.935 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 18:11:03.946 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 92.3427ms
+2026-03-20 18:11:03.951 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 285.0313ms
+2026-03-20 18:11:03.952 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:11:03.958 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 496.6612ms
+2026-03-20 18:11:05.949 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - null null
+2026-03-20 18:11:05.981 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:05.985 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:06.050 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:06.052 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:06.058 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 71.7255ms
+2026-03-20 18:11:06.059 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:06.060 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - 200 null application/json; charset=utf-8 111.5362ms
+2026-03-20 18:11:11.463 +03:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7278/api/Auth/5e3bf777-39d8-4162-942b-f52ba0a055db - null null
+2026-03-20 18:11:11.468 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.DeleteUser (Hospital.API)'
+2026-03-20 18:11:11.472 +03:00 [INF] Route matched with {action = "DeleteUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(System.String) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:11.494 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2026-03-20 18:11:11.501 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:11:11.624 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Int32), @p22='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [EmployeeId] = @p4, [FullName] = @p5, [IsActive] = @p6, [IsDeleted] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+INSERT INTO [AuditLogs] ([Date], [Type], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p20, @p21, @p22);
+2026-03-20 18:11:11.647 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 18:11:11.649 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.DeleteUser (Hospital.API) in 176.146ms
+2026-03-20 18:11:11.650 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.DeleteUser (Hospital.API)'
+2026-03-20 18:11:11.651 +03:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7278/api/Auth/5e3bf777-39d8-4162-942b-f52ba0a055db - 200 null application/json; charset=utf-8 187.6886ms
+2026-03-20 18:11:12.965 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - null null
+2026-03-20 18:11:12.968 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:12.969 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:12.977 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:12.979 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:12.981 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 10.6008ms
+2026-03-20 18:11:12.982 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:12.983 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - 200 null application/json; charset=utf-8 17.5925ms
+2026-03-20 18:11:16.198 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - null null
+2026-03-20 18:11:16.201 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:16.202 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:16.208 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:16.210 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:16.211 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 8.1067ms
+2026-03-20 18:11:16.212 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:16.212 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - 200 null application/json; charset=utf-8 14.2372ms
+2026-03-20 18:11:18.899 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - null null
+2026-03-20 18:11:18.901 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:18.902 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:18.907 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:18.909 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:18.910 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.4127ms
+2026-03-20 18:11:18.911 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:18.912 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - 200 null application/json; charset=utf-8 13.3997ms
+2026-03-20 18:11:19.874 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - null null
+2026-03-20 18:11:19.877 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:19.877 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:19.881 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:19.883 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:19.884 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.6351ms
+2026-03-20 18:11:19.885 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:19.886 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - 200 null application/json; charset=utf-8 11.6502ms
+2026-03-20 18:11:21.843 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=True - null null
+2026-03-20 18:11:21.845 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:21.846 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:21.850 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:21.853 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:21.854 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.5099ms
+2026-03-20 18:11:21.855 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:21.856 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=True - 200 null application/json; charset=utf-8 12.8164ms
+2026-03-20 18:11:29.723 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=True - null null
+2026-03-20 18:11:29.726 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:29.727 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:29.730 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:29.732 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:29.733 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.0726ms
+2026-03-20 18:11:29.734 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:29.734 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=True - 200 null application/json; charset=utf-8 10.975ms
+2026-03-20 18:11:30.244 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=True - null null
+2026-03-20 18:11:30.246 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:30.247 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:30.250 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:30.252 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:30.253 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.1019ms
+2026-03-20 18:11:30.254 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:30.254 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=True - 200 null application/json; charset=utf-8 10.5806ms
+2026-03-20 18:11:32.252 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=True&IsDeleted=True - null null
+2026-03-20 18:11:32.254 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:32.255 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:32.270 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean), @__IsActive_Value_1='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0 AND [a].[IsActive] = @__IsActive_Value_1
+2026-03-20 18:11:32.271 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:32.272 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 16.3064ms
+2026-03-20 18:11:32.273 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:32.274 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=True&IsDeleted=True - 200 null application/json; charset=utf-8 22.7292ms
+2026-03-20 18:11:33.876 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=True&IsDeleted=True - null null
+2026-03-20 18:11:33.878 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:33.879 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:33.882 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean), @__IsActive_Value_1='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0 AND [a].[IsActive] = @__IsActive_Value_1
+2026-03-20 18:11:33.884 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:33.885 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.1527ms
+2026-03-20 18:11:33.886 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:33.887 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=True&IsDeleted=True - 200 null application/json; charset=utf-8 11.3804ms
+2026-03-20 18:11:34.236 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=True&IsDeleted=True - null null
+2026-03-20 18:11:34.238 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:34.239 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:34.242 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean), @__IsActive_Value_1='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0 AND [a].[IsActive] = @__IsActive_Value_1
+2026-03-20 18:11:34.244 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:34.245 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.0673ms
+2026-03-20 18:11:34.246 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:34.247 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=True&IsDeleted=True - 200 null application/json; charset=utf-8 10.7088ms
+2026-03-20 18:11:35.484 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=False&IsDeleted=True - null null
+2026-03-20 18:11:35.487 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:35.488 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:35.492 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean), @__IsActive_Value_1='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0 AND [a].[IsActive] = @__IsActive_Value_1
+2026-03-20 18:11:35.494 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:35.495 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.3408ms
+2026-03-20 18:11:35.496 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:35.497 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=False&IsDeleted=True - 200 null application/json; charset=utf-8 12.9006ms
+2026-03-20 18:11:36.301 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=False&IsDeleted=True - null null
+2026-03-20 18:11:36.303 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:36.304 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:36.309 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean), @__IsActive_Value_1='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0 AND [a].[IsActive] = @__IsActive_Value_1
+2026-03-20 18:11:36.312 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:36.313 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 7.3215ms
+2026-03-20 18:11:36.314 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:36.315 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=False&IsDeleted=True - 200 null application/json; charset=utf-8 14.1837ms
+2026-03-20 18:11:36.549 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=False&IsDeleted=True - null null
+2026-03-20 18:11:36.551 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:36.551 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:36.554 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean), @__IsActive_Value_1='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0 AND [a].[IsActive] = @__IsActive_Value_1
+2026-03-20 18:11:36.557 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:36.557 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.1485ms
+2026-03-20 18:11:36.558 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:36.559 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=False&IsDeleted=True - 200 null application/json; charset=utf-8 10.5399ms
+2026-03-20 18:11:37.981 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=True - null null
+2026-03-20 18:11:37.983 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:37.984 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:37.989 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:37.991 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:37.992 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.3978ms
+2026-03-20 18:11:37.993 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:37.994 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=True - 200 null application/json; charset=utf-8 13.3296ms
+2026-03-20 18:11:39.621 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users? - null null
+2026-03-20 18:11:39.624 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:39.624 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:39.632 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 18:11:39.634 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:39.635 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 8.8089ms
+2026-03-20 18:11:39.636 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:39.636 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users? - 200 null application/json; charset=utf-8 15.34ms
+2026-03-20 18:11:40.749 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users? - null null
+2026-03-20 18:11:40.751 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:40.754 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:40.758 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 18:11:40.761 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:40.761 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.7917ms
+2026-03-20 18:11:40.762 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:40.763 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users? - 200 null application/json; charset=utf-8 14.4518ms
+2026-03-20 18:11:41.173 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users? - null null
+2026-03-20 18:11:41.175 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:41.175 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:41.179 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 18:11:41.181 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:41.182 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.1965ms
+2026-03-20 18:11:41.183 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:41.183 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users? - 200 null application/json; charset=utf-8 10.5123ms
+2026-03-20 18:11:46.725 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=True& - null null
+2026-03-20 18:11:46.727 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:46.728 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:46.741 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__IsActive_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = @__IsActive_Value_0
+2026-03-20 18:11:46.742 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:46.743 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 13.9245ms
+2026-03-20 18:11:46.744 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:46.745 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsActive=True& - 200 null application/json; charset=utf-8 20.2037ms
+2026-03-20 18:11:48.829 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users? - null null
+2026-03-20 18:11:48.832 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:48.832 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:48.836 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 18:11:48.839 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:48.840 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.2476ms
+2026-03-20 18:11:48.841 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:48.842 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users? - 200 null application/json; charset=utf-8 12.674ms
+2026-03-20 18:11:50.854 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - null null
+2026-03-20 18:11:50.857 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:50.857 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:50.862 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:50.864 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:50.865 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 6.0079ms
+2026-03-20 18:11:50.866 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:50.866 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - 200 null application/json; charset=utf-8 12.2346ms
+2026-03-20 18:11:52.118 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - null null
+2026-03-20 18:11:52.120 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:52.121 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:11:52.124 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:11:52.126 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:11:52.127 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 5.0752ms
+2026-03-20 18:11:52.128 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:11:52.129 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - 200 null application/json; charset=utf-8 10.6696ms
+2026-03-20 18:12:42.642 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 18:12:42.644 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:12:42.645 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:12:42.650 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:12:42.652 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 18:12:42.653 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 6.9001ms
+2026-03-20 18:12:42.654 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:12:42.654 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 401 null application/json; charset=utf-8 12.2225ms
+2026-03-20 18:13:02.594 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 18:13:02.596 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:13:02.598 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:13:02.612 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 18:13:02.615 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:13:02.616 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 13.1808ms
+2026-03-20 18:13:02.618 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:13:02.619 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 25.3338ms
+2026-03-20 18:13:36.735 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - application/json 191
+2026-03-20 18:13:36.741 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 18:13:36.747 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(Hospital.Core.DTOs.UserViewDTO) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:13:36.762 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:13:36.765 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:13:36.781 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Int32), @p22='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [EmployeeId] = @p4, [FullName] = @p5, [IsActive] = @p6, [IsDeleted] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+INSERT INTO [AuditLogs] ([Date], [Type], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p20, @p21, @p22);
+2026-03-20 18:13:36.786 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 18:13:36.788 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 18:13:36.789 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API) in 40.1911ms
+2026-03-20 18:13:36.790 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 18:13:36.791 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - 200 null application/json; charset=utf-8 56.6016ms
+2026-03-20 18:13:43.741 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 18:13:43.743 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:13:43.743 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:13:43.747 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:13:43.750 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 18:13:43.751 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 6.4127ms
+2026-03-20 18:13:43.752 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:13:43.753 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 401 null application/json; charset=utf-8 12.5769ms
+2026-03-20 18:13:46.884 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 18:13:46.886 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:13:46.886 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:13:46.889 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:13:46.892 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 18:13:46.893 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 5.4563ms
+2026-03-20 18:13:46.894 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:13:46.895 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 401 null application/json; charset=utf-8 11.1224ms
+2026-03-20 18:13:50.436 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 18:13:50.439 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:13:50.439 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:13:50.443 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:13:50.447 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 18:13:50.447 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 6.7704ms
+2026-03-20 18:13:50.448 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:13:50.449 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 401 null application/json; charset=utf-8 12.769ms
+2026-03-20 18:13:57.195 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7278/api/Auth/Users - null null
+2026-03-20 18:13:57.197 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:13:57.198 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:13:57.204 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+2026-03-20 18:13:57.206 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:13:57.207 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 8.3655ms
+2026-03-20 18:13:57.208 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:13:57.210 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7278/api/Auth/Users - 200 null application/json; charset=utf-8 15.2705ms
+2026-03-20 18:14:07.374 +03:00 [INF] Request starting HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - application/json 190
+2026-03-20 18:14:07.376 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 18:14:07.377 +03:00 [INF] Route matched with {action = "UpdateUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(Hospital.Core.DTOs.UserViewDTO) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:14:07.380 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:14:07.384 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:14:07.387 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p18='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p19='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256), @p20='?' (DbType = DateTime2), @p21='?' (DbType = Int32), @p22='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [EmployeeId] = @p4, [FullName] = @p5, [IsActive] = @p6, [IsDeleted] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+INSERT INTO [AuditLogs] ([Date], [Type], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p20, @p21, @p22);
+2026-03-20 18:14:07.395 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 18:14:07.396 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 18:14:07.397 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API) in 19.3744ms
+2026-03-20 18:14:07.398 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.UpdateUser (Hospital.API)'
+2026-03-20 18:14:07.399 +03:00 [INF] Request finished HTTP/2 PUT https://localhost:7278/api/Auth/UpdateUser - 200 null application/json; charset=utf-8 25.8565ms
+2026-03-20 18:14:09.190 +03:00 [INF] Request starting HTTP/1.1 POST https://localhost:7278/api/Auth/Login - application/json; charset=utf-8 45
+2026-03-20 18:14:09.192 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:14:09.193 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(Hospital.Core.DTOs.LoginDto) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:14:09.196 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeId], [a].[FullName], [a].[IsActive], [a].[IsDeleted], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-03-20 18:14:09.260 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-20 18:14:09.262 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-03-20 18:14:09.263 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.Login (Hospital.API) in 69.4122ms
+2026-03-20 18:14:09.264 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.Login (Hospital.API)'
+2026-03-20 18:14:09.265 +03:00 [INF] Request finished HTTP/1.1 POST https://localhost:7278/api/Auth/Login - 200 null application/json; charset=utf-8 74.9571ms
+2026-03-20 18:14:11.020 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - null null
+2026-03-20 18:14:11.027 +03:00 [INF] Executing endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:14:11.027 +03:00 [INF] Route matched with {action = "GetUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Hospital.API.Controllers.AuthController (Hospital.API).
+2026-03-20 18:14:11.033 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__IsDeleted_Value_0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[UserName], [a].[FullName], [a].[EmployeeId], (
+    SELECT TOP(1) [a1].[Name]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+    WHERE [a0].[UserId] = [a].[Id]) AS [Role], [a].[IsActive], [a].[IsDeleted]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsDeleted] = @__IsDeleted_Value_0
+2026-03-20 18:14:11.035 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Hospital.Core.DTOs.UserViewDTO, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-03-20 18:14:11.036 +03:00 [INF] Executed action Hospital.API.Controllers.AuthController.GetUsers (Hospital.API) in 7.3582ms
+2026-03-20 18:14:11.037 +03:00 [INF] Executed endpoint 'Hospital.API.Controllers.AuthController.GetUsers (Hospital.API)'
+2026-03-20 18:14:11.038 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7278/api/Auth/Users?IsDeleted=False - 200 null application/json; charset=utf-8 17.4213ms

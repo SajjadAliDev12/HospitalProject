@@ -194,5 +194,30 @@ namespace Hospital.API.Controllers
 
             return BadRequest(new { message = "فشل تحديث البيانات", errors = result.Errors.Select(e => e.Description) });
         }
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+                return NotFound(new { message = "المستخدم غير موجود" });
+
+            // تنفيذ الحذف المنطقي (Soft Delete)
+            user.IsDeleted = true;
+            user.IsActive = false; // تعطيل الحساب تلقائياً عند الحذف
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if (result.Succeeded)
+            {
+                return Ok(new { message = "تم حذف المستخدم (نقل للأرشيف) بنجاح" });
+            }
+
+            return BadRequest(new { message = "فشل في عملية الحذف", errors = result.Errors.Select(e => e.Description) });
+        }
     }
 }

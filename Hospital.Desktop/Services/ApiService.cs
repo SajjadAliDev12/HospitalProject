@@ -80,5 +80,23 @@ namespace Hospital.Desktop.Services
             await HandleError(response);
             return default;
         }
+        public async Task<T> DeleteAsync<T>(string endpoint)
+        {
+            var response = await _httpClient.DeleteAsync(endpoint);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                // إذا كانت الاستجابة فارغة (مثل NoContent 204) نرجع القيمة الافتراضية
+                if (string.IsNullOrWhiteSpace(responseContent))
+                    return default;
+
+                return JsonConvert.DeserializeObject<T>(responseContent);
+            }
+
+            await HandleError(response);
+            return default;
+        }
     }
 }

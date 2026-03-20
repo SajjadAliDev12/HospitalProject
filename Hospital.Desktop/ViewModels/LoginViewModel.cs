@@ -89,13 +89,27 @@ namespace Hospital.Desktop.ViewModels
         protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 
-    // كلاس بسيط لتنفيذ الأوامر (Command)
     public class RelayCommand : ICommand
     {
-        private readonly Func<object, Task> _execute;
-        public RelayCommand(Func<object, Task> execute) => _execute = execute;
+        private readonly Func<object, Task> _executeAsync;
+        private readonly Action<object> _executeSync;
+
+        // مشيد للأوامر الـ Async (مثل تسجيل الدخول)
+        public RelayCommand(Func<object, Task> execute) => _executeAsync = execute;
+
+        // مشيد للأوامر الـ Sync (مثل التنقل بين الصفحات)
+        public RelayCommand(Action<object> execute) => _executeSync = execute;
+
         public bool CanExecute(object parameter) => true;
-        public async void Execute(object parameter) => await _execute(parameter);
+
+        public async void Execute(object parameter)
+        {
+            if (_executeAsync != null)
+                await _executeAsync(parameter);
+            else
+                _executeSync?.Invoke(parameter);
+        }
+
         public event EventHandler CanExecuteChanged;
     }
 }
