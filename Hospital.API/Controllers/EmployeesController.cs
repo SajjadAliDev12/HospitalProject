@@ -61,16 +61,16 @@ namespace Hospital.API.Controllers
                 BirthDate = employee.BirthDate,
                 IsDeleted = employee.isDeleted,
                 HireDate = employee.HireDate,
-                CertificateType = Convert.ToInt32(employee.CertificateType),
+                CertificateType = employee.CertificateType,
                 DepartmentId = employee.DepartmentId,
                 Id = employee.Id,
-                JobStatus = Convert.ToInt32(employee.JobStatus),
+                JobStatus = employee.JobStatus,
                 LeaveBalance = employee.LeaveBalance,
                 JobTitleId = employee.JobTitleId,
                 PhoneNumber = employee.PhoneNumber,
                 Address = employee.Address,
-                ShiftType = Convert.ToInt32(employee.ShiftType),
-                Gender = Convert.ToInt32(employee.Gender)
+                ShiftType = employee.ShiftType,
+                Gender = employee.Gender
             });
         }
         [HttpPost]

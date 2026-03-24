@@ -2892,20 +2892,17 @@
             "format": "int32"
           },
           "shiftType": {
-            "type": "integer",
-            "format": "int32"
+            "$ref": "#/components/schemas/enShiftType"
           },
           "jobTitleId": {
             "type": "integer",
             "format": "int32"
           },
           "gender": {
-            "type": "integer",
-            "format": "int32"
+            "$ref": "#/components/schemas/enGender"
           },
           "certificateType": {
-            "type": "integer",
-            "format": "int32"
+            "$ref": "#/components/schemas/enCertificate"
           },
           "leaveBalance": {
             "type": "integer",
@@ -2920,8 +2917,7 @@
             "nullable": true
           },
           "jobStatus": {
-            "type": "integer",
-            "format": "int32"
+            "$ref": "#/components/schemas/enJobStatus"
           },
           "isDeleted": {
             "type": "boolean"
@@ -3155,7 +3151,38 @@
         },
         "additionalProperties": false
       },
+      "enCertificate": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "enGender": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "enJobStatus": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "enShiftType": {
         "enum": [
           0,
           1

@@ -56,27 +56,51 @@ namespace Hospital.Desktop.ViewModels
             finally { IsLoading = false; }
         }
 
-        private void OpenEmployeeForm(object parameter, string mode)
+        private async void OpenEmployeeForm(object parameter, string mode)
         {
-            // سنستخدم EmployeeFullDTO هنا كما طلبت
             EmployeeFullDTO employeeData = null;
-
             if (parameter is EmployeeSimpleDTO simple)
             {
-                // إذا كان تعديل أو عرض، يجب جلب البيانات الكاملة من الـ API أولاً
-                // سنفترض وجود Endpoint يرجع البيانات الكاملة بالـ ID
-                // employeeData = await _apiService.GetAsync<EmployeeFullDTO>($"Employees/{simple.Id}");
+                try
+                {
+                    IsLoading = true; // تفعيل مؤشر التحميل
 
-                // مؤقتاً سنقوم بإنشاء كائن جديد ونقل البيانات الأساسية
-                employeeData = new EmployeeFullDTO { Id = simple.Id, Name = simple.Name };
+                    // جلب البيانات الكاملة من السيرفر باستخدام الـ ID
+                    employeeData = await _apiService.GetAsync<EmployeeFullDTO>($"Employees/{simple.Id}");
+                    IsLoading = false;
+
+                    if (employeeData == null)
+                    {
+                        MessageBox.Show("فشل جلب بيانات الموظف من السيرفر.");
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    IsLoading = false;
+                    MessageBox.Show("خطأ أثناء الاتصال: " + ex.Message);
+                    return;
+                }
+            }
+            else
+            {
+                // في حالة الإضافة ننشئ كائن جديد
+                employeeData = new EmployeeFullDTO
+                {
+                    BirthDate = DateOnly.FromDateTime(DateTime.Now.AddYears(-20)),
+                    HireDate = DateOnly.FromDateTime(DateTime.Now)
+                };
             }
 
-            // فتح النافذة (سنقوم ببرمجتها في الخطوة القادمة)
-            // var form = new EmployeeFormView();
-            // form.DataContext = new EmployeeFormViewModel(employeeData, mode);
-            // if (form.ShowDialog() == true) LoadEmployees();
+            var form = new EmployeeFormView();
+            var viewModel = new EmployeeFormViewModel(employeeData, mode);
 
-            MessageBox.Show($"سيتم فتح نافذة {mode} للموظف");
+            viewModel.RequestClose += () => form.Close();
+            form.DataContext = viewModel;
+
+            form.ShowDialog();
+
+            if (mode != "View") LoadEmployees();
         }
 
         private async Task DeleteEmployee(object parameter)
@@ -94,5 +118,6 @@ namespace Hospital.Desktop.ViewModels
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
         }
+
     }
 }

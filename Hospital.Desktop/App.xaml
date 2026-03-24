@@ -14,6 +14,11 @@
         <conv:InverseBoolToVisConverter x:Key="InverseBoolToVis"/>
         <conv:StatusColorConverter x:Key="StatusColorConverter"/>
         <conv:GenderConverter x:Key="GenderConverter"/>
+        <conv:DateOnlyConverter x:Key="DateOnlyConverter"/>
+        <conv:DateOnlyJsonConverter x:Key="DateOnlyJsonConverter"/>
+        <conv:ShiftTypeConverter x:Key="ShiftTypeConverter"/>
+        <conv:JobStatusConverter x:Key="JobStatusConverter"/>
+        <conv:CertificateConverter x:Key="CertificateConverter"/>
         <DataTemplate DataType="{x:Type vm:UsersViewModel}">
             <views:UsersView/>
         </DataTemplate>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Hospital.Core.DTOs
@@ -11,17 +12,19 @@ namespace Hospital.Core.DTOs
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        [JsonPropertyName("birthDate")]
         public DateOnly BirthDate { get; set; }
+        [JsonPropertyName("hireDate")]
         public DateOnly HireDate { get; set; }
         public int DepartmentId { get; set; }
-        public int ShiftType { get; set; }
+        public enShiftType ShiftType { get; set; }
         public int JobTitleId { get; set; }
-        public int Gender { get; set; }
-        public int CertificateType { get; set; }
+        public enGender Gender { get; set; }
+        public enCertificate CertificateType { get; set; }
         public int LeaveBalance { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
-        public int JobStatus { get; set; }
+        public enJobStatus JobStatus { get; set; }
         public bool IsDeleted { get; set; }
     }
 }
