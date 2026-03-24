@@ -30,7 +30,7 @@ public static class EncryptionHelper
         }
         catch
         {
-            // في حال فشل فك التشفير (مثلاً تم تغيير إعدادات ويندوز)
+            
             return string.Empty;
         }
     }

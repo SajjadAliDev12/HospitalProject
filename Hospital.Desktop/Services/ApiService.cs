@@ -98,5 +98,21 @@ namespace Hospital.Desktop.Services
             await HandleError(response);
             return default;
         }
+        public async Task<T> PutAsync<T>(string endpoint, object data)
+        {
+            var json = JsonConvert.SerializeObject(data);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PutAsync(endpoint, content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(responseContent);
+            }
+
+            await HandleError(response);
+            return default;
+        }
     }
 }

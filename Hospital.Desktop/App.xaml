@@ -10,11 +10,16 @@
     <Application.Resources>
         <conv:BooleanToStatusConverter x:Key="BooleanToStatusConverter"/>
         <conv:BoolToVisConverter x:Key="BoolToVis"/>
+        <conv:InverseBoolConverter x:Key="InverseBool"/>
+        <conv:InverseBoolToVisConverter x:Key="InverseBoolToVis"/>
         <conv:StatusColorConverter x:Key="StatusColorConverter"/>
+        <conv:GenderConverter x:Key="GenderConverter"/>
         <DataTemplate DataType="{x:Type vm:UsersViewModel}">
             <views:UsersView/>
         </DataTemplate>
-
+        <DataTemplate DataType="{x:Type vm:EmployeesViewModel}">
+            <views:EmployeesView/>
+        </DataTemplate>
         <Style x:Key="MenuButtonStyle" TargetType="RadioButton">
             <Setter Property="Template">
                 <Setter.Value>
@@ -40,7 +45,21 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="15,7"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style x:Key="LogoutButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Foreground" Value="#E74C3C"/>

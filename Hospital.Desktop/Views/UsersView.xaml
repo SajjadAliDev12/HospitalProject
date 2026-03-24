@@ -22,8 +22,11 @@
                 <Button Content="تحديث القائمة" Command="{Binding RefreshCommand}" 
                         Padding="15,7" Background="#3498DB" Foreground="White" FontWeight="Bold" Cursor="Hand" BorderThickness="0"/>
 
-                <Button Content="إضافة مستخدم" Margin="10,0" Padding="15,7" 
-                        Background="#2ECC71" Foreground="White" FontWeight="Bold" Cursor="Hand" BorderThickness="0"/>
+                <Button Content="إضافة مستخدم" 
+        Command="{Binding AddUserCommand}" 
+        Margin="10,0" Padding="15,7" 
+        Background="#2ECC71" Foreground="White" 
+        FontWeight="Bold" Cursor="Hand" BorderThickness="0"/>
 
                 <Separator Margin="15,0" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}"/>
 
@@ -110,17 +113,25 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                                    <Button Content="عرض التفاصيل" 
+            Command="{Binding DataContext.ViewDetailsCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+            CommandParameter="{Binding}"
+            Background="Transparent" BorderThickness="0" Foreground="#3498DB" FontWeight="SemiBold" Cursor="Hand"/>
+
+                                    <TextBlock Text=" | " Foreground="#DDD" VerticalAlignment="Center"/>
+
                                     <Button Content="تعديل" 
-                                            Command="{Binding DataContext.EditUserCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
-                                            CommandParameter="{Binding}"
-                                            Background="Transparent" BorderThickness="0" Foreground="#3498DB" FontWeight="SemiBold" Cursor="Hand"/>
+            Command="{Binding DataContext.EditUserCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+            CommandParameter="{Binding}"
+            Background="Transparent" BorderThickness="0" Foreground="#3498DB" FontWeight="SemiBold" Cursor="Hand"/>
 
                                     <TextBlock Text=" | " Foreground="#DDD" VerticalAlignment="Center"/>
 
                                     <Button Content="حذف" 
-                                            Command="{Binding DataContext.DeleteUserCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
-                                            CommandParameter="{Binding}"
-                                            Background="Transparent" BorderThickness="0" Foreground="#E74C3C" FontWeight="SemiBold" Cursor="Hand"/>
+            Command="{Binding DataContext.DeleteUserCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+            CommandParameter="{Binding}"
+            Background="Transparent" BorderThickness="0" Foreground="#E74C3C" FontWeight="SemiBold" Cursor="Hand"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

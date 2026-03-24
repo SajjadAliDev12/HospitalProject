@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Threading;
 
+
 namespace Hospital.Desktop.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
@@ -58,7 +59,8 @@ namespace Hospital.Desktop.ViewModels
                         SelectedMenuTitle = "الغيابات";
                         break;
                     case "Employees":
-                        SelectedMenuTitle = "الموظفين";
+                        CurrentView = new EmployeesViewModel();
+                        SelectedMenuTitle = "إدارة الموظفين";
                         break;
                     case "Transfers":
                         SelectedMenuTitle = "التنقلات";

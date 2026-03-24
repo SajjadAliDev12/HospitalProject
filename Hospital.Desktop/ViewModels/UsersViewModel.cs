@@ -1,5 +1,6 @@
 ﻿using Hospital.Core.DTOs;
 using Hospital.Desktop.Services;
+using Hospital.Desktop.Views;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
@@ -31,11 +32,19 @@ namespace Hospital.Desktop.ViewModels
             set { _isLoading = value; OnPropertyChanged(nameof(IsLoading)); }
         }
         public ICommand RefreshCommand { get; }
+        public ICommand AddUserCommand { get; }
+        public ICommand ViewDetailsCommand { get; }
+        public ICommand EditUserCommand { get; }
         public UsersViewModel()
         {
             _apiService = new ApiService();
             Users = new ObservableCollection<UserViewDTO>();
             RefreshCommand = new RelayCommand((p) => LoadUsers());
+            AddUserCommand = new RelayCommand((p) => OpenUserForm(null, "Add"));
+
+            ViewDetailsCommand = new RelayCommand((p) => OpenUserForm(p as UserViewDTO, "View"));
+
+            EditUserCommand = new RelayCommand((p) => OpenUserForm(p as UserViewDTO, "Edit"));
             LoadUsers();
         }
 
@@ -76,11 +85,44 @@ namespace Hospital.Desktop.ViewModels
                 if (result != null)
                 {
                     MessageBox.Show("تم الحذف بنجاح");
-                    LoadUsers(); // إعادة تحديث القائمة لرؤية التغيير
+                    LoadUsers(); 
                 }
             }
         });
+        private void OpenUserForm(UserViewDTO? selectedUser, string mode)
+        {
+            UserFormDTO formDto;
 
+            if (selectedUser != null)
+            {
+                
+                formDto = new UserFormDTO
+                {
+                    Id = selectedUser.Id,
+                    UserName = selectedUser.UserName,
+                    FullName = selectedUser.FullName,
+                    Role = selectedUser.Role,
+                    EmployeeId = selectedUser.EmployeeId,
+                    IsActive = selectedUser.IsActive,
+                    IsDeleted = selectedUser.IsDeleted
+                };
+            }
+            else
+            {
+                formDto = new UserFormDTO();
+            }
+
+            // إنشاء النافذة وتمرير الـ ViewModel لها
+            var formWindow = new UserFormView();
+            formWindow.DataContext = new UserFormViewModel(formDto, mode);
+
+            // عرض النافذة كـ Dialog (تتوقف الشاشة الخلفية حتى تُغلق)
+            if (formWindow.ShowDialog() == true || mode != "View")
+            {
+                // تحديث القائمة بعد الإغلاق إذا حدث تغيير
+                LoadUsers();
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
