@@ -23,14 +23,12 @@ namespace Hospital.Desktop.ViewModels
         }
         public ObservableCollection<JobTitleVeiwDTO> JobTitles { get; set; } = new();
 
-        // حالات الشاشة
         public bool IsAddMode { get; set; }
         public bool IsEditMode { get; set; }
         public bool IsViewMode { get; set; }
 
         public event Action RequestClose;
 
-        // القوائم المنسدلة من الـ Enums
         public Array Genders => Enum.GetValues(typeof(enGender));
         public Array ShiftTypes => Enum.GetValues(typeof(enShiftType));
         public Array JobStatuses => Enum.GetValues(typeof(enJobStatus));
@@ -49,7 +47,6 @@ namespace Hospital.Desktop.ViewModels
             IsEditMode = mode == "Edit";
             IsViewMode = mode == "View";
 
-            // إذا كانت إضافة ننشئ كائن جديد، وإذا تعديل نستخدم البيانات الممرة
             em = employee ?? new EmployeeFullDTO
             {
                 BirthDate = DateOnly.FromDateTime(DateTime.Now.AddYears(-20)),
@@ -65,18 +62,15 @@ namespace Hospital.Desktop.ViewModels
         {
             try
             {
-                // 1. جلب الأقسام (تأكد من أن الرابط هو "Departments")
                 var deps = await _apiService.GetAsync<List<DepartmentDto>>("Departments");
                 if (deps != null)
                 {
-                    // تحديث القائمة على الواجهة
                     App.Current.Dispatcher.Invoke(() => {
                         Departments.Clear();
                         foreach (var d in deps) Departments.Add(d);
                     });
                 }
 
-                // 2. جلب المسميات الوظيفية (افترضت أن اسم الرابط JobTitles)
                 var jobs = await _apiService.GetAsync<List<JobTitleVeiwDTO>>("JobTitles");
                 if (jobs != null)
                 {

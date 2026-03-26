@@ -10,15 +10,36 @@ namespace Hospital.Desktop.ViewModels
     public class UserFormViewModel : BaseViewModel
     {
         private readonly ApiService _apiService;
+        private CancellationTokenSource _cts;
         public UserFormDTO User { get; set; }
         public ObservableCollection<string> Roles { get; set; } = new() { "Admin", "User", "Manager" };
-        public ObservableCollection<dynamic> Employees { get; set; } = new();
+        public ObservableCollection<EmployeeLookupDto> Employees { get; set; } = new();
 
+        private string _searchText;
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                if (_searchText == value) return;
+                _searchText = value;
+                OnPropertyChanged();
+
+                if (IsViewMode) return;
+                var currentEmployee = Employees.FirstOrDefault(e => e.Id == User.EmployeeId);
+
+                // شرط الحماية: إذا كان النص يطابق اسم الموظف المختار، لا تطلق البحث
+                if (currentEmployee != null && currentEmployee.Name == value)
+                    return;
+
+                if (!string.IsNullOrWhiteSpace(value) && value.Length > 1)
+                    SearchEmployeesDebounced(value);
+            }
+        }
         public bool IsAddMode { get; set; }
         public bool IsEditMode { get; set; }
         public bool IsViewMode { get; set; }
 
-        // حدث لإخبار الواجهة بإغلاق النافذة
         public event Action RequestClose;
 
         private bool _linkEmployee;
@@ -40,22 +61,67 @@ namespace Hospital.Desktop.ViewModels
             User = user ?? new UserFormDTO { IsActive = true, IsDeleted = false };
             LinkEmployee = User.EmployeeId.HasValue;
 
-            LoadEmployees();
+            if (LinkEmployee) LoadCurrentEmployee(User.EmployeeId);
 
-            // تصحيح: تمرير الـ PasswordBox كبارامتر
             SaveCommand = new RelayCommand(async (p) => await SaveUser(p), (p) => !IsViewMode);
         }
-
-        private async void LoadEmployees()
+        private async void SearchEmployeesDebounced(string term)
         {
-            var result = await _apiService.GetAsync<List<dynamic>>("Employees");
-            if (result != null)
-                foreach (var emp in result) Employees.Add(emp);
+            _cts?.Cancel();
+            _cts = new CancellationTokenSource();
+
+            try
+            {
+                await Task.Delay(400, _cts.Token);
+
+                var results = await _apiService.GetAsync<List<EmployeeLookupDto>>($"Employees/Search?term={term}");
+
+                App.Current.Dispatcher.Invoke(() => {
+                    // حفظ الموظف المختار حالياً قبل مسح القائمة لضمان عدم اختفائه من ComboBox
+                    var selectedId = User.EmployeeId;
+                    var selectedEmp = Employees.FirstOrDefault(e => e.Id == selectedId);
+
+                    Employees.Clear();
+
+                    // إعادة الموظف المختار أولاً (إذا لم يكن ضمن النتائج الجديدة)
+                    if (selectedEmp != null)
+                        Employees.Add(selectedEmp);
+
+                    if (results != null)
+                    {
+                        foreach (var emp in results)
+                        {
+                            // تجنب إضافة الموظف المختار مرتين
+                            if (emp.Id != selectedId)
+                                Employees.Add(emp);
+                        }
+                    }
+                });
+            }
+            catch (TaskCanceledException) { }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        private async void LoadCurrentEmployee(int? id)
+        {
+            if (!id.HasValue) return;
+
+            var emp = await _apiService.GetAsync<EmployeeFullDTO>($"Employees/{id}");
+            if (emp != null)
+            {
+                App.Current.Dispatcher.Invoke(() => {
+                    Employees.Clear();
+                    var lookup = new EmployeeLookupDto { Id = emp.Id, Name = emp.Name };
+                    Employees.Add(lookup);
+
+                    // تحديث النص الظاهري دون تفعيل البحث
+                    _searchText = lookup.Name;
+                    OnPropertyChanged(nameof(SearchText));
+                });
+            }
         }
 
         private async Task SaveUser(object parameter)
         {
-            // جلب كلمة المرور يدوياً في حالة الإضافة فقط
             if (IsAddMode && parameter is PasswordBox passBox)
             {
                 User.Password = passBox.Password;
@@ -74,7 +140,7 @@ namespace Hospital.Desktop.ViewModels
                     await _apiService.PutAsync<dynamic>("Auth/UpdateUser", User);
 
                 MessageBox.Show("تمت العملية بنجاح.");
-                RequestClose?.Invoke(); // تنفيذ الإغلاق
+                RequestClose?.Invoke();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }

@@ -13,6 +13,7 @@
         <conv:InverseBoolConverter x:Key="InverseBool"/>
         <conv:InverseBoolToVisConverter x:Key="InverseBoolToVis"/>
         <conv:StatusColorConverter x:Key="StatusColorConverter"/>
+        <conv:DeleteRestoreConverter x:Key="DeleteRestoreConverter"/>
         <conv:GenderConverter x:Key="GenderConverter"/>
         <conv:DateOnlyConverter x:Key="DateOnlyConverter"/>
         <conv:DateOnlyJsonConverter x:Key="DateOnlyJsonConverter"/>

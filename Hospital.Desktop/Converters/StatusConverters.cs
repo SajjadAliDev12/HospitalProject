@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
+using System.Windows.Media;
 
 namespace Hospital.Desktop.Converters
 {
@@ -102,7 +103,19 @@ namespace Hospital.Desktop.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => (bool)value ? "نشط" : "غير نشط";
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => Binding.DoNothing;
     }
+    public class DeleteRestoreConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            bool isDeleted = (bool)value;
+            if (parameter?.ToString() == "Color")
+                return isDeleted ? Brushes.Green : Brushes.Red;
 
+            return isDeleted ? "استعادة" : "حذف";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
+    }
     public class BoolToVisConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) => (bool)value ? Visibility.Visible : Visibility.Collapsed;

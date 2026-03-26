@@ -75,11 +75,7 @@ namespace Hospital.Desktop.ViewModels
             timer.Tick += (s, e) => CurrentTime = DateTime.Now.ToString("yyyy/MM/dd  hh:mm:ss tt");
             timer.Start();
         }
-        public void ShowUsersView()
-        {
-            SelectedMenuTitle = "إدارة المستخدمين";
-            CurrentView = new UsersViewModel(); // سنحتاج لاستخدام DataTemplate لاحقاً
-        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
