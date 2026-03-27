@@ -11,5 +11,8 @@ namespace Hospital.Core.DTOs
         public int Id { get; set; }
         public string Name { get; set; }
         public bool IsDeleted { get; set; } = false;
+        public int StaffCount { get; set; }
+        public int MorningCount { get; set; }
+        public int NightCount { get; set; }
     }
 }

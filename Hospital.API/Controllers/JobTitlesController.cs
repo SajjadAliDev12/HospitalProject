@@ -39,6 +39,33 @@ namespace Hospital.API.Controllers
             await _context.SaveChangesAsync();
             return Ok(new { message = "تمت إضافة العنوان الوظيفي بنجاح" });
         }
+        [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult> Update(int id, JobTitleVeiwDTO dto)
+        {
+            var job = await _context.JobTitles.FindAsync(id);
+            if (job == null) return NotFound();
+            job.Title = dto.Title;
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var job = await _context.JobTitles.FindAsync(id);
+            if (job == null) return NotFound();
+            _context.JobTitles.Remove(job);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
     }
 
 }

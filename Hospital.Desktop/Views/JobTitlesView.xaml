@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Hospital.Desktop.Views.JobTitlesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FlowDirection="RightToLeft">
+    <Grid Background="#F4F7F9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="White" Margin="15,15,15,5" CornerRadius="8" Padding="15">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="إضافة عنوان وظيفي" Command="{Binding AddCommand}" Style="{StaticResource ActionButtonStyle}" Background="#2ECC71" Foreground="White" Width="150"/>
+                <Button Content="تحديث" Command="{Binding RefreshCommand}" Style="{StaticResource ActionButtonStyle}" Background="#3498DB" Foreground="White" Margin="10,0" Width="100"/>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="15,5,15,15">
+            <DataGrid ItemsSource="{Binding JobTitles}" AutoGenerateColumns="False" IsReadOnly="True" RowHeight="45">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="التسلسل" Binding="{Binding Id}" Width="80"/>
+                    <DataGridTextColumn Header="العنوان الوظيفي" Binding="{Binding Title}" Width="*"/>
+
+                    <DataGridTemplateColumn Header="الإجراءات" Width="150">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="تعديل" Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="#F39C12" Background="Transparent" BorderThickness="0" Cursor="Hand" FontWeight="Bold"/>
+                                    <TextBlock Text=" | " VerticalAlignment="Center" Foreground="#DDD"/>
+                                    <Button Content="حذف" Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="#E74C3C" Background="Transparent" BorderThickness="0" Cursor="Hand" FontWeight="Bold"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <ProgressBar IsIndeterminate="True" Height="3" VerticalAlignment="Top" Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}"/>
+        </Grid>
+    </Grid>
+</UserControl>

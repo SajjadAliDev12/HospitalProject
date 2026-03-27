@@ -20,9 +20,11 @@
 
                 <RadioButton Style="{StaticResource MenuButtonStyle}" Content="الرئيسية" IsChecked="True" Command="{Binding NavCommand}" CommandParameter="Dashboard" FlowDirection="LeftToRight"/>
                 <RadioButton Style="{StaticResource MenuButtonStyle}" Content="الموظفين" Command="{Binding NavCommand}" CommandParameter="Employees" FlowDirection="LeftToRight"/>
+                <RadioButton Style="{StaticResource MenuButtonStyle}" Content="الأقسام" Command="{Binding NavCommand}" CommandParameter="Departments" FlowDirection="LeftToRight"/>
                 <RadioButton Style="{StaticResource MenuButtonStyle}" Content="الأجازات" Command="{Binding NavCommand}" CommandParameter="Leaves" FlowDirection="LeftToRight"/>
                 <RadioButton Style="{StaticResource MenuButtonStyle}" Content="الغيابات" Command="{Binding NavCommand}" CommandParameter="Absents" FlowDirection="LeftToRight"/>
                 <RadioButton Style="{StaticResource MenuButtonStyle}" Content="التنقلات" Command="{Binding NavCommand}" CommandParameter="Transfers" FlowDirection="LeftToRight"/>
+                <RadioButton Style="{StaticResource MenuButtonStyle}" Content="العناوين الوظيفية" Command="{Binding NavCommand}" CommandParameter="JobTitles" FlowDirection="LeftToRight"/>
                 <RadioButton Style="{StaticResource MenuButtonStyle}" Content="المستخدمين" Command="{Binding NavCommand}" CommandParameter="Users" FlowDirection="LeftToRight"/>
 
                 <Separator Background="#5D6D7E" Margin="10,20"/>

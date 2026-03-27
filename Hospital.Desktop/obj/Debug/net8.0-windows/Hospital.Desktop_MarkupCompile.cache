@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\pc\source\repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\
+C:\Users\scorp\source\repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\
 Hospital.Desktop
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\pc\source\repos\HospitalProject\Hospital.Desktop\App.xaml
-6-1719292547
+C:\Users\scorp\source\repos\HospitalProject\Hospital.Desktop\App.xaml
+101890417816
 
-21891839267
-347861498718
-MainWindow.xaml;Views\EmployeeFormView.xaml;Views\EmployeesView.xaml;Views\LoginView.xaml;Views\UserFormView.xaml;Views\UsersView.xaml;
+29-3670879
+347-1230431655
+MainWindow.xaml;Views\DepartmentFormView.xaml;Views\DepartmentsView.xaml;Views\EmployeeFormView.xaml;Views\EmployeesView.xaml;Views\JobTitleFormView.xaml;Views\JobTitlesView.xaml;Views\LoginView.xaml;Views\UserFormView.xaml;Views\UsersView.xaml;
 
 False
 

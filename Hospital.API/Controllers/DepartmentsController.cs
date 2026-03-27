@@ -1,5 +1,6 @@
 ﻿using Hospital.API.Data;
 using Hospital.Core.DTOs;
+using Hospital.Core.Enums;
 using Hospital.Core.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -34,7 +35,10 @@ namespace Hospital.API.Controllers
             {
                 Id = d.Id,
                 Name = d.Name,
-                IsDeleted = d.isDeleted
+                IsDeleted = d.isDeleted,
+                StaffCount = d.Employees.Count(e => !e.isDeleted),
+                MorningCount = d.Employees.Count(e => !e.isDeleted && e.ShiftType == enShiftType.Morning),
+                NightCount = d.Employees.Count(e => !e.isDeleted && e.ShiftType == enShiftType.Night)
             }).ToListAsync();
 
             return Ok(departments);

@@ -48,13 +48,13 @@
 
                 <UniformGrid Columns="2">
                     <StackPanel Margin="5">
-                        <TextBlock Text="القسم:"/>
-                        <ComboBox ItemsSource="{Binding Departments}" 
-          SelectedValuePath="Id" 
-          DisplayMemberPath="Name" 
-          SelectedValue="{Binding em.DepartmentId}"
-          IsEnabled="{Binding IsViewMode, Converter={StaticResource InverseBool}}" 
-          Margin="0,5"/>
+                        <TextBlock Text="القسم الحالي (لا يمكن تعديله من هنا):" Foreground="Gray" FontSize="11"/>
+                        <TextBox Text="{Binding Employee.DepartmentName}" 
+             IsReadOnly="True" 
+             Background="#F5F5F5" 
+             BorderThickness="0,0,0,1" 
+             Margin="0,5"/>
+                        <TextBlock Text="* يتم التغيير عبر نظام التنقلات فقط" Foreground="#E74C3C" FontSize="10"/>
                     </StackPanel>
 
                     <StackPanel Margin="5">

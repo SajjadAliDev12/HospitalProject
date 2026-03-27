@@ -62,6 +62,14 @@ namespace Hospital.Desktop.ViewModels
                         CurrentView = new EmployeesViewModel();
                         SelectedMenuTitle = "إدارة الموظفين";
                         break;
+                    case "Departments":
+                        CurrentView = new DepartmentsViewModel();
+                        SelectedMenuTitle = "إدارة الأقسام";
+                        break;
+                    case "JobTitles":
+                        CurrentView = new JobTitlesViewModel();
+                        SelectedMenuTitle = "إدارة العناوين الوظيفية";
+                        break;
                     case "Transfers":
                         SelectedMenuTitle = "التنقلات";
                         break;

@@ -23,6 +23,12 @@
         <DataTemplate DataType="{x:Type vm:UsersViewModel}">
             <views:UsersView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:DepartmentsViewModel}">
+            <views:DepartmentsView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:JobTitlesViewModel}">
+            <views:JobTitlesView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EmployeesViewModel}">
             <views:EmployeesView/>
         </DataTemplate>

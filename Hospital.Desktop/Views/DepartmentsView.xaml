@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="Hospital.Desktop.Views.DepartmentsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FlowDirection="RightToLeft">
+    <Grid Background="#F4F7F9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="White" Margin="15,15,15,5" CornerRadius="8" Padding="15">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="عرض الأقسام:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <ComboBox SelectedIndex="{Binding SelectedStatusFilter}" Width="150" Height="35" VerticalContentAlignment="Center">
+                        <ComboBoxItem Content="الكل"/>
+                        <ComboBoxItem Content="الفعالة فقط"/>
+                        <ComboBoxItem Content="المحذوفة فقط"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button Content="إضافة قسم جديد" Command="{Binding AddCommand}" Style="{StaticResource ActionButtonStyle}" Background="#2ECC71" Foreground="White" Width="140"/>
+                    <Button Content="تحديث" Command="{Binding RefreshCommand}" Style="{StaticResource ActionButtonStyle}" Background="#3498DB" Foreground="White" Margin="10,0" Width="100"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="15,5,15,15">
+            <DataGrid ItemsSource="{Binding Departments}" AutoGenerateColumns="False" IsReadOnly="True" RowHeight="50">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ت" Binding="{Binding Id}" Width="50"/>
+                    <DataGridTextColumn Header="اسم القسم" Binding="{Binding Name}" Width="2*"/>
+
+                    <DataGridTextColumn Header="المنتسبين" Binding="{Binding StaffCount}" Width="80">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="صباحي" Binding="{Binding MorningCount}" Width="80"/>
+                    <DataGridTextColumn Header="خفر" Binding="{Binding NightCount}" Width="80"/>
+
+                    <DataGridTemplateColumn Header="الإجراءات" Width="150">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="تعديل" Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="#F39C12" Background="Transparent" BorderThickness="0" Cursor="Hand"/>
+                                    <TextBlock Text=" | " VerticalAlignment="Center" Foreground="#DDD"/>
+                                    <Button Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                            CommandParameter="{Binding}" 
+                                            Content="{Binding IsDeleted, Converter={StaticResource DeleteRestoreConverter}}" 
+                                            Foreground="{Binding IsDeleted, Converter={StaticResource DeleteRestoreConverter}, ConverterParameter=Color}"
+                                            Background="Transparent" BorderThickness="0" Cursor="Hand"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <ProgressBar IsIndeterminate="True" Height="4" VerticalAlignment="Top" Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}"/>
+        </Grid>
+    </Grid>
+</UserControl>

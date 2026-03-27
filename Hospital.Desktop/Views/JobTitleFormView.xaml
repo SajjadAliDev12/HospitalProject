@@ -1,0 +1,15 @@
+﻿<Window x:Class="Hospital.Desktop.Views.JobTitleFormView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="إدارة العناوين الوظيفية" Height="180" Width="350" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="العنوان الوظيفي:"/>
+            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" Margin="0,10" Padding="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="حفظ" Command="{Binding SaveCommand}" Width="100" Height="30" Background="#2ECC71" Foreground="White" BorderThickness="0"/>
+                <Button Content="إلغاء" IsCancel="True" Width="100" Height="30" Margin="10,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
