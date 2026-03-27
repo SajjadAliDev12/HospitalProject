@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Hospital.Desktop.Converters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using Newtonsoft.Json.Linq;
 
 namespace Hospital.Desktop.Services
 {
@@ -11,6 +12,10 @@ namespace Hospital.Desktop.Services
         private readonly HttpClient _httpClient;
         private static string _token;
         private const string BaseUrl = "https://localhost:7278/api/";
+        private readonly JsonSerializerSettings _settings = new JsonSerializerSettings
+        {
+            Converters = { new DateOnlyJsonConverter() }
+        };
 
         public ApiService()
         {
@@ -71,11 +76,11 @@ namespace Hospital.Desktop.Services
         public async Task<T> GetAsync<T>(string endpoint)
         {
             var response = await _httpClient.GetAsync(endpoint);
-
             if (response.IsSuccessStatusCode)
             {
-                var responseContent = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(responseContent);
+                var content = await response.Content.ReadAsStringAsync();
+                // استخدم الـ settings هنا
+                return JsonConvert.DeserializeObject<T>(content, _settings);
             }
             await HandleError(response);
             return default;

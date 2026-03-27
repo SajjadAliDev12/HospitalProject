@@ -128,10 +128,14 @@
 
                                     <TextBlock Text=" | " Foreground="#DDD" VerticalAlignment="Center"/>
 
-                                    <Button Content="حذف" 
-            Command="{Binding DataContext.DeleteUserCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
-            CommandParameter="{Binding}"
-            Background="Transparent" BorderThickness="0" Foreground="#E74C3C" FontWeight="SemiBold" Cursor="Hand"/>
+                                    <Button Command="{Binding DataContext.DeleteUserCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+        CommandParameter="{Binding}"
+        Content="{Binding IsDeleted, Converter={StaticResource DeleteRestoreConverter}}"
+        Foreground="{Binding IsDeleted, Converter={StaticResource DeleteRestoreConverter}, ConverterParameter=Color}"
+        Background="Transparent" 
+        BorderThickness="0" 
+        FontWeight="SemiBold" 
+        Cursor="Hand"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

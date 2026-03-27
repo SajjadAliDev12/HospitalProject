@@ -74,19 +74,47 @@ namespace Hospital.Desktop.ViewModels
             }
         }
         public ICommand DeleteUserCommand => new RelayCommand(async (param) => {
-            var user = param as UserViewDTO;
-            if (user == null) return;
+            if (!(param is UserViewDTO user)) return;
 
-            var confirm = MessageBox.Show($"هل أنت متأكد من حذف {user.UserName}؟", "تأكيد", MessageBoxButton.YesNo);
-            if (confirm == MessageBoxResult.Yes)
+            string actionText = user.IsDeleted ? "استعادة" : "حذف";
+            var confirm = MessageBox.Show($"هل أنت متأكد من {actionText} المستخدم {user.UserName}؟",
+                                        "تأكيد", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (confirm != MessageBoxResult.Yes) return;
+
+            try
             {
-                string endpoint = $"Auth/{user.Id}";
-                var result = await _apiService.DeleteAsync<dynamic>(endpoint);
-                if (result != null)
+                if (user.IsDeleted)
                 {
-                    MessageBox.Show("تم الحذف بنجاح");
-                    LoadUsers(); 
+                    // منطق الاستعادة: تغيير الحالة وإرسال طلب تحديث
+                    user.IsDeleted = false;
+                    user.IsActive = true;
+
+                    // ملاحظة: تأكد أن الـ API يتوقع UserViewDTO أو قم بتحويله لـ UserFormDTO إذا لزم الأمر
+                    var result = await _apiService.PutAsync<dynamic>("Auth/UpdateUser", user);
+
+                    if (result != null)
+                        MessageBox.Show("تمت استعادة الحساب بنجاح.");
+                    else
+                        { user.IsDeleted = true;
+                        user.IsActive = false;  }// إعادة الحالة للأصل في حال فشل السيرفر
                 }
+                else
+                {
+                    // منطق الحذف العادي (Soft Delete)
+                    string endpoint = $"Auth/{user.Id}";
+                    var result = await _apiService.DeleteAsync<dynamic>(endpoint);
+
+                    if (result != null)
+                        MessageBox.Show("تم الحذف بنجاح.");
+                }
+
+                LoadUsers(); // تحديث الجدول
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"خطأ في العملية: {ex.Message}");
+                LoadUsers(); // إعادة جلب البيانات لضمان دقة الحالة المعروضة
             }
         });
         private void OpenUserForm(UserViewDTO? selectedUser, string mode)

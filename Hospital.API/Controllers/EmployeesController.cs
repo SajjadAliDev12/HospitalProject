@@ -24,25 +24,43 @@ namespace Hospital.API.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<EmployeeSimpleDTO>>> GetEmployees([FromQuery] bool? IsDeleted)
+        public async Task<ActionResult<PagedResult<EmployeeSimpleDTO>>> GetEmployees([FromQuery] bool? IsDeleted,[FromQuery] string? searchTerm,[FromQuery] int page = 1,[FromQuery] int pageSize = 20)
         {
             IQueryable<Employee> query = _dbContext.Employees.IgnoreQueryFilters().AsNoTracking();
+
             if (IsDeleted.HasValue)
-            {
                 query = query.Where(e => e.isDeleted == IsDeleted.Value);
-            }
-            var Employees = await query.Select(e => new EmployeeSimpleDTO
+
+            if (!string.IsNullOrWhiteSpace(searchTerm))
             {
-                Id = e.Id,
-                Name = e.Name,
-                BirthDate = e.BirthDate,
-                IsDeleted = e.isDeleted,
-                DepartmentID = e.DepartmentId,
-                Gender = e.Gender,
-                PhoneNumber = e.PhoneNumber,
-                HireDate = e.HireDate,
-            }).ToListAsync();
-            return Ok(Employees);
+                query = query.Where(e => e.Name.Contains(searchTerm));
+            }
+
+            var totalCount = await query.CountAsync();
+
+            var items = await query
+                .OrderByDescending(e => e.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(e => new EmployeeSimpleDTO
+                {
+                    Id = e.Id,
+                    Name = e.Name,
+                    BirthDate = e.BirthDate,
+                    HireDate = e.HireDate,
+                    Gender = e.Gender,
+                    PhoneNumber = e.PhoneNumber,
+                    IsDeleted = e.isDeleted,
+                    DepartmentID = e.DepartmentId
+                }).ToListAsync();
+
+            return Ok(new PagedResult<EmployeeSimpleDTO>
+            {
+                Items = items,
+                TotalCount = totalCount,
+                PageSize = pageSize,
+                CurrentPage = page
+            });
         }
 
         [HttpGet("{Id}")]
@@ -61,16 +79,16 @@ namespace Hospital.API.Controllers
                 BirthDate = employee.BirthDate,
                 IsDeleted = employee.isDeleted,
                 HireDate = employee.HireDate,
-                CertificateType = Convert.ToInt32(employee.CertificateType),
+                CertificateType = employee.CertificateType,
                 DepartmentId = employee.DepartmentId,
                 Id = employee.Id,
-                JobStatus = Convert.ToInt32(employee.JobStatus),
+                JobStatus = employee.JobStatus,
                 LeaveBalance = employee.LeaveBalance,
                 JobTitleId = employee.JobTitleId,
                 PhoneNumber = employee.PhoneNumber,
                 Address = employee.Address,
-                ShiftType = Convert.ToInt32(employee.ShiftType),
-                Gender = Convert.ToInt32(employee.Gender)
+                ShiftType = employee.ShiftType,
+                Gender = employee.Gender
             });
         }
         [HttpPost]
@@ -177,6 +195,24 @@ namespace Hospital.API.Controllers
             {
                 return StatusCode(500, new { message = "حدث خطأ اثناء معالجة البيانات" });
             }
+        }
+        [HttpGet("Search")]
+        public async Task<ActionResult<IEnumerable<EmployeeLookupDto>>> SearchEmployees([FromQuery] string term)
+        {
+            if (string.IsNullOrWhiteSpace(term)) return Ok(new List<EmployeeLookupDto>());
+
+            var results = await _dbContext.Employees
+                .AsNoTracking()
+                .Where(e => !e.isDeleted && e.Name.Contains(term))
+                .Take(10)
+                .Select(e => new EmployeeLookupDto
+                {
+                    Id = e.Id,
+                    Name = e.Name
+                })
+                .ToListAsync();
+
+            return Ok(results);
         }
     }
 }

@@ -1,47 +1,124 @@
 ﻿<UserControl x:Class="Hospital.Desktop.Views.EmployeesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              FlowDirection="RightToLeft">
-    <Grid Background="#F4F7F9">
+    <Grid Background="#F0F2F5">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Border Background="White" Margin="15,15,15,5" CornerRadius="8" Padding="15">
-            <StackPanel Orientation="Horizontal">
-                <Button Content="تحديث القائمة" Command="{Binding RefreshCommand}" Style="{StaticResource ActionButtonStyle}" Background="#3498DB" Foreground="White"/>
-                <Button Content="إضافة موظف" Command="{Binding AddEmployeeCommand}" Margin="10,0" Style="{StaticResource ActionButtonStyle}" Background="#2ECC71" Foreground="White"/>
-            </StackPanel>
+        <Border Background="White" Margin="15,15,15,5" CornerRadius="10" Padding="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="0">
+                    <Button Command="{Binding AddEmployeeCommand}" Style="{StaticResource ActionButtonStyle}" Background="#27AE60" Foreground="White" Width="130">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="+" FontWeight="Bold" Margin="0,0,8,0" FontSize="16"/>
+                            <TextBlock Text="إضافة موظف"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Command="{Binding RefreshCommand}" Margin="10,0" Style="{StaticResource ActionButtonStyle}" Background="#3498DB" Foreground="White" Width="100">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="↻" FontWeight="Bold" Margin="0,0,8,0" FontSize="16"/>
+                            <TextBlock Text="تحديث"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <Border Grid.Column="1" Background="#F8F9FA" CornerRadius="5" BorderBrush="#DEE2E6" BorderThickness="1" Margin="20,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="🔍" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#ADB5BD"/>
+                        <TextBox Grid.Column="1" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                                 BorderThickness="0" Background="Transparent" VerticalContentAlignment="Center" 
+                                 Tag="ابحث عن طريق الاسم..." Padding="5,0"/>
+                    </Grid>
+                </Border>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                    <ComboBox SelectedIndex="{Binding SelectedStatusFilter}" Width="130" Height="35" VerticalContentAlignment="Center" Margin="5,0">
+                        <ComboBoxItem Content="كل الموظفين"/>
+                        <ComboBoxItem Content="المحذوفين"/>
+                    </ComboBox>
+
+                    <ComboBox SelectedIndex="{Binding SelectedGenderFilter}" Width="100" Height="35" VerticalContentAlignment="Center" Margin="5,0">
+                        <ComboBoxItem Content="الكل (جنس)"/>
+                        <ComboBoxItem Content="ذكور"/>
+                        <ComboBoxItem Content="إناث"/>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
         </Border>
 
         <Grid Grid.Row="1" Margin="15,5,15,15">
-            <DataGrid ItemsSource="{Binding Employees}" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" RowHeight="50">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="المعرف" Binding="{Binding Id}" Width="60"/>
-                    <DataGridTextColumn Header="اسم الموظف" Binding="{Binding Name}" Width="1.5*"/>
-                    <DataGridTextColumn Header="الجنس" Binding="{Binding Gender, Converter={StaticResource GenderConverter}}" Width="80"/>
-                    <DataGridTextColumn Header="تاريخ الميلاد" Binding="{Binding BirthDate}" Width="*"/>
-                    <DataGridTextColumn Header="تاريخ التعيين" Binding="{Binding HireDate}" Width="*"/>
-                    <DataGridTextColumn Header="رقم الهاتف" Binding="{Binding PhoneNumber}" Width="*"/>
+            <DataGrid ItemsSource="{Binding FilteredEmployees}" AutoGenerateColumns="False" IsReadOnly="True" 
+                      SelectionMode="Single" SelectionUnit="FullRow" RowHeight="50"
+                      Background="White" BorderThickness="0" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#F1F1F1">
 
-                    <DataGridTemplateColumn Header="الإجراءات" Width="200">
+                <DataGrid.InputBindings>
+                    <MouseBinding MouseAction="LeftDoubleClick" 
+                                  Command="{Binding ViewDetailsCommand}" 
+                                  CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                </DataGrid.InputBindings>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="المعرف" Binding="{Binding Id}" Width="70"/>
+                    <DataGridTextColumn Header="اسم الموظف" Binding="{Binding Name}" Width="2*"/>
+                    <DataGridTextColumn Header="الجنس" Binding="{Binding Gender, Converter={StaticResource GenderConverter}}" Width="100"/>
+                    <DataGridTextColumn Header="تاريخ الميلاد" Binding="{Binding BirthDate, StringFormat={}{0:yyyy/MM/dd}}" Width="*"/>
+                    <DataGridTextColumn Header="تاريخ التعيين" Binding="{Binding HireDate, StringFormat={}{0:yyyy/MM/dd}}" Width="*"/>
+                    <DataGridTextColumn Header="رقم الهاتف" Binding="{Binding PhoneNumber}" Width="1.2*"/>
+
+                    <DataGridTemplateColumn Header="الإجراءات" Width="180">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <Button Content="عرض" Command="{Binding DataContext.ViewDetailsCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="#3498DB" Background="Transparent" BorderThickness="0" Cursor="Hand"/>
-                                    <TextBlock Text=" | " VerticalAlignment="Center" Foreground="#DDD"/>
-                                    <Button Content="تعديل" Command="{Binding DataContext.EditEmployeeCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="#F39C12" Background="Transparent" BorderThickness="0" Cursor="Hand"/>
-                                    <TextBlock Text=" | " VerticalAlignment="Center" Foreground="#DDD"/>
-                                    <Button Content="حذف" Command="{Binding DataContext.DeleteEmployeeCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="#E74C3C" Background="Transparent" BorderThickness="0" Cursor="Hand"/>
+                                    <Button Content="عرض" Command="{Binding DataContext.ViewDetailsCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="#3498DB" Background="Transparent" BorderThickness="0" Cursor="Hand" FontWeight="SemiBold"/>
+                                    <TextBlock Text="|" VerticalAlignment="Center" Foreground="#DDD" Margin="5,0"/>
+                                    <Button Content="تعديل" Command="{Binding DataContext.EditEmployeeCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}" Foreground="#F39C12" Background="Transparent" BorderThickness="0" Cursor="Hand" FontWeight="SemiBold"/>
+                                    <TextBlock Text="|" VerticalAlignment="Center" Foreground="#DDD" Margin="5,0"/>
+                                    <Button Command="{Binding DataContext.DeleteEmployeeCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+        CommandParameter="{Binding}" 
+        Content="{Binding IsDeleted, Converter={StaticResource DeleteRestoreConverter}}" 
+        Foreground="{Binding IsDeleted, Converter={StaticResource DeleteRestoreConverter}, ConverterParameter=Color}" 
+        Background="Transparent" 
+        BorderThickness="0" 
+        Cursor="Hand" 
+        FontWeight="SemiBold"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            <Border Grid.Row="1" VerticalAlignment="Bottom" Background="White" 
+        BorderBrush="#DDD" BorderThickness="0,1,0,0" Padding="10">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="السابق" Command="{Binding PreviousPageCommand}" Width="80" Height="30" Margin="5,0"/>
 
-            <ProgressBar IsIndeterminate="True" Height="4" VerticalAlignment="Top" Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}"/>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0">
+                        <TextBlock Text="الصفحة " Foreground="#666"/>
+                        <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold"/>
+                        <TextBlock Text=" من " Foreground="#666"/>
+                        <TextBlock Text="{Binding TotalPages}" FontWeight="Bold"/>
+                    </StackPanel>
+
+                    <Button Content="التالي" Command="{Binding NextPageCommand}" Width="80" Height="30" Margin="5,0"/>
+                </StackPanel>
+            </Border>
+            <ProgressBar IsIndeterminate="True" Height="3" VerticalAlignment="Top" 
+                         Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}" Foreground="#3498DB"/>
         </Grid>
     </Grid>
 </UserControl>

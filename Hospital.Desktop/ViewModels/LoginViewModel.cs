@@ -34,7 +34,6 @@ namespace Hospital.Desktop.ViewModels
             {
                 Username = Properties.Settings.Default.SavedUsername;
                 IsRememberMe = true;
-                // ملاحظة: الـ PasswordBox يحتاج تعاملاً خاصاً في الـ Code Behind لتعبئته تلقائياً
             }
         }
 
@@ -71,12 +70,10 @@ namespace Hospital.Desktop.ViewModels
                     Properties.Settings.Default.Save();
                     // حفظ التوكن في الخدمة لاستخدامه لاحقاً
                     _apiService.SetToken(response.token.ToString());
-
-                    // الانتقال للنافذة الرئيسية (MainWindow)
                     var mainWin = new MainWindow();
                     mainWin.Show();
 
-                    Application.Current.Windows[0].Close(); // إغلاق نافذة الدخول
+                    Application.Current.Windows[0].Close();
                 }
             }
             catch (Exception ex)
