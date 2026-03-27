@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj": {}
+    "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj": {
+    "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj",
+        "projectUniqueName": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj",
         "projectName": "Hospital.Core",
-        "projectPath": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj",
+        "projectPath": "C:\\Users\\scorp\\source\\repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj",
         "packagesPath": "C:\\Users\\scorp\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\obj\\",
         "projectStyle": "PackageReference",
