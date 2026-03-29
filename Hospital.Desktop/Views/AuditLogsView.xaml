@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Hospital.Desktop.Views.AuditLogsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             FlowDirection="RightToLeft">
+    <Grid Background="#F4F7F9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="White" Margin="15" CornerRadius="8" Padding="15">
+            <DockPanel>
+                <TextBlock Text="سجلات الرقابة والتدقيق (Audit Logs)" FontSize="18" FontWeight="Bold" Foreground="#2C3E50" VerticalAlignment="Center"/>
+                <Button Content="تحديث السجلات" Command="{Binding RefreshCommand}" HorizontalAlignment="Left" Width="120" Height="35" Background="#34495E" Foreground="White" BorderThickness="0"/>
+            </DockPanel>
+        </Border>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Logs}" Margin="15,0,15,5" 
+                  AutoGenerateColumns="False" IsReadOnly="True" RowHeight="50" FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="التاريخ والوقت" Binding="{Binding Date, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}" Width="160"/>
+                <DataGridTextColumn Header="المستخدم" Binding="{Binding UserName}" Width="120"/>
+                <DataGridTextColumn Header="العملية" Binding="{Binding ActionType}" Width="100"/>
+                <DataGridTextColumn Header="الهدف (Entity)" Binding="{Binding EntityName}" Width="130"/>
+                <DataGridTextColumn Header="رقم السجل" Binding="{Binding RecordId}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border Grid.Row="2" Background="White" Margin="15,0,15,15" CornerRadius="8" Padding="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="السابق" Command="{Binding PrevPageCommand}" Width="80" Margin="5" Background="#BDC3C7" BorderThickness="0"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0">
+                    <TextBlock Text="صفحة " Foreground="Gray"/>
+                    <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold"/>
+                    <TextBlock Text=" من " Foreground="Gray"/>
+                    <TextBlock Text="{Binding TotalPages}" FontWeight="Bold"/>
+                </StackPanel>
+                <Button Content="التالي" Command="{Binding NextPageCommand}" Width="80" Margin="5" Background="#BDC3C7" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

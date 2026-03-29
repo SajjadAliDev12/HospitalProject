@@ -38,6 +38,9 @@
         <DataTemplate DataType="{x:Type vm:AbsentsViewModel}">
             <views:AbsentsView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AuditLogsViewModel}">
+            <views:AuditLogsView/>
+        </DataTemplate>
 
         <Style x:Key="MenuButtonStyle" TargetType="RadioButton">
             <Setter Property="Template">

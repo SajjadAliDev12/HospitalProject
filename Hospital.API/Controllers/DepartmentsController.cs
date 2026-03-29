@@ -25,15 +25,11 @@ namespace Hospital.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<DepartmentDto>>> GetDepartments([FromQuery] bool? IsDeleted)
         {
-            IQueryable<Department> query = _context.Departments.AsQueryable();
+            IQueryable<Department> query = _context.Departments.IgnoreQueryFilters().AsQueryable();
 
             if (IsDeleted.HasValue)
             {
                 query = _context.Departments.IgnoreQueryFilters().Where(e => e.isDeleted == IsDeleted.Value);
-            }
-            else
-            {
-                query = query.Where(e => !e.isDeleted);
             }
 
             var departments = await query

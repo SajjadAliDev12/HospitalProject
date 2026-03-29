@@ -34,7 +34,6 @@ namespace Hospital.API.Data
             builder.Entity<Leave>().HasOne(l => l.SubEmployee).WithMany().HasForeignKey(l => l.SubEmployeeId).OnDelete(DeleteBehavior.NoAction);
             builder.Entity<TransferLog>().HasOne(t => t.OldDepartment).WithMany().HasForeignKey(t => t.OldDepartmentId).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<TransferLog>().HasOne(t => t.NewDepartment).WithMany().HasForeignKey(t => t.NewDepartmentId).OnDelete(DeleteBehavior.Restrict);
-            builder.Entity<TransferLog>().HasOne(t => t.Employee).WithMany().HasForeignKey(t => t.EmployeeId).OnDelete(DeleteBehavior.NoAction);
 
         }
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -52,6 +51,11 @@ namespace Hospital.API.Data
                 {
                     Date = DateTime.Now,
                     UserId = userId,
+                    // استخراج اسم الجدول برمجياً
+                    EntityName = entry.Entity.GetType().Name,
+                    // محاولة جلب المفتاح الأساسي (RecordId)
+                    RecordId = entry.Properties.FirstOrDefault(p => p.Metadata.IsPrimaryKey())?.CurrentValue?.ToString(),
+
                     Type = entry.Entity switch
                     {
                         TransferLog => enAuditType.Transfer,

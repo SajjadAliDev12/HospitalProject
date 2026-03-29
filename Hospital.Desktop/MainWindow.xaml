@@ -26,6 +26,7 @@
                 <RadioButton Style="{StaticResource MenuButtonStyle}" Content="التنقلات" Command="{Binding NavCommand}" CommandParameter="Transfers" FlowDirection="LeftToRight"/>
                 <RadioButton Style="{StaticResource MenuButtonStyle}" Content="العناوين الوظيفية" Command="{Binding NavCommand}" CommandParameter="JobTitles" FlowDirection="LeftToRight"/>
                 <RadioButton Style="{StaticResource MenuButtonStyle}" Content="المستخدمين" Command="{Binding NavCommand}" CommandParameter="Users" FlowDirection="LeftToRight"/>
+                <RadioButton Style="{StaticResource MenuButtonStyle}" Content="سجلات التدقيق" Command="{Binding NavCommand}" CommandParameter="AuditLogs" FlowDirection="LeftToRight"/>
 
                 <Separator Background="#5D6D7E" Margin="10,20"/>
 

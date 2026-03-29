@@ -75,6 +75,10 @@ namespace Hospital.Desktop.ViewModels
                         CurrentView = new TransferLogViewModel();
                         SelectedMenuTitle = "التنقلات";
                         break;
+                    case "AuditLogs":
+                        CurrentView = new AuditLogsViewModel();
+                        SelectedMenuTitle = "سجلات التدقيق";
+                        break;
                     default:
                         SelectedMenuTitle = "الرئيسية";
                         break;

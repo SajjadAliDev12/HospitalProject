@@ -11,7 +11,9 @@ namespace Hospital.Core.DTOs
         public long Id { get; set; }
         public DateTime Date { get; set; }
         public string UserId { get; set; }
-        public string UserName { get; set; } 
-        public string ActionType { get; set; }
+        public string UserName { get; set; }
+        public string ActionType { get; set; } 
+        public string EntityName { get; set; } 
+        public string RecordId { get; set; }   
     }
 }
