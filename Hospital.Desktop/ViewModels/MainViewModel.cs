@@ -80,6 +80,10 @@ namespace Hospital.Desktop.ViewModels
                         CurrentView = new AuditLogsViewModel();
                         SelectedMenuTitle = "سجلات التدقيق";
                         break;
+                    case "NightShifts":
+                        CurrentView = new ShiftSettingsViewModel();
+                        SelectedMenuTitle = "إدارة الخفارات";
+                        break;
                     default:
                         SelectedMenuTitle = "الرئيسية";
                         break;

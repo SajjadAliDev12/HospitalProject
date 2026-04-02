@@ -89,7 +89,9 @@ namespace Hospital.API.Controllers
                 Address = employee.Address,
                 ShiftType = employee.ShiftType,
                 Gender = employee.Gender,
-                LeaveCardNumber = employee.LeaveCardNumber
+                LeaveCardNumber = employee.LeaveCardNumber,
+                enMorningGroup = employee.enMorningGroup,
+                NightShiftId = employee.NightShiftId
             });
         }
         [HttpPost]
@@ -121,7 +123,9 @@ namespace Hospital.API.Controllers
                 PhoneNumber = dto.PhoneNumber,
                 JobStatus = (enJobStatus)dto.JobStatus,
                 isDeleted = false,
-                LeaveCardNumber = dto.LeaveCardNumber
+                LeaveCardNumber = dto.LeaveCardNumber,
+                enMorningGroup = dto.enMorningGroup,
+                NightShiftId = dto.NightShiftId
             };
 
             try
@@ -166,6 +170,9 @@ namespace Hospital.API.Controllers
             employee.JobStatus = (enJobStatus)dto.JobStatus;
             employee.isDeleted = dto.IsDeleted; 
             employee.LeaveCardNumber = dto.LeaveCardNumber;
+            employee.enMorningGroup = dto.enMorningGroup;
+            employee.NightShiftId = dto.NightShiftId;
+
 
             try
             {

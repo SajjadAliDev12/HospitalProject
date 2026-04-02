@@ -14,5 +14,5 @@ namespace Hospital.Core.Enums
     public enum enCertificate { HighSchool , institute ,  Collage , Master , PHD , Prof};
     public enum enRole { Admin , Manager , User };
     public enum enAuditType {Add , Edit , Delete , Transfer , Leave , Absent};
-    
+    public enum enMorningShifts { SaturdayGroup, ThursdayGroup }
 }

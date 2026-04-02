@@ -147,6 +147,68 @@
                                         IsEnabled="{Binding IsViewMode, Converter={StaticResource InverseBool}}" Height="38"/>
                         </StackPanel>
                     </UniformGrid>
+                    <Separator Margin="0,15" Background="#F0F0F0"/>
+
+                    <StackPanel>
+                        <StackPanel.Style>
+                            <Style TargetType="StackPanel">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding em.ShiftType}" Value="Morning"/>
+                                            <Condition Binding="{Binding IsViewMode}" Value="False"/>
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </MultiDataTrigger>
+
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding em.ShiftType}" Value="Night"/>
+                                            <Condition Binding="{Binding IsViewMode}" Value="False"/>
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </MultiDataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+
+                        <TextBlock Text="تفاصيل جدول الدوام" Style="{StaticResource SectionHeaderStyle}" Margin="0,0,0,10" FontSize="14"/>
+
+                        <Grid>
+                            <StackPanel Visibility="{Binding em.ShiftType, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=Morning}">
+                                <TextBlock Text="مجموعة الدوام (السبت/الخميس):" Style="{StaticResource LabelStyle}"/>
+                                <ComboBox ItemsSource="{Binding MorningShiftOptions}" 
+                      SelectedItem="{Binding em.enMorningShifts}" 
+                      IsEnabled="{Binding IsViewMode, Converter={StaticResource InverseBool}}"
+                      Height="38" VerticalContentAlignment="Center">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Converter={StaticResource MorningShiftConverter}}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Visibility="{Binding em.ShiftType, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=Night}">
+                                <TextBlock Text="مسؤول الخفارة المباشر:" Style="{StaticResource LabelStyle}"/>
+                                <ComboBox ItemsSource="{Binding NightShiftTeams}" 
+                      SelectedValuePath="Id" 
+                      SelectedValue="{Binding em.NightShiftId}"
+                      IsEnabled="{Binding IsViewMode, Converter={StaticResource InverseBool}}"
+                      Height="38" VerticalContentAlignment="Center">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="خفارة: " Foreground="#999"/>
+                                                <TextBlock Text="{Binding Supervisor.Name}" FontWeight="Bold"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
 
                     <Separator Margin="0,20" Background="#F0F0F0"/>
 

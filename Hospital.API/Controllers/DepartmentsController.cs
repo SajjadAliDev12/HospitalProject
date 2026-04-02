@@ -25,11 +25,14 @@ namespace Hospital.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<DepartmentDto>>> GetDepartments([FromQuery] bool? IsDeleted)
         {
-            IQueryable<Department> query = _context.Departments.IgnoreQueryFilters().AsQueryable();
+            IQueryable<Department> query = _context.Departments
+        .Include(d => d.Manager)
+        .IgnoreQueryFilters()
+        .AsQueryable();
 
             if (IsDeleted.HasValue)
             {
-                query = _context.Departments.IgnoreQueryFilters().Where(e => e.isDeleted == IsDeleted.Value);
+                query = query.Where(e => e.isDeleted == IsDeleted.Value);
             }
 
             var departments = await query
@@ -40,7 +43,11 @@ namespace Hospital.API.Controllers
                     IsDeleted = d.isDeleted,
                     StaffCount = d.Employees.Count(e => !e.isDeleted),
                     MorningCount = d.Employees.Count(e => !e.isDeleted && e.ShiftType == enShiftType.Morning),
-                    NightCount = d.Employees.Count(e => !e.isDeleted && e.ShiftType == enShiftType.Night)
+                    NightCount = d.Employees.Count(e => !e.isDeleted && e.ShiftType == enShiftType.Night),
+                    ManagerId = d.ManagerId,
+                    ManagerName = d.Manager != null ? d.Manager.Name : "لا يوجد مسؤول",
+                    ManagerStartDate = d.ManagerStartDate,
+                    ManagerOrderNumber = d.ManagerOrderNumber
                 }).ToListAsync();
 
             return Ok(departments);
@@ -80,7 +87,10 @@ namespace Hospital.API.Controllers
                 var department = new Department
                 {
                     Name = departmentDto.Name,
-                    isDeleted = false
+                    isDeleted = false,
+                    ManagerId = departmentDto.ManagerId,
+                    ManagerOrderNumber = departmentDto.ManagerOrderNumber,
+                    ManagerStartDate = departmentDto.ManagerStartDate,
                 };
                 _context.Departments.Add(department);
                 await _context.SaveChangesAsync();
@@ -88,7 +98,10 @@ namespace Hospital.API.Controllers
                 {
                     Id = department.Id,
                     Name = department.Name,
-                    IsDeleted = department.isDeleted
+                    IsDeleted = department.isDeleted,
+                    ManagerId = department.ManagerId,
+                    ManagerOrderNumber= department.ManagerOrderNumber,
+                    ManagerStartDate = department.ManagerStartDate,
                 };
                 return CreatedAtAction("GetDepartment", new { id = department.Id },resultDto);
             }
@@ -126,7 +139,10 @@ namespace Hospital.API.Controllers
 
             
              department.Name = departmentDto.Name; 
-     department.isDeleted = departmentDto.IsDeleted; 
+            department.isDeleted = departmentDto.IsDeleted; 
+            department.ManagerStartDate = departmentDto.ManagerStartDate;
+            department.ManagerOrderNumber = departmentDto.ManagerOrderNumber;
+            department.ManagerId = departmentDto.ManagerId;
 
     
      await _context.SaveChangesAsync(); 
@@ -136,7 +152,10 @@ namespace Hospital.API.Controllers
     {
         Id = department.Id,
         Name = department.Name,
-        IsDeleted = department.isDeleted
+        IsDeleted = department.isDeleted,
+        ManagerId = department.ManagerId,
+        ManagerOrderNumber = department.ManagerOrderNumber,
+        ManagerStartDate = department.ManagerStartDate,
     });
         }
     }

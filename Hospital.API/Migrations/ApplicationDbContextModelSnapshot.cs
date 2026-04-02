@@ -166,6 +166,16 @@ namespace Hospital.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("ManagerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ManagerOrderNumber")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateOnly?>("ManagerStartDate")
+                        .HasColumnType("date");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -175,6 +185,8 @@ namespace Hospital.API.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ManagerId");
 
                     b.ToTable("Departments");
                 });
@@ -224,12 +236,18 @@ namespace Hospital.API.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
+                    b.Property<int?>("NightShiftId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("ShiftType")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("enMorningGroup")
                         .HasColumnType("int");
 
                     b.Property<bool>("isDeleted")
@@ -240,6 +258,8 @@ namespace Hospital.API.Migrations
                     b.HasIndex("DepartmentId");
 
                     b.HasIndex("JobTitleId");
+
+                    b.HasIndex("NightShiftId");
 
                     b.ToTable("Employees");
                 });
@@ -297,6 +317,58 @@ namespace Hospital.API.Migrations
                     b.HasIndex("SubEmployeeId");
 
                     b.ToTable("Leaves");
+                });
+
+            modelBuilder.Entity("Hospital.Core.Models.NightShiftTeam", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("SupervisorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SupervisorId");
+
+                    b.ToTable("NightShiftTeams");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1
+                        },
+                        new
+                        {
+                            Id = 2
+                        },
+                        new
+                        {
+                            Id = 3
+                        },
+                        new
+                        {
+                            Id = 4
+                        });
+                });
+
+            modelBuilder.Entity("Hospital.Core.Models.SystemSetting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateOnly>("ShiftReferenceDate")
+                        .HasColumnType("date");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SystemSettings");
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.TransferLog", b =>
@@ -502,6 +574,16 @@ namespace Hospital.API.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Hospital.Core.Models.Department", b =>
+                {
+                    b.HasOne("Hospital.Core.Models.Employee", "Manager")
+                        .WithMany()
+                        .HasForeignKey("ManagerId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Manager");
+                });
+
             modelBuilder.Entity("Hospital.Core.Models.Employee", b =>
                 {
                     b.HasOne("Hospital.Core.Models.Department", "Department")
@@ -516,9 +598,16 @@ namespace Hospital.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Hospital.Core.Models.NightShiftTeam", "nightShift")
+                        .WithMany()
+                        .HasForeignKey("NightShiftId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.Navigation("Department");
 
                     b.Navigation("JobTitle");
+
+                    b.Navigation("nightShift");
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.Leave", b =>
@@ -538,6 +627,16 @@ namespace Hospital.API.Migrations
                     b.Navigation("Employee");
 
                     b.Navigation("SubEmployee");
+                });
+
+            modelBuilder.Entity("Hospital.Core.Models.NightShiftTeam", b =>
+                {
+                    b.HasOne("Hospital.Core.Models.Employee", "Supervisor")
+                        .WithMany()
+                        .HasForeignKey("SupervisorId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("Supervisor");
                 });
 
             modelBuilder.Entity("Hospital.Core.Models.TransferLog", b =>

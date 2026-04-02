@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,5 +27,7 @@ namespace Hospital.Core.DTOs
         public string PhoneNumber { get; set; }
         public int JobStatus { get; set; }
         public int? LeaveCardNumber { get; set; }
+        public int? NightShiftId { get; set; }
+        public enMorningShifts? enMorningGroup { get; set; }
     }
 }

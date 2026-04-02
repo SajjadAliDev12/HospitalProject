@@ -18,6 +18,8 @@ namespace Hospital.API.Data
         public DbSet<TransferLog> TransferLogs { get; set; }
         public DbSet<Absent> Absents { get; set; }
         public DbSet<JobTitle> JobTitles { get; set; }
+        public DbSet<NightShiftTeam> NightShiftTeams { get; set; }
+        public DbSet<SystemSetting> SystemSettings { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -34,7 +36,15 @@ namespace Hospital.API.Data
             builder.Entity<Leave>().HasOne(l => l.SubEmployee).WithMany().HasForeignKey(l => l.SubEmployeeId).OnDelete(DeleteBehavior.NoAction);
             builder.Entity<TransferLog>().HasOne(t => t.OldDepartment).WithMany().HasForeignKey(t => t.OldDepartmentId).OnDelete(DeleteBehavior.Restrict);
             builder.Entity<TransferLog>().HasOne(t => t.NewDepartment).WithMany().HasForeignKey(t => t.NewDepartmentId).OnDelete(DeleteBehavior.Restrict);
-
+            builder.Entity<NightShiftTeam>().HasOne(t => t.Supervisor).WithMany().HasForeignKey(t => t.SupervisorId).OnDelete(DeleteBehavior.NoAction);
+            builder.Entity<Employee>().HasOne(e => e.nightShift).WithMany().HasForeignKey(e=>e.NightShiftId).OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<Department>().HasOne(d=>d.Manager).WithMany().HasForeignKey(d=>d.ManagerId).OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<NightShiftTeam>().HasData(
+    new NightShiftTeam { Id = 1, SupervisorId = null },
+    new NightShiftTeam { Id = 2, SupervisorId = null },
+    new NightShiftTeam { Id = 3, SupervisorId = null },
+    new NightShiftTeam { Id = 4, SupervisorId = null }
+);
         }
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

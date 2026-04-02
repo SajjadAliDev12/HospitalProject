@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\pc\source\repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\
 Hospital.Desktop
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\pc\source\repos\HospitalProject\Hospital.Desktop\App.xaml
-20-370162881
+C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\App.xaml
+21-1205688402
 
-481521497157
-347861498718
-MainWindow.xaml;Views\AbsentDetailsView.xaml;Views\AbsentFormView.xaml;Views\AbsentsView.xaml;Views\AddTransferView.xaml;Views\AuditLogsView.xaml;Views\DepartmentFormView.xaml;Views\DepartmentsView.xaml;Views\EmployeeFormView.xaml;Views\EmployeesView.xaml;Views\JobTitleFormView.xaml;Views\JobTitlesView.xaml;Views\LeaveDetailsView.xaml;Views\LeaveFormView.xaml;Views\LeavesView.xaml;Views\LoginView.xaml;Views\TransferDetailsView.xaml;Views\TransferLogView.xaml;Views\UserFormView.xaml;Views\UsersView.xaml;
+492052436748
+347232943594
+MainWindow.xaml;Views\AbsentDetailsView.xaml;Views\AbsentFormView.xaml;Views\AbsentsView.xaml;Views\AddTransferView.xaml;Views\AuditLogsView.xaml;Views\DepartmentFormView.xaml;Views\DepartmentsView.xaml;Views\EmployeeFormView.xaml;Views\EmployeesView.xaml;Views\JobTitleFormView.xaml;Views\JobTitlesView.xaml;Views\LeaveDetailsView.xaml;Views\LeaveFormView.xaml;Views\LeavesView.xaml;Views\LoginView.xaml;Views\ShiftSettingsView.xaml;Views\TransferDetailsView.xaml;Views\TransferLogView.xaml;Views\UserFormView.xaml;Views\UsersView.xaml;
 
-False
+True
 
