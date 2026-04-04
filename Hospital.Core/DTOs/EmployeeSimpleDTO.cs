@@ -18,4 +18,13 @@ namespace Hospital.Core.DTOs
         public bool IsDeleted { get; set; } = false;
         public int DepartmentID { get; set; }
     }
+    public class EmployeeReportDto
+    {
+        public string Name { get; set; }
+        public string JobTitle { get; set; }
+        public enShiftType ShiftType { get; set; }
+        public enMorningShifts? MorningShiftGroup { get; set; }
+        public int? NightShiftId { get; set; }
+        public string DepartmentName { get; set; }
+    }
 }

@@ -11,5 +11,6 @@ namespace Hospital.Core.Models
         public int Id { get; set; }
         public int? SupervisorId { get; set; }
         public Employee? Supervisor {  get; set; }
+        
     }
 }

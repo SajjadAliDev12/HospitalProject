@@ -62,7 +62,38 @@ namespace Hospital.API.Controllers
                 CurrentPage = page
             });
         }
+        [HttpGet("report-data")]
+        public async Task<ActionResult<IEnumerable<EmployeeReportDto>>> GetEmployeesForReport(int? departmentId, enShiftType? shiftType)
+        {
+            var query = _dbContext.Employees
+                .Include(e => e.Department)
+                .Include(e => e.JobTitle)
+                .AsQueryable();
 
+            // الفلترة حسب القسم (إذا اختار الآدمين قسماً محدداً)
+            if (departmentId.HasValue)
+            {
+                query = query.Where(e => e.DepartmentId == departmentId.Value);
+            }
+
+            // الفلترة حسب نوع الدوام (صباحي/خفر/الكل)
+            if (shiftType.HasValue)
+            {
+                query = query.Where(e => e.ShiftType == shiftType.Value);
+            }
+
+            var result = await query.Select(e => new EmployeeReportDto
+            {
+                Name = e.Name,
+                JobTitle = e.JobTitle.Title,
+                ShiftType = e.ShiftType,
+                MorningShiftGroup = e.enMorningGroup,
+                NightShiftId = e.NightShiftId,
+                DepartmentName = e.Department.Name
+            }).ToListAsync();
+
+            return Ok(result);
+        }
         [HttpGet("{Id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

@@ -154,21 +154,12 @@
                             <Style TargetType="StackPanel">
                                 <Setter Property="Visibility" Value="Collapsed"/>
                                 <Style.Triggers>
-                                    <MultiDataTrigger>
-                                        <MultiDataTrigger.Conditions>
-                                            <Condition Binding="{Binding em.ShiftType}" Value="Morning"/>
-                                            <Condition Binding="{Binding IsViewMode}" Value="False"/>
-                                        </MultiDataTrigger.Conditions>
+                                    <DataTrigger Binding="{Binding em.ShiftType}" Value="Morning">
                                         <Setter Property="Visibility" Value="Visible"/>
-                                    </MultiDataTrigger>
-
-                                    <MultiDataTrigger>
-                                        <MultiDataTrigger.Conditions>
-                                            <Condition Binding="{Binding em.ShiftType}" Value="Night"/>
-                                            <Condition Binding="{Binding IsViewMode}" Value="False"/>
-                                        </MultiDataTrigger.Conditions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding em.ShiftType}" Value="Night">
                                         <Setter Property="Visibility" Value="Visible"/>
-                                    </MultiDataTrigger>
+                                    </DataTrigger>
                                 </Style.Triggers>
                             </Style>
                         </StackPanel.Style>
@@ -193,15 +184,16 @@
                             <StackPanel Visibility="{Binding em.ShiftType, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter=Night}">
                                 <TextBlock Text="مسؤول الخفارة المباشر:" Style="{StaticResource LabelStyle}"/>
                                 <ComboBox ItemsSource="{Binding NightShiftTeams}" 
-                      SelectedValuePath="Id" 
-                      SelectedValue="{Binding em.NightShiftId}"
-                      IsEnabled="{Binding IsViewMode, Converter={StaticResource InverseBool}}"
-                      Height="38" VerticalContentAlignment="Center">
+          SelectedValuePath="Id" 
+          SelectedValue="{Binding em.NightShiftId}"
+          IsEnabled="{Binding IsViewMode, Converter={StaticResource InverseBool}}"
+          Height="38" VerticalContentAlignment="Center">
                                     <ComboBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="خفارة: " Foreground="#999"/>
-                                                <TextBlock Text="{Binding Supervisor.Name}" FontWeight="Bold"/>
+                                                <TextBlock Text="{Binding SupervisorName}" FontWeight="Bold" Foreground="#1E293B"/>
+                                                <TextBlock Text="{Binding Id, StringFormat=' (فريق {0})'}" Foreground="#0078D4"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>

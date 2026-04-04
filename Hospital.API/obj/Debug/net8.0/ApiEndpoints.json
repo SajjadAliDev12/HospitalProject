@@ -1046,6 +1046,37 @@
   },
   {
     "ContainingType": "Hospital.API.Controllers.EmployeesController",
+    "Method": "GetEmployeesForReport",
+    "RelativePath": "api/Employees/report-data",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "departmentId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "shiftType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Hospital.Core.DTOs.EmployeeReportDto, Hospital.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Hospital.API.Controllers.EmployeesController",
     "Method": "SearchEmployees",
     "RelativePath": "api/Employees/Search",
     "HttpMethod": "GET",
@@ -1568,7 +1599,7 @@
       },
       {
         "Name": "teamDto",
-        "Type": "Hospital.Core.Models.NightShiftTeam",
+        "Type": "Hospital.Core.DTOs.NightShiftTeamDto",
         "IsRequired": true
       }
     ],

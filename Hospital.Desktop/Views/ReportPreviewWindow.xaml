@@ -1,0 +1,29 @@
+﻿<Window x:Class="Hospital.Desktop.Views.ReportPreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="معاينة جدول الدوام والخيارات" Height="800" Width="900"
+        WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <FlowDocumentPageViewer Name="FlowDocViewer" Grid.Row="0" Background="#525659">
+            <FlowDocumentPageViewer.Resources>
+                <Style TargetType="FlowDocument">
+                    <Setter Property="Background" Value="White"/>
+                </Style>
+            </FlowDocumentPageViewer.Resources>
+        </FlowDocumentPageViewer>
+
+        <Border Grid.Row="1" Background="#F8FAFC" Padding="15" BorderBrush="#E2E8F0" BorderThickness="0,1,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="إرسال إلى الطابعة" Click="Print_Click" Padding="20,8" 
+                        Background="#2563EB" Foreground="White" FontWeight="Bold" Cursor="Hand"/>
+                <Button Content="إغلاق" IsCancel="True" Margin="10,0,0,0" Padding="20,8" Cursor="Hand"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

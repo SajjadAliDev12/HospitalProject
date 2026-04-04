@@ -54,7 +54,7 @@ namespace Hospital.API.Controllers
             return Ok();
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateTeam(int id, NightShiftTeam teamDto)
+        public async Task<IActionResult> UpdateTeam(int id, NightShiftTeamDto teamDto)
         {
             // التأكد أن هذا المسؤول غير محجوز لخفرة أخرى
             var duplicate = await _context.NightShiftTeams

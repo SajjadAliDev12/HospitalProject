@@ -35,7 +35,7 @@ namespace Hospital.Desktop.ViewModels
         public Array JobStatuses => Enum.GetValues(typeof(enJobStatus));
         public Array Certificates => Enum.GetValues(typeof(enCertificate));
         public Array MorningShiftOptions => Enum.GetValues(typeof(enMorningShifts));
-        public ObservableCollection<NightShiftTeam> NightShiftTeams { get; set; } = new();
+        public ObservableCollection<NightShiftTeamDto> NightShiftTeams { get; set; } = new();
 
         public ObservableCollection<dynamic> Departments { get; set; } = new();
         
@@ -81,7 +81,7 @@ namespace Hospital.Desktop.ViewModels
                         foreach (var j in jobs) JobTitles.Add(j);
                     });
                 }
-                var teams = await _apiService.GetAsync<List<NightShiftTeam>>("NightShiftTeams");
+                var teams = await _apiService.GetAsync<List<NightShiftTeamDto>>("NightShiftTeams");
                 if (teams != null)
                 {
                     App.Current.Dispatcher.Invoke(() => {

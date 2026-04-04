@@ -84,12 +84,6 @@
         Cursor="Hand"
         HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock Text="" 
-                   FontFamily="Segoe MDL2 Assets" 
-                   Foreground="#E74C3C" 
-                   FontSize="22" 
-                   VerticalAlignment="Center" 
-                   Margin="0,0,12,0"/>
 
                         <TextBlock Text="تسجيل الخروج" 
                    Foreground="#E74C3C" 
