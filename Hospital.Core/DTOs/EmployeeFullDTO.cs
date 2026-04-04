@@ -27,5 +27,7 @@ namespace Hospital.Core.DTOs
         public enJobStatus JobStatus { get; set; }
         public bool IsDeleted { get; set; }
         public int? LeaveCardNumber { get; set; }
+        public int? NightShiftId { get; set; }
+        public enMorningShifts? enMorningGroup {  get; set; }
     }
 }

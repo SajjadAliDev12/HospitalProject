@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.API\\Hospital.API.csproj": {}
+    "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.API\\Hospital.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.API\\Hospital.API.csproj": {
+    "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.API\\Hospital.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.API\\Hospital.API.csproj",
+        "projectUniqueName": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.API\\Hospital.API.csproj",
         "projectName": "Hospital.API",
-        "projectPath": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.API\\Hospital.API.csproj",
-        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.API\\obj\\",
+        "projectPath": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.API\\Hospital.API.csproj",
+        "packagesPath": "C:\\Users\\scorp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\scorp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj": {
-                "projectPath": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj"
+              "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj": {
+                "projectPath": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj"
               }
             }
           }
@@ -48,7 +48,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -106,24 +106,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj": {
+    "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj",
+        "projectUniqueName": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj",
         "projectName": "Hospital.Core",
-        "projectPath": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj",
-        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pc\\source\\repos\\HospitalProject\\Hospital.Core\\obj\\",
+        "projectPath": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\Hospital.Core.csproj",
+        "packagesPath": "C:\\Users\\scorp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\scorp\\Source\\Repos\\HospitalProject\\Hospital.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\scorp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -150,7 +150,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -181,7 +181,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

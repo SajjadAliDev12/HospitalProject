@@ -35,5 +35,8 @@ namespace Hospital.Core.Models
         public Department Department { get; set; }
         public Collection<Leave> Leaves { get; set; }
         public Collection<Absent> Absents { get; set; }
+        public enMorningShifts? enMorningGroup { get; set; }
+        public int? NightShiftId { get; set; }
+        public NightShiftTeam? nightShift {  get; set; }
     }
 }

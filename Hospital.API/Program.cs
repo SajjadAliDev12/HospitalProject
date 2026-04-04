@@ -1,5 +1,6 @@
 using Hospital.API.Data;
 using Hospital.API.Middleware;
+using Hospital.API.Services;
 using Hospital.Core.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -78,6 +79,7 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 builder.Services.AddDbContext<ApplicationDbContext>(options =>options.UseSqlServer(ConnectionString));
+builder.Services.AddScoped<IShiftService, ShiftService>();
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();

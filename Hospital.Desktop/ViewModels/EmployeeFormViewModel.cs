@@ -1,5 +1,6 @@
 ﻿using Hospital.Core.DTOs;
 using Hospital.Core.Enums;
+using Hospital.Core.Models;
 using Hospital.Desktop.Services;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -33,8 +34,9 @@ namespace Hospital.Desktop.ViewModels
         public Array ShiftTypes => Enum.GetValues(typeof(enShiftType));
         public Array JobStatuses => Enum.GetValues(typeof(enJobStatus));
         public Array Certificates => Enum.GetValues(typeof(enCertificate));
+        public Array MorningShiftOptions => Enum.GetValues(typeof(enMorningShifts));
+        public ObservableCollection<NightShiftTeamDto> NightShiftTeams { get; set; } = new();
 
-       
         public ObservableCollection<dynamic> Departments { get; set; } = new();
         
 
@@ -77,6 +79,14 @@ namespace Hospital.Desktop.ViewModels
                     App.Current.Dispatcher.Invoke(() => {
                         JobTitles.Clear();
                         foreach (var j in jobs) JobTitles.Add(j);
+                    });
+                }
+                var teams = await _apiService.GetAsync<List<NightShiftTeamDto>>("NightShiftTeams");
+                if (teams != null)
+                {
+                    App.Current.Dispatcher.Invoke(() => {
+                        NightShiftTeams.Clear();
+                        foreach (var t in teams) NightShiftTeams.Add(t);
                     });
                 }
             }

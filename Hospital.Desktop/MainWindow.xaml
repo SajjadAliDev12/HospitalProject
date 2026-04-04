@@ -69,7 +69,9 @@
                         <RadioButton Style="{StaticResource FluentMenuButton}" Content="التنقلات" Tag="" Command="{Binding NavCommand}" CommandParameter="Transfers"/>
                         <RadioButton Style="{StaticResource FluentMenuButton}" Content="العناوين الوظيفية" Tag="" Command="{Binding NavCommand}" CommandParameter="JobTitles"/>
                         <RadioButton Style="{StaticResource FluentMenuButton}" Content="المستخدمين" Tag="" Command="{Binding NavCommand}" CommandParameter="Users"/>
+                        <RadioButton Style="{StaticResource FluentMenuButton}" Content="الخفارات" Tag="" Command="{Binding NavCommand}" CommandParameter="NightShifts"/>
                         <RadioButton Style="{StaticResource FluentMenuButton}" Content="سجلات التدقيق" Tag="" Command="{Binding NavCommand}" CommandParameter="AuditLogs"/>
+                        
                     </StackPanel>
                 </ScrollViewer>
 
@@ -82,12 +84,6 @@
         Cursor="Hand"
         HorizontalAlignment="Stretch">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock Text="" 
-                   FontFamily="Segoe MDL2 Assets" 
-                   Foreground="#E74C3C" 
-                   FontSize="22" 
-                   VerticalAlignment="Center" 
-                   Margin="0,0,12,0"/>
 
                         <TextBlock Text="تسجيل الخروج" 
                    Foreground="#E74C3C" 

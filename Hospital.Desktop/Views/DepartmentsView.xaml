@@ -93,7 +93,14 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ت" Binding="{Binding Id}" Width="60"/>
                             <DataGridTextColumn Header="اسم القسم" Binding="{Binding Name}" Width="*"/>
-
+                            <DataGridTextColumn Header="مسؤول القسم" Binding="{Binding ManagerName}" Width="1.5*">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="FontWeight" Value="SemiBold"/>
+                                        <Setter Property="Foreground" Value="#2563EB"/>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
                             <DataGridTemplateColumn Header="إجمالي المنتسبين" Width="130">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>

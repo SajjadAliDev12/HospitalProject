@@ -1501,6 +1501,61 @@
         }
       }
     },
+    "/api/Employees/report-data": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "parameters": [
+          {
+            "name": "departmentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "shiftType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/enShiftType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeReportDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeReportDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeReportDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Employees/{Id}": {
       "get": {
         "tags": [
@@ -2575,6 +2630,199 @@
         }
       }
     },
+    "/api/NightShiftTeams": {
+      "get": {
+        "tags": [
+          "NightShiftTeams"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NightShiftTeamDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NightShiftTeamDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/NightShiftTeamDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/NightShiftTeams/{id}": {
+      "put": {
+        "tags": [
+          "NightShiftTeams"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NightShiftTeam"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NightShiftTeam"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NightShiftTeam"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Shifts/calculate": {
+      "get": {
+        "tags": [
+          "Shifts"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Shifts/settings": {
+      "get": {
+        "tags": [
+          "Shifts"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemSettingDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemSettingDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemSettingDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Shifts"
+        ],
+        "parameters": [
+          {
+            "name": "newDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Shifts/{id}": {
+      "put": {
+        "tags": [
+          "Shifts"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NightShiftTeamDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NightShiftTeamDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NightShiftTeamDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/TransferLog": {
       "get": {
         "tags": [
@@ -2794,6 +3042,30 @@
   },
   "components": {
     "schemas": {
+      "Absent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employee": {
+            "$ref": "#/components/schemas/Employee"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "AbsentFullDto": {
         "type": "object",
         "properties": {
@@ -2879,6 +3151,20 @@
           "name": {
             "type": "string",
             "nullable": true
+          },
+          "managerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "managerStartDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "managerOrderNumber": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2944,6 +3230,14 @@
             "type": "integer",
             "format": "int32",
             "nullable": true
+          },
+          "nightShiftId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "enMorningGroup": {
+            "$ref": "#/components/schemas/enMorningShifts"
           }
         },
         "additionalProperties": false
@@ -3002,6 +3296,52 @@
         },
         "additionalProperties": false
       },
+      "Department": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "managerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "manager": {
+            "$ref": "#/components/schemas/Employee"
+          },
+          "managerStartDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "managerOrderNumber": {
+            "maxLength": 100,
+            "type": "string",
+            "nullable": true
+          },
+          "employees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Employee"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "DepartmentDto": {
         "type": "object",
         "properties": {
@@ -3027,6 +3367,123 @@
           "nightCount": {
             "type": "integer",
             "format": "int32"
+          },
+          "managerId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "managerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "managerStartDate": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "managerOrderNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Employee": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "maxLength": 250,
+            "minLength": 1,
+            "type": "string"
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "hireDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "departmentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shiftType": {
+            "$ref": "#/components/schemas/enShiftType"
+          },
+          "jobTitleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jobTitle": {
+            "$ref": "#/components/schemas/JobTitle"
+          },
+          "gender": {
+            "$ref": "#/components/schemas/enGender"
+          },
+          "certificateType": {
+            "$ref": "#/components/schemas/enCertificate"
+          },
+          "leaveBalance": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "maxLength": 500,
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "maxLength": 20,
+            "type": "string",
+            "nullable": true
+          },
+          "jobStatus": {
+            "$ref": "#/components/schemas/enJobStatus"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "leaveCardNumber": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "department": {
+            "$ref": "#/components/schemas/Department"
+          },
+          "leaves": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Leave"
+            },
+            "nullable": true
+          },
+          "absents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Absent"
+            },
+            "nullable": true
+          },
+          "enMorningGroup": {
+            "$ref": "#/components/schemas/enMorningShifts"
+          },
+          "nightShiftId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "nightShift": {
+            "$ref": "#/components/schemas/NightShiftTeam"
           }
         },
         "additionalProperties": false
@@ -3089,6 +3546,14 @@
             "type": "integer",
             "format": "int32",
             "nullable": true
+          },
+          "nightShiftId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "enMorningGroup": {
+            "$ref": "#/components/schemas/enMorningShifts"
           }
         },
         "additionalProperties": false
@@ -3101,6 +3566,35 @@
             "format": "int32"
           },
           "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmployeeReportDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "jobTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "shiftType": {
+            "$ref": "#/components/schemas/enShiftType"
+          },
+          "morningShiftGroup": {
+            "$ref": "#/components/schemas/enMorningShifts"
+          },
+          "nightShiftId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "departmentName": {
             "type": "string",
             "nullable": true
           }
@@ -3173,6 +3667,20 @@
         },
         "additionalProperties": false
       },
+      "JobTitle": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "JobTitleDTO": {
         "type": "object",
         "properties": {
@@ -3193,6 +3701,48 @@
           "title": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Leave": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "employee": {
+            "$ref": "#/components/schemas/Employee"
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "subEmployeeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "subEmployee": {
+            "$ref": "#/components/schemas/Employee"
+          },
+          "leaveType": {
+            "$ref": "#/components/schemas/enLeaveType"
           }
         },
         "additionalProperties": false
@@ -3259,6 +3809,43 @@
         },
         "additionalProperties": false
       },
+      "NightShiftTeam": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supervisorId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "supervisor": {
+            "$ref": "#/components/schemas/Employee"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NightShiftTeamDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "supervisorId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "supervisorName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ProblemDetails": {
         "type": "object",
         "properties": {
@@ -3305,6 +3892,20 @@
             "type": "integer",
             "format": "int32",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SystemSettingDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shiftReferenceDate": {
+            "type": "string",
+            "format": "date"
           }
         },
         "additionalProperties": false
@@ -3434,6 +4035,14 @@
           4,
           5,
           6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "enMorningShifts": {
+        "enum": [
+          0,
+          1
         ],
         "type": "integer",
         "format": "int32"

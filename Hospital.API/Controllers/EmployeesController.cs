@@ -62,7 +62,38 @@ namespace Hospital.API.Controllers
                 CurrentPage = page
             });
         }
+        [HttpGet("report-data")]
+        public async Task<ActionResult<IEnumerable<EmployeeReportDto>>> GetEmployeesForReport(int? departmentId, enShiftType? shiftType)
+        {
+            var query = _dbContext.Employees
+                .Include(e => e.Department)
+                .Include(e => e.JobTitle)
+                .AsQueryable();
 
+            // الفلترة حسب القسم (إذا اختار الآدمين قسماً محدداً)
+            if (departmentId.HasValue)
+            {
+                query = query.Where(e => e.DepartmentId == departmentId.Value);
+            }
+
+            // الفلترة حسب نوع الدوام (صباحي/خفر/الكل)
+            if (shiftType.HasValue)
+            {
+                query = query.Where(e => e.ShiftType == shiftType.Value);
+            }
+
+            var result = await query.Select(e => new EmployeeReportDto
+            {
+                Name = e.Name,
+                JobTitle = e.JobTitle.Title,
+                ShiftType = e.ShiftType,
+                MorningShiftGroup = e.enMorningGroup,
+                NightShiftId = e.NightShiftId,
+                DepartmentName = e.Department.Name
+            }).ToListAsync();
+
+            return Ok(result);
+        }
         [HttpGet("{Id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -89,7 +120,9 @@ namespace Hospital.API.Controllers
                 Address = employee.Address,
                 ShiftType = employee.ShiftType,
                 Gender = employee.Gender,
-                LeaveCardNumber = employee.LeaveCardNumber
+                LeaveCardNumber = employee.LeaveCardNumber,
+                enMorningGroup = employee.enMorningGroup,
+                NightShiftId = employee.NightShiftId
             });
         }
         [HttpPost]
@@ -121,7 +154,9 @@ namespace Hospital.API.Controllers
                 PhoneNumber = dto.PhoneNumber,
                 JobStatus = (enJobStatus)dto.JobStatus,
                 isDeleted = false,
-                LeaveCardNumber = dto.LeaveCardNumber
+                LeaveCardNumber = dto.LeaveCardNumber,
+                enMorningGroup = dto.enMorningGroup,
+                NightShiftId = dto.NightShiftId
             };
 
             try
@@ -166,6 +201,9 @@ namespace Hospital.API.Controllers
             employee.JobStatus = (enJobStatus)dto.JobStatus;
             employee.isDeleted = dto.IsDeleted; 
             employee.LeaveCardNumber = dto.LeaveCardNumber;
+            employee.enMorningGroup = dto.enMorningGroup;
+            employee.NightShiftId = dto.NightShiftId;
+
 
             try
             {

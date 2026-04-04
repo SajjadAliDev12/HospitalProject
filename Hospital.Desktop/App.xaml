@@ -20,6 +20,10 @@
         <conv:ShiftTypeConverter x:Key="ShiftTypeConverter"/>
         <conv:JobStatusConverter x:Key="JobStatusConverter"/>
         <conv:CertificateConverter x:Key="CertificateConverter"/>
+
+        <conv:MorningShiftConverter x:Key="MorningShiftConverter"/>
+        <conv:EnumToVisibilityConverter x:Key="EnumToVisibilityConverter"/>
+        <conv:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
         <DataTemplate DataType="{x:Type vm:UsersViewModel}">
             <views:UsersView/>
         </DataTemplate>
@@ -28,6 +32,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:JobTitlesViewModel}">
             <views:JobTitlesView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ShiftSettingsViewModel}">
+            <views:ShiftSettingsView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:EmployeesViewModel}">
             <views:EmployeesView/>
