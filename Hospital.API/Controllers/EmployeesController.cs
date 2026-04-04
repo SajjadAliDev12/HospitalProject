@@ -121,7 +121,7 @@ namespace Hospital.API.Controllers
                 ShiftType = employee.ShiftType,
                 Gender = employee.Gender,
                 LeaveCardNumber = employee.LeaveCardNumber,
-                enMorningGroup = employee.enMorningGroup,
+                enMorningShifts = employee.enMorningGroup,
                 NightShiftId = employee.NightShiftId
             });
         }
@@ -155,7 +155,7 @@ namespace Hospital.API.Controllers
                 JobStatus = (enJobStatus)dto.JobStatus,
                 isDeleted = false,
                 LeaveCardNumber = dto.LeaveCardNumber,
-                enMorningGroup = dto.enMorningGroup,
+                enMorningGroup = (enMorningShifts?)dto.enMorningGroup,
                 NightShiftId = dto.NightShiftId
             };
 
@@ -201,7 +201,7 @@ namespace Hospital.API.Controllers
             employee.JobStatus = (enJobStatus)dto.JobStatus;
             employee.isDeleted = dto.IsDeleted; 
             employee.LeaveCardNumber = dto.LeaveCardNumber;
-            employee.enMorningGroup = dto.enMorningGroup;
+            employee.enMorningGroup = (enMorningShifts?)dto.enMorningShifts;
             employee.NightShiftId = dto.NightShiftId;
 
 

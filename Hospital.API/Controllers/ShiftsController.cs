@@ -1,6 +1,7 @@
 ﻿using Hospital.API.Data;
 using Hospital.API.Services;
 using Hospital.Core.DTOs;
+using Hospital.Core.Enums;
 using Hospital.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -71,6 +72,30 @@ namespace Hospital.API.Controllers
             team.SupervisorId = teamDto.SupervisorId;
             await _context.SaveChangesAsync();
             return Ok();
+        }
+        [HttpGet("report-data")]
+        public async Task<ActionResult<IEnumerable<EmployeeReportDto>>> GetEmployeesForReport(int? departmentId, enShiftType? shiftType)
+        {
+            var query = _context.Employees
+                .Include(e => e.Department)
+                .Include(e => e.JobTitle)
+                .Where(e => !e.isDeleted) // استثناء المحذوفين
+                .AsQueryable();
+
+            if (departmentId.HasValue) query = query.Where(e => e.DepartmentId == departmentId.Value);
+            if (shiftType.HasValue) query = query.Where(e => e.ShiftType == shiftType.Value);
+
+            var result = await query.Select(e => new EmployeeReportDto
+            {
+                Name = e.Name,
+                JobTitle = e.JobTitle.Title,
+                ShiftType = e.ShiftType,
+                MorningShiftGroup = (enMorningShifts?)e.enMorningGroup,
+                NightShiftId = e.NightShiftId,
+                DepartmentName = e.Department.Name
+            }).ToListAsync();
+
+            return Ok(result);
         }
     }
 }

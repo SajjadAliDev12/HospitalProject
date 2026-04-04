@@ -2823,6 +2823,61 @@
         }
       }
     },
+    "/api/Shifts/report-data": {
+      "get": {
+        "tags": [
+          "Shifts"
+        ],
+        "parameters": [
+          {
+            "name": "departmentId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "shiftType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/enShiftType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeReportDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeReportDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmployeeReportDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/TransferLog": {
       "get": {
         "tags": [
@@ -3552,7 +3607,7 @@
             "format": "int32",
             "nullable": true
           },
-          "enMorningGroup": {
+          "enMorningShifts": {
             "$ref": "#/components/schemas/enMorningShifts"
           }
         },

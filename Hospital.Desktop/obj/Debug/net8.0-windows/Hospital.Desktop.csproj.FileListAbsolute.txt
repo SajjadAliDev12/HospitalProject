@@ -176,3 +176,7 @@ C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-wi
 C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\ShiftSettingsView.baml
 C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\ReportPreviewWindow.baml
 C:\Users\scorp\Source\Repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\ReportPreviewWindow.g.cs
+C:\Users\pc\source\repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\ReportPreviewWindow.baml
+C:\Users\pc\source\repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\ReportPreviewWindow.g.cs
+C:\Users\pc\source\repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\ShiftSettingsView.g.cs
+C:\Users\pc\source\repos\HospitalProject\Hospital.Desktop\obj\Debug\net8.0-windows\Views\ShiftSettingsView.baml

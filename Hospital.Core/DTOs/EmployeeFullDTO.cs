@@ -28,6 +28,6 @@ namespace Hospital.Core.DTOs
         public bool IsDeleted { get; set; }
         public int? LeaveCardNumber { get; set; }
         public int? NightShiftId { get; set; }
-        public enMorningShifts? enMorningGroup {  get; set; }
+        public enMorningShifts? enMorningShifts { get; set; }
     }
 }
