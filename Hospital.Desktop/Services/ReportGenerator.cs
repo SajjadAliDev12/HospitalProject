@@ -17,7 +17,7 @@ namespace Hospital.Desktop.Services
             Dictionary<int, List<int>> shiftDays)
         {
             FlowDocument doc = new FlowDocument();
-            doc.FontFamily = new FontFamily("Segoe UI");
+            doc.FontFamily = new FontFamily("Cairo");
             doc.FlowDirection = FlowDirection.RightToLeft;
 
             // ضبط الصفحة على الوضع العرضي (Landscape) A4
