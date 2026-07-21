@@ -56,7 +56,11 @@ namespace Hospital.Desktop.ViewModels
                 if (result != null)
                 {
                     Leaves.Clear();
-                    foreach (var item in result.Items) Leaves.Add(item);
+                    foreach (var item in result.Items)
+                    { 
+                        if(!item.IsDeleted)
+                        Leaves.Add(item); 
+                    }
                     TotalPages = result.TotalPages;
                 }
             }
