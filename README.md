@@ -90,7 +90,7 @@ Run the API Server:
 
 Bash
 dotnet run --project Hospital.API
-The API will start at https://localhost:xxxx. Ensure this URL matches the base URL in your WPF ApiService.
+The API will start at https://localhost:5000.
 
 Launch the Desktop Application:
 Open a new terminal window and run:
@@ -100,14 +100,14 @@ dotnet run --project Hospital.Desktop
 
 
 ##👤 Author
-Sajjad Ali Mohsin
+* **Sajjad Ali Mohsin**
 
-Nurse & Software Developer
+* **Nurse & Software Developer**
 
-Specializing in Backend Systems, Database Architecture, and Healthcare Software Solutions.
+* **Specializing in Backend Systems, Database Architecture, and Healthcare Software Solutions.**
 
 ##📄 License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+* **This project is licensed under the MIT License. See the LICENSE file for more details.**
 ---
 
 ## 📐 Project Architecture
@@ -128,4 +128,4 @@ HospitalSystem/
     ├── Services/                 # API Connection & ReportGenerator (FlowDocument)
     ├── ViewModels/               # MVVM Logic (ShiftSettingsViewModel)
     └── Views/                    # XAML Windows (ReportPreviewWindow, Main)
----
+
