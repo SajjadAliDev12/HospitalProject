@@ -99,14 +99,14 @@ Bash
 dotnet run --project Hospital.Desktop
 
 
-##👤 Author
+## 👤 Author
 * **Sajjad Ali Mohsin**
 
 * **Nurse & Software Developer**
 
 * **Specializing in Backend Systems, Database Architecture, and Healthcare Software Solutions.**
 
-##📄 License
+## 📄 License
 * **This project is licensed under the MIT License. See the LICENSE file for more details.**
 ---
 
