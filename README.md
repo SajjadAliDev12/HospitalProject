@@ -6,21 +6,21 @@
 
 ## 🏗️ Solution Overview
 
-| Item | Value |
-|---|---|
-| Solution | `HospitalProject.slnx` (XML `.slnx` — the **only** solution entry point; no classic `.sln`) |
-| Target framework | `net8.0` / `net8.0-windows` (Desktop/WPF) |
-| Database | SQL Server (LocalDB, `HospitalManagementDB`) — **EF Core 8.0.10** via `ApplicationDbContext` |
-| API endpoint | `https://localhost:7278` (Swagger at `/swagger`) |
-| Docs | [`PROJECT_MAP.md`](PROJECT_MAP.md) (navigation) · [`ARCHITECTURE.md`](ARCHITECTURE.md) (blueprint) · [`TECH_STACK.md`](TECH_STACK.md) (versions) · [`TASK_TREE.md`](TASK_TREE.md) (plan) |
+| Item             | Value                                                                                                                                                                                    |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Solution         | `HospitalProject.slnx` (XML `.slnx` — the **only** solution entry point; no classic `.sln`)                                                                                              |
+| Target framework | `net8.0` / `net8.0-windows` (Desktop/WPF)                                                                                                                                                |
+| Database         | SQL Server (LocalDB, `HospitalManagementDB`) — **EF Core 8.0.10** via `ApplicationDbContext`                                                                                             |
+| API endpoint     | `https://localhost:7278` (Swagger at `/swagger`)                                                                                                                                         |
+| Docs             | [`PROJECT_MAP.md`](PROJECT_MAP.md) (navigation) · [`ARCHITECTURE.md`](ARCHITECTURE.md) (blueprint) · [`TECH_STACK.md`](TECH_STACK.md) (versions) · [`TASK_TREE.md`](TASK_TREE.md) (plan) |
 
 ### Projects
 
-| Project | Type | Role |
-|---|---|---|
-| `Hospital.Core/` | class library (`net8.0`) | Domain models, DTOs, enums — shared contracts |
-| `Hospital.API/` | ASP.NET Core Web API (`net8.0`) | REST backend, JWT auth, EF data access, auditing |
-| `Hospital.Desktop/` | WPF (`net8.0-windows`) | MVVM desktop client (Arabic UI, RTL) |
+| Project             | Type                            | Role                                             |
+| ------------------- | ------------------------------- | ------------------------------------------------ |
+| `Hospital.Core/`    | class library (`net8.0`)        | Domain models, DTOs, enums — shared contracts    |
+| `Hospital.API/`     | ASP.NET Core Web API (`net8.0`) | REST backend, JWT auth, EF data access, auditing |
+| `Hospital.Desktop/` | WPF (`net8.0-windows`)          | MVVM desktop client (Arabic UI, RTL)             |
 
 ---
 
@@ -80,13 +80,13 @@ See [`PROJECT_MAP.md`](PROJECT_MAP.md) §2.2–2.3 for the full controller/ViewM
 
 ## 📁 Documentation Set
 
-| File | Purpose |
-|---|---|
-| `PROJECT_MAP.md` | Verified navigation map of the whole codebase |
-| `ARCHITECTURE.md` | Blueprint: layers, data flow, key implementation points |
-| `TECH_STACK.md` | Version-pinned package matrix + build commands |
-| `AGENTS.md` · `rules.md` · `.cursorrules` | Workflow contract & coding style |
-| `TASK_TREE.md` | Production-readiness execution plan (gap-driven) |
+| File                                      | Purpose                                                 |
+| ----------------------------------------- | ------------------------------------------------------- |
+| `PROJECT_MAP.md`                          | Verified navigation map of the whole codebase           |
+| `ARCHITECTURE.md`                         | Blueprint: layers, data flow, key implementation points |
+| `TECH_STACK.md`                           | Version-pinned package matrix + build commands          |
+| `AGENTS.md` · `rules.md` · `.cursorrules` | Workflow contract & coding style                        |
+| `TASK_TREE.md`                            | Production-readiness execution plan (gap-driven)        |
 
 ---
 
