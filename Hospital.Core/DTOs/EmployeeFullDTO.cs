@@ -1,4 +1,4 @@
-﻿using Hospital.Core.Enums;
+using Hospital.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace Hospital.Core.DTOs
     public class EmployeeFullDTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
         [JsonPropertyName("birthDate")]
         public DateOnly BirthDate { get; set; }
         [JsonPropertyName("hireDate")]
@@ -22,8 +22,8 @@ namespace Hospital.Core.DTOs
         public enGender Gender { get; set; }
         public enCertificate CertificateType { get; set; }
         public int LeaveBalance { get; set; }
-        public string Address { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Address { get; set; } = null!;
+        public string PhoneNumber { get; set; } = null!;
         public enJobStatus JobStatus { get; set; }
         public bool IsDeleted { get; set; }
         public int? LeaveCardNumber { get; set; }

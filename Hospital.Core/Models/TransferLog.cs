@@ -1,4 +1,4 @@
-﻿using Hospital.Core.Enums;
+using Hospital.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,14 +13,14 @@ namespace Hospital.Core.Models
        
         public long Id { get; set; }
         public int EmployeeId { get; set; }
-        public  Employee Employee { get; set; }
+        public  Employee Employee { get; set; } = null!;
         public int OldDepartmentId { get; set; }
-        public Department OldDepartment { get; set; }
+        public Department OldDepartment { get; set; } = null!;
         public int NewDepartmentId { get; set; }
-        public Department NewDepartment { get; set; }
+        public Department NewDepartment { get; set; } = null!;
         public enShiftType OldShiftType { get; set; }
         public enShiftType NewShiftType { get;set; }
         public DateOnly TransferDate {  get; set; }
-        public string AdOrderNumber { get; set; }
+        public string AdOrderNumber { get; set; } = null!;
     }
 }

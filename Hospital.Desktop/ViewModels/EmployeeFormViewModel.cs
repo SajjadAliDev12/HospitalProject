@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Core.Enums;
 using Hospital.Core.Models;
 using Hospital.Desktop.Services;
@@ -12,7 +12,7 @@ namespace Hospital.Desktop.ViewModels
     {
         private readonly ApiService _apiService;
         
-        private EmployeeFullDTO _employee;
+        private EmployeeFullDTO _employee = null!;
         public EmployeeFullDTO em
         {
             get => _employee;
@@ -22,13 +22,13 @@ namespace Hospital.Desktop.ViewModels
                 OnPropertyChanged(); 
             }
         }
-        public ObservableCollection<JobTitleVeiwDTO> JobTitles { get; set; } = new();
+        public ObservableCollection<JobTitleViewDTO> JobTitles { get; set; } = new();
 
         public bool IsAddMode { get; set; }
         public bool IsEditMode { get; set; }
         public bool IsViewMode { get; set; }
 
-        public event Action RequestClose;
+        public event Action? RequestClose;
 
         public Array Genders => Enum.GetValues(typeof(enGender));
         public Array ShiftTypes => Enum.GetValues(typeof(enShiftType));
@@ -73,7 +73,7 @@ namespace Hospital.Desktop.ViewModels
                     });
                 }
 
-                var jobs = await _apiService.GetAsync<List<JobTitleVeiwDTO>>("JobTitles");
+                var jobs = await _apiService.GetAsync<List<JobTitleViewDTO>>("JobTitles");
                 if (jobs != null)
                 {
                     App.Current.Dispatcher.Invoke(() => {

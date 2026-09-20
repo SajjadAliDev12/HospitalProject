@@ -1,4 +1,4 @@
-﻿using Hospital.Core.Models;
+using Hospital.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +10,7 @@ namespace Hospital.Core.DTOs
 {
     public class CreateDepartmentDto
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
         public int? ManagerId { get; set; }
         public DateOnly? ManagerStartDate { get; set; }
         public string? ManagerOrderNumber { get; set; }

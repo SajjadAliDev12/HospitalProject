@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Desktop.Services;
 using Hospital.Desktop.Views;
 using System.Collections.ObjectModel;
@@ -12,7 +12,7 @@ namespace Hospital.Desktop.ViewModels
         private readonly ApiService _apiService;
         private bool _isLoading;
 
-        public ObservableCollection<JobTitleVeiwDTO> JobTitles { get; set; } = new();
+        public ObservableCollection<JobTitleViewDTO> JobTitles { get; set; } = new();
 
         public bool IsLoading
         {
@@ -31,8 +31,8 @@ namespace Hospital.Desktop.ViewModels
 
             RefreshCommand = new RelayCommand((p) => LoadJobTitles());
             AddCommand = new RelayCommand((p) => OpenJobTitleForm(null));
-            EditCommand = new RelayCommand((p) => OpenJobTitleForm(p as JobTitleVeiwDTO));
-            DeleteCommand = new RelayCommand(async (p) => await HandleDelete(p as JobTitleVeiwDTO));
+            EditCommand = new RelayCommand((p) => OpenJobTitleForm(p as JobTitleViewDTO));
+            DeleteCommand = new RelayCommand(async (p) => await HandleDelete(p as JobTitleViewDTO));
 
             LoadJobTitles();
         }
@@ -42,7 +42,7 @@ namespace Hospital.Desktop.ViewModels
             try
             {
                 IsLoading = true;
-                var result = await _apiService.GetAsync<List<JobTitleVeiwDTO>>("JobTitles");
+                var result = await _apiService.GetAsync<List<JobTitleViewDTO>>("JobTitles");
                 JobTitles.Clear();
                 if (result != null)
                     foreach (var job in result) JobTitles.Add(job);
@@ -51,7 +51,7 @@ namespace Hospital.Desktop.ViewModels
             finally { IsLoading = false; }
         }
 
-        private void OpenJobTitleForm(JobTitleVeiwDTO job)
+        private void OpenJobTitleForm(JobTitleViewDTO job)
         {
             var form = new JobTitleFormView();
             var vm = new JobTitleFormViewModel(job);
@@ -60,7 +60,7 @@ namespace Hospital.Desktop.ViewModels
             form.ShowDialog();
         }
 
-        private async Task HandleDelete(JobTitleVeiwDTO job)
+        private async Task HandleDelete(JobTitleViewDTO job)
         {
             if (job == null) return;
             if (MessageBox.Show($"هل أنت متأكد من حذف العنوان الوظيفي: {job.Title}؟", "تأكيد", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)

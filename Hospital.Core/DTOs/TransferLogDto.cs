@@ -1,4 +1,4 @@
-﻿using Hospital.Core.Enums;
+using Hospital.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +11,15 @@ namespace Hospital.Core.DTOs
     {
         public long Id { get; set; }
         public int EmployeeId { get; set; }
-        public string EmployeeName { get; set; }
+        public string EmployeeName { get; set; } = null!;
         public int OldDepartmentId { get; set; }
         public int NewDepartmentId { get; set; }
         public enShiftType OldShiftType { get; set; }
         public enShiftType NewShiftType { get; set; }
         public DateOnly TransferDate { get; set; }
-        public string AdOrderNumber { get; set; }
-        public string OldDepartmentName { get; set; } 
-        public string NewDepartmentName { get; set; } 
+        public string AdOrderNumber { get; set; } = null!;
+        public string OldDepartmentName { get; set; } = null!;
+        public string NewDepartmentName { get; set; } = null!;
     }
 
     public class CreateTransferLogDto
@@ -28,7 +28,7 @@ namespace Hospital.Core.DTOs
         public int NewDepartmentId { get; set; }
         public enShiftType NewShiftType { get; set; }
         public DateOnly TransferDate { get; set; }
-        public string AdOrderNumber { get; set; }
+        public string AdOrderNumber { get; set; } = null!;
     }
     
 }

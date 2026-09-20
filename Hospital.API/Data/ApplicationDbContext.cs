@@ -1,4 +1,4 @@
-﻿using Hospital.Core.Enums;
+using Hospital.Core.Enums;
 using Hospital.Core.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -113,9 +113,9 @@ namespace Hospital.API.Data
         // كلاس داخلي بسيط للمساعدة في نقل البيانات بين المرحلتين
         private class AuditEntry
         {
-            public Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry Entry { get; set; }
-            public string UserId { get; set; }
-            public string EntityName { get; set; }
+            public Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry Entry { get; set; } = null!;
+            public string UserId { get; set; } = null!;
+            public string EntityName { get; set; } = null!;
             public DateTime Date { get; set; }
             public enAuditType Type { get; set; }
         }

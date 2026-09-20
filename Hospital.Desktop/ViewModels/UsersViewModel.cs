@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Desktop.Services;
 using Hospital.Desktop.Views;
 using System.Collections.ObjectModel;
@@ -151,7 +151,7 @@ namespace Hospital.Desktop.ViewModels
                 LoadUsers();
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

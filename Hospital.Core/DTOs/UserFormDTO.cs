@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Hospital.Core.DTOs
 {
@@ -8,16 +8,16 @@ namespace Hospital.Core.DTOs
 
         [Required(ErrorMessage = "اسم المستخدم مطلوب")]
         [StringLength(50, MinimumLength = 3)]
-        public string UserName { get; set; }
+        public string UserName { get; set; } = null!;
 
         [Required(ErrorMessage = "الاسم الكامل مطلوب")]
-        public string FullName { get; set; }
+        public string FullName { get; set; } = null!;
 
 
         public string? Password { get; set; }
 
         [Required(ErrorMessage = "يجب تحديد صلاحية للمستخدم")]
-        public string Role { get; set; }
+        public string Role { get; set; } = null!;
 
         // يسمح بقيمة null إذا كان الحساب غير مرتبط بموظف معين
         public int? EmployeeId { get; set; }

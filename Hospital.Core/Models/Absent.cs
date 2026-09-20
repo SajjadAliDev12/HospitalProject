@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace Hospital.Core.Models
         
         public int Id { get; set; }
         public int EmployeeId { get; set; }
-        public Employee Employee { get; set; }
+        public Employee Employee { get; set; } = null!;
         public DateTime Date { get; set; }
         public bool isDeleted { get; set; } = false;
     }

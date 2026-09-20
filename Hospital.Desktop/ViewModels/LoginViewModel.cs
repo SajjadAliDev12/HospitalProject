@@ -1,4 +1,4 @@
-﻿using Hospital.Desktop.Services;
+using Hospital.Desktop.Services;
 using Hospital.Core.DTOs;
 using System.Windows.Input;
 using System.ComponentModel;
@@ -10,8 +10,8 @@ namespace Hospital.Desktop.ViewModels
     public class LoginViewModel : INotifyPropertyChanged
     {
         private readonly ApiService _apiService;
-        public string Username { get; set; }
-        private string _errorMessage;
+        public string Username { get; set; } = null!;
+        private string _errorMessage = null!;
         public string ErrorMessage
         {
             get => _errorMessage;
@@ -82,7 +82,7 @@ namespace Hospital.Desktop.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 

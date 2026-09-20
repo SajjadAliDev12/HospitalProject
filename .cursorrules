@@ -1,0 +1,38 @@
+# HospitalProject — Cursor Ruleset
+Docs: PROJECT_MAP.md · ARCHITECTURE.md · AGENTS.md · rules.md · TECH_STACK.md (all generated from verified source).
+
+## Identity
+This is a 3-project .NET 8 Arabic hospital HR / shift-management monolith: `Hospital.Core` (shared models/DTOs/enums), `Hospital.API` (ASP.NET Core Web API + Identity + JWT + EF Core + Serilog), `Hospital.Desktop` (WPF net8.0-windows MVVM client). No repo layer, no community MVVM toolkit, no tests/CI/README/editorconfig — call be honest about those gaps.
+
+## Guardrails (highest priority — Cursor should not violate even if asked)
+1. NEVER invent — every claim about this repo must trace to a real file path. Corporate TODO: say "Not implemented".
+2. NEVER commit: `appsettings*.json` (has `Jwt:Key`), `Logs/`, `*.sql`, `bin/`, `obj/`, `.user`, `.slnLaunch.user`, secrets.
+3. NEVER rename legacy quirks as drive-by: mixed `DTO`/`Dto` suffixes, `enRole` etc. Keep names as-is. (Historical: `JobTitleVeiwDTO` typo fixed to `JobTitleViewDTO` on 2026-09-20 via TASK-CORE-01; JSON wire format unchanged.)
+4. Soft-delete is the only delete: `isDeleted` bool + `HasQueryFilter`; controllers use `IgnoreQueryFilters()` for restore/read-deleted; never hard-delete.
+5. Arabic-first everywhere: Arabic strings, Arabic messages (API returns `{message}` in Arabic), RTL XAML. New UI strings stay Arabic.
+6. Desktop uses hand-rolled `BaseViewModel`/`RelayCommand` MVVM — NOT `CommunityToolkit.Mvvm` (referenced but unused). Do not add toolkit-based code.
+7. Thin controllers: inject `ApplicationDbContext`, no repository/UoW.
+8. Ports: API https://localhost:7278 (7180 alt) / http 5180; Desktop base URL is `https://localhost:7278/api/` in `ApiService`. Changing ports requires explicit user approval.
+9. Do not add: tests, CI, `.editorconfig`, LICENSE, Dockerfile — unless the user explicitly asks.
+10. Ask the human before anything ambiguous or structure-changing.
+
+## Preferred workflow
+1. CHECK: `dotnet build HospitalProject.slnx` (warning count ~258 nullable; keep warnings, don't silence).
+2. READ the right doc first: `PROJECT_MAP.md` (nav), `ARCHITECTURE.md` (blueprint), `PROJECT_MAP.md` section for the module you touch.
+3. For API changes: open matching controller (e.g. `EmployeesController.cs`) as the canonical pattern, mirror it.
+4. For Desktop changes: add VM → View via `DataTemplate` + `BaseViewModel`; use `RelayCommand`; wire nav in `MainViewModel`.
+5. Build + `git status` before finishing; keep `git status` clean of `Logs/` and `appsettings*`.
+6. Update the doc that describes what you changed (PROJECT_MAP.md / ARCHITECTURE.md) if tree/naming changes.
+
+## Tooling & commands
+- Build: `dotnet build HospitalProject.slnx` (slnx only; no classic .sln)
+- API run: `dotnet run --project Hospital.API` (https://localhost:7278)
+- Desktop run: `dotnet run --project Hospital.Desktop` (net8.0-windows WPF)
+- EF (from Hospital.API/): `dotnet ef migrations add <Name>` / `dotnet ef database update` / `dotnet ef migrations list`
+- Migrations: 9 + snapshot (`ApplicationDbContextModelSnapshot.cs`); current = `newfeature` (last migration).
+
+## Language & style
+- Match existing style: `net8.0` / `net8.0-windows`, nullable enable, implicit usings, PascalCase classes, camelCase locals, entities have `isDeleted`.
+- Serilog API-only (Serilog package referenced but not initialized in Desktop); Console + File `Logs/log-.txt` rolling in API.
+- Identity roles: `Admin`, `Manager`, `User` (seeded by `DbSeeder`); JWT claim `NameIdentifier` used in audit.
+- IdentityDbContext + soft-delete global filters + SaveChangesAsync audit override in `ApplicationDbContext`.

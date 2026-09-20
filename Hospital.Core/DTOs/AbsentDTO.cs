@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +12,7 @@ namespace Hospital.Core.DTOs
         public int EmployeeId { get; set; }
         public DateTime Date { get; set; }
         public bool IsDeleted { get; set; }
-        public string EmployeeName {  get; set; }
+        public string EmployeeName { get; set; } = null!;
     }
 
     public class CreateAbsentDto

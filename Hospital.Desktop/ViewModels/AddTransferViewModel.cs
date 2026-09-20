@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Core.Enums;
 using Hospital.Desktop.Services;
 using System.Collections.ObjectModel;
@@ -11,14 +11,14 @@ namespace Hospital.Desktop.ViewModels
     public class AddTransferViewModel : BaseViewModel
     {
         private readonly ApiService _apiService;
-        private CancellationTokenSource _cts;
+        private CancellationTokenSource _cts = null!;
 
         public CreateTransferLogDto Transfer { get; set; } = new() { TransferDate = DateOnly.FromDateTime(DateTime.Now) };
         public ObservableCollection<EmployeeLookupDto> Employees { get; set; } = new();
         public ObservableCollection<DepartmentDto> Departments { get; set; } = new();
         public Array ShiftTypes => Enum.GetValues(typeof(enShiftType));
 
-        private string _searchText;
+        private string _searchText = null!;
         public string SearchText
         {
             get => _searchText;
@@ -41,7 +41,7 @@ namespace Hospital.Desktop.ViewModels
             }
         }
 
-        public event Action RequestClose;
+        public event Action? RequestClose;
         public ICommand SaveCommand { get; }
 
         public AddTransferViewModel()

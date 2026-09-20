@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -10,9 +10,9 @@ namespace Hospital.Core.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public string FullName { get; set; }
+        public string FullName { get; set; } = null!;
         public int? EmployeeId { get; set; }
-        public Employee Employee { get; set; }
+        public Employee Employee { get; set; } = null!;
         public bool IsDeleted { get; set; } = false;
         public bool IsActive { get; set; } = true;
     }

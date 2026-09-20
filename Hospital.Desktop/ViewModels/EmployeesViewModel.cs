@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Core.Enums;
 using Hospital.Desktop.Services;
 using Hospital.Desktop.Views;
@@ -13,7 +13,7 @@ namespace Hospital.Desktop.ViewModels
     public class EmployeesViewModel : BaseViewModel
     {
         private readonly ApiService _apiService;
-        private string _searchText;
+        private string _searchText = null!;
         private int _selectedStatusFilter = 0; // 0: All (Active), 1: Deleted
         private int _selectedGenderFilter = 0; // 0: All, 1: Male, 2: Female
         private bool _isLoading;

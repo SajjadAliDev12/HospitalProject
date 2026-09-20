@@ -1,4 +1,4 @@
-﻿using Hospital.API.Data;
+using Hospital.API.Data;
 using Hospital.Core.DTOs;
 using Hospital.Core.Enums;
 using Hospital.Core.Models;
@@ -139,6 +139,18 @@ namespace Hospital.API.Controllers
 
             if (!await _dbContext.JobTitles.AnyAsync(j => j.Id == dto.JobTitleId))
                 return BadRequest(new { message = "لم يتم العثور على العنوان الوظيفي المحدد" });
+            if (!Enum.IsDefined(typeof(enShiftType), dto.ShiftType))
+                return BadRequest(new { message = "نوع الدوام المحدد غير صالح" });
+            if (!Enum.IsDefined(typeof(enGender), dto.Gender))
+                return BadRequest(new { message = "الجنس المحدد غير صالح" });
+            if (!Enum.IsDefined(typeof(enCertificate), dto.CertificateType))
+                return BadRequest(new { message = "نوع الشهادة المحدد غير صالح" });
+            if (!Enum.IsDefined(typeof(enJobStatus), dto.JobStatus))
+                return BadRequest(new { message = "الحالة الوظيفية المحددة غير صالحة" });
+            if (dto.enMorningGroup.HasValue && !Enum.IsDefined(typeof(enMorningShifts), dto.enMorningGroup.Value))
+                return BadRequest(new { message = "المجموعة الصباحية المحددة غير صالحة" });
+            if (dto.NightShiftId.HasValue && !await _dbContext.NightShiftTeams.AnyAsync(t => t.Id == dto.NightShiftId.Value))
+                return BadRequest(new { message = "لم يتم العثور على فريق الخفر المحدد" });
             var employee = new Employee
             {
                 Name = dto.Name,
@@ -187,6 +199,18 @@ namespace Hospital.API.Controllers
                 return BadRequest(new { message = "لم يتم العثور على القسم المحدد" });
             if (!await _dbContext.JobTitles.AnyAsync(j => j.Id == dto.JobTitleId))
                 return BadRequest(new { message = "لم يتم العثور على العنوان الوظيفي المحدد" });
+            if (!Enum.IsDefined(typeof(enShiftType), dto.ShiftType))
+                return BadRequest(new { message = "نوع الدوام المحدد غير صالح" });
+            if (!Enum.IsDefined(typeof(enGender), dto.Gender))
+                return BadRequest(new { message = "الجنس المحدد غير صالح" });
+            if (!Enum.IsDefined(typeof(enCertificate), dto.CertificateType))
+                return BadRequest(new { message = "نوع الشهادة المحدد غير صالح" });
+            if (!Enum.IsDefined(typeof(enJobStatus), dto.JobStatus))
+                return BadRequest(new { message = "الحالة الوظيفية المحددة غير صالحة" });
+            if (dto.enMorningShifts.HasValue && !Enum.IsDefined(typeof(enMorningShifts), dto.enMorningShifts.Value))
+                return BadRequest(new { message = "المجموعة الصباحية المحددة غير صالحة" });
+            if (dto.NightShiftId.HasValue && !await _dbContext.NightShiftTeams.AnyAsync(t => t.Id == dto.NightShiftId.Value))
+                return BadRequest(new { message = "لم يتم العثور على فريق الخفر المحدد" });
             employee.Name = dto.Name;
             employee.BirthDate = dto.BirthDate;
             employee.HireDate = dto.HireDate;

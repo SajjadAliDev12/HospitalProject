@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Desktop.Services;
 using System;
 using System.Collections.Generic;
@@ -14,12 +14,12 @@ namespace Hospital.Desktop.ViewModels
     public class LeaveFormViewModel : BaseViewModel
     {
         private readonly ApiService _apiService;
-        private string _empSearchText;
-        private string _subSearchText;
+        private string _empSearchText = null!;
+        private string _subSearchText = null!;
         private bool _isEmpDropDownOpen;
         private bool _isSubDropDownOpen;
-        private CancellationTokenSource _ctsEmp;
-        private CancellationTokenSource _ctsSub;
+        private CancellationTokenSource _ctsEmp = null!;
+        private CancellationTokenSource _ctsSub = null!;
 
         public LeaveFullDto Leave { get; set; }
         public bool IsEditMode { get; }
@@ -73,7 +73,7 @@ namespace Hospital.Desktop.ViewModels
             }
         }
 
-        public event Action RequestClose;
+        public event Action? RequestClose;
         public ICommand SaveCommand { get; }
 
         public LeaveFormViewModel(LeaveFullDto existingLeave = null)

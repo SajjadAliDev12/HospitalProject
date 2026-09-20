@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Desktop.Services;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -10,12 +10,12 @@ namespace Hospital.Desktop.ViewModels
     public class UserFormViewModel : BaseViewModel
     {
         private readonly ApiService _apiService;
-        private CancellationTokenSource _cts;
+        private CancellationTokenSource _cts = null!;
         public UserFormDTO User { get; set; }
         public ObservableCollection<string> Roles { get; set; } = new() { "Admin", "User", "Manager" };
         public ObservableCollection<EmployeeLookupDto> Employees { get; set; } = new();
 
-        private string _searchText;
+        private string _searchText = null!;
         public string SearchText
         {
             get => _searchText;
@@ -38,7 +38,7 @@ namespace Hospital.Desktop.ViewModels
         public bool IsEditMode { get; set; }
         public bool IsViewMode { get; set; }
 
-        public event Action RequestClose;
+        public event Action? RequestClose;
 
         private bool _linkEmployee;
         public bool LinkEmployee

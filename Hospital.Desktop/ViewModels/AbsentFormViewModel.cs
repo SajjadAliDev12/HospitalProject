@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Desktop.Services;
 using System;
 using System.Collections.Generic;
@@ -14,8 +14,8 @@ namespace Hospital.Desktop.ViewModels
     public class AbsentFormViewModel : BaseViewModel
     {
         private readonly ApiService _apiService;
-        private string _searchText;
-        private CancellationTokenSource _cts; // لمنع تداخل الطلبات
+        private string _searchText = null!;
+        private CancellationTokenSource _cts = null!; // لمنع تداخل الطلبات
 
         public CreateAbsentDto Absent { get; set; } = new() { Date = DateTime.Now };
         public ObservableCollection<EmployeeLookupDto> Employees { get; set; } = new();
@@ -37,7 +37,7 @@ namespace Hospital.Desktop.ViewModels
             }
         }
         public bool IsSelecting = true;
-        public event Action RequestClose;
+        public event Action? RequestClose;
         public ICommand SaveCommand { get; }
 
         public AbsentFormViewModel()

@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Desktop.Services;
 using System.Windows;
 using System.Windows.Input;
@@ -9,7 +9,7 @@ namespace Hospital.Desktop.ViewModels
     {
         private readonly ApiService _apiService;
         private readonly int? _jobTitleId;
-        private string _title;
+        private string _title = null!;
 
         public string Title
         {
@@ -18,10 +18,10 @@ namespace Hospital.Desktop.ViewModels
         }
 
         public bool IsEditMode => _jobTitleId.HasValue;
-        public event Action RequestClose;
+        public event Action? RequestClose;
         public ICommand SaveCommand { get; }
 
-        public JobTitleFormViewModel(JobTitleVeiwDTO job = null)
+        public JobTitleFormViewModel(JobTitleViewDTO job = null)
         {
             _apiService = new ApiService();
             if (job != null)
@@ -40,7 +40,7 @@ namespace Hospital.Desktop.ViewModels
             {
                 if (IsEditMode)
                 {
-                    var dto = new JobTitleVeiwDTO { Id = _jobTitleId.Value, Title = Title };
+                    var dto = new JobTitleViewDTO { Id = _jobTitleId.Value, Title = Title };
                     await _apiService.PutAsync<dynamic>($"JobTitles/{_jobTitleId}", dto);
                 }
                 else

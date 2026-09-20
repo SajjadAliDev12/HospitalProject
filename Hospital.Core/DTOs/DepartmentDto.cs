@@ -1,4 +1,4 @@
-﻿using Hospital.Core.Models;
+using Hospital.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,7 +11,7 @@ namespace Hospital.Core.DTOs
     public class DepartmentDto
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
         public bool IsDeleted { get; set; }
         public int StaffCount { get; set; }
         public int MorningCount { get; set; }

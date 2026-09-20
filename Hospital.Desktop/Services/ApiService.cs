@@ -1,4 +1,4 @@
-﻿using Hospital.Desktop.Converters;
+using Hospital.Desktop.Converters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net.Http;
@@ -10,8 +10,8 @@ namespace Hospital.Desktop.Services
     public class ApiService
     {
         private readonly HttpClient _httpClient;
-        private static string _token;
-        private const string BaseUrl = "https://localhost:7278/api/";
+        private static string _token = null!;
+        private static readonly string BaseUrl = Hospital.Desktop.Properties.Settings.Default.ApiBaseUrl;
         private readonly JsonSerializerSettings _settings = new JsonSerializerSettings
         {
             Converters = { new DateOnlyJsonConverter() }

@@ -1,4 +1,4 @@
-﻿using Hospital.API.Data;
+using Hospital.API.Data;
 using Hospital.Core.DTOs;
 using Hospital.Core.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -23,7 +23,7 @@ namespace Hospital.API.Controllers
         public async Task<ActionResult<IEnumerable<JobTitleDTO>>> GetJobTitles()
         {
             return Ok(await _context.JobTitles
-                .Select(j => new JobTitleVeiwDTO { Id = j.Id, Title = j.Title })
+                .Select(j => new JobTitleViewDTO { Id = j.Id, Title = j.Title })
                 .ToListAsync());
         }
 
@@ -44,7 +44,7 @@ namespace Hospital.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult> Update(int id, JobTitleVeiwDTO dto)
+        public async Task<ActionResult> Update(int id, JobTitleViewDTO dto)
         {
             var job = await _context.JobTitles.FindAsync(id);
             if (job == null) return NotFound();

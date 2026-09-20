@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Desktop.Services;
 using Hospital.Desktop.Views;
 using System;
@@ -28,7 +28,7 @@ namespace Hospital.Desktop.ViewModels
         private int _currentPage = 1;
         private int _totalPages = 1;
         private int _pageSize = 15;
-        private TransferLogDto _selectedLog;
+        private TransferLogDto _selectedLog = null!;
 
         public ObservableCollection<TransferLogDto> Logs { get; set; } = new();
 

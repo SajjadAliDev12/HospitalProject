@@ -1,4 +1,4 @@
-﻿using Hospital.Core.Enums;
+using Hospital.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,7 +12,7 @@ namespace Hospital.Core.DTOs
     {
         [Required]
         [MaxLength(250)]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
         public DateOnly BirthDate { get; set; }
         public DateOnly HireDate { get; set; }
         public int DepartmentId { get; set; }
@@ -22,9 +22,9 @@ namespace Hospital.Core.DTOs
         public int CertificateType { get; set; }
         public int LeaveBalance { get; set; }
         [MaxLength(500)]
-        public string Address { get; set; }
+        public string Address { get; set; } = null!;
         [MaxLength(20)]
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; } = null!;
         public int JobStatus { get; set; }
         public int? LeaveCardNumber { get; set; }
         public int? NightShiftId { get; set; }

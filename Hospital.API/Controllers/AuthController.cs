@@ -1,4 +1,4 @@
-﻿using Hospital.Core.Models;
+using Hospital.Core.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -74,6 +74,8 @@ namespace Hospital.API.Controllers
         {
             if (await _userManager.FindByNameAsync(model.UserName) != null)
                 return BadRequest(new { message = "اسم المستخدم موجود مسبقاً" });
+            if (model.EmployeeId.HasValue && !await _context.Employees.AnyAsync(e => e.Id == model.EmployeeId.Value))
+                return BadRequest(new { message = "لم يتم العثور على الموظف المحدد" });
 
             var user = new ApplicationUser
             {
@@ -170,6 +172,10 @@ namespace Hospital.API.Controllers
 
             if (user == null)
                 return NotFound(new { message = "المستخدم غير موجود" });
+            if (model.EmployeeId.HasValue && !await _context.Employees.AnyAsync(e => e.Id == model.EmployeeId.Value))
+                return BadRequest(new { message = "لم يتم العثور على الموظف المحدد" });
+            if (!string.IsNullOrEmpty(model.Role) && !await _context.Roles.AnyAsync(r => r.Name == model.Role))
+                return BadRequest(new { message = "لم يتم العثور على الدور المحدد" });
             user.FullName = model.FullName;
             user.IsActive = model.IsActive;
             user.IsDeleted = model.IsDeleted;
@@ -184,8 +190,12 @@ namespace Hospital.API.Controllers
                     var currentRoles = await _userManager.GetRolesAsync(user);
                     if (!currentRoles.Contains(model.Role))
                     {
-                        await _userManager.RemoveFromRolesAsync(user, currentRoles);
-                        await _userManager.AddToRoleAsync(user, model.Role);
+                        var removeResult = await _userManager.RemoveFromRolesAsync(user, currentRoles);
+                        if (!removeResult.Succeeded)
+                            return BadRequest(new { message = "فشل تحديث دور المستخدم", errors = removeResult.Errors.Select(e => e.Description) });
+                        var addResult = await _userManager.AddToRoleAsync(user, model.Role);
+                        if (!addResult.Succeeded)
+                            return BadRequest(new { message = "فشل تحديث دور المستخدم", errors = addResult.Errors.Select(e => e.Description) });
                     }
                 }
 

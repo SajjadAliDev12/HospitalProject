@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace Hospital.Desktop.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private object _currentView;
+        private object _currentView = null!;
         public object CurrentView
         {
             get => _currentView;
@@ -25,7 +25,7 @@ namespace Hospital.Desktop.ViewModels
             set { _selectedMenuTitle = value; OnPropertyChanged(nameof(SelectedMenuTitle)); }
         }
 
-        private string _currentTime;
+        private string _currentTime = null!;
         public string CurrentTime
         {
             get => _currentTime;
@@ -95,7 +95,7 @@ namespace Hospital.Desktop.ViewModels
             timer.Start();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

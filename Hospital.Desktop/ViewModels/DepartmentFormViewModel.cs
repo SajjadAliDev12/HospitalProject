@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Desktop.Services;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -11,11 +11,11 @@ namespace Hospital.Desktop.ViewModels
         private readonly ApiService _apiService;
         private readonly int? _departmentId;
 
-        private string _departmentName;
+        private string _departmentName = null!;
         private int? _managerId;
         private string? _managerOrderNumber;
         private DateOnly? _managerStartDate;
-        private string _employeeSearchText;
+        private string _employeeSearchText = null!;
 
         // الخصائص المرتبطة بالواجهة (Binding)
         public string DepartmentName
@@ -35,7 +35,7 @@ namespace Hospital.Desktop.ViewModels
             get => _managerOrderNumber;
             set { _managerOrderNumber = value; OnPropertyChanged(); }
         }
-        private string _managerSearchText;
+        private string _managerSearchText = null!;
         private bool _isManagerDropDownOpen;
 
         public string ManagerSearchText
@@ -104,7 +104,7 @@ namespace Hospital.Desktop.ViewModels
         public ObservableCollection<EmployeeLookupDto> Employees { get; set; } = new();
 
         public bool IsEditMode => _departmentId.HasValue;
-        public event Action RequestClose;
+        public event Action? RequestClose;
         public ICommand SaveCommand { get; }
 
         public DepartmentFormViewModel(DepartmentDto department = null)

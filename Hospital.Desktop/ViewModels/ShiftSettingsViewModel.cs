@@ -1,4 +1,4 @@
-﻿using Hospital.Core.DTOs;
+using Hospital.Core.DTOs;
 using Hospital.Core.Enums;
 using Hospital.Core.Models;
 using Hospital.Desktop.Services;
@@ -317,7 +317,7 @@ namespace Hospital.Desktop.ViewModels
             }
         }
 
-        private string _localSearchText;
+        private string _localSearchText = null!;
         public string LocalSearchText
         {
             get => _localSearchText;
@@ -341,7 +341,7 @@ namespace Hospital.Desktop.ViewModels
             set { _isLocalDropDownOpen = value; OnPropertyChanged(); }
         }
 
-        public event Action<TeamItemViewModel, string> SearchTextChanged;
+        public event Action<TeamItemViewModel, string>? SearchTextChanged;
 
         public TeamItemViewModel(NightShiftTeamDto data, ShiftSettingsViewModel parent)
         {
