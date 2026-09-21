@@ -27,7 +27,7 @@
 
         <Style x:Key="PrimaryBtn" TargetType="Button">
             <Setter Property="Height" Value="45"/>
-            <Setter Property="Background" Value="#2563EB"/>
+            <Setter Property="Background" Value="{StaticResource GovPrimary}"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderThickness" Value="0"/>

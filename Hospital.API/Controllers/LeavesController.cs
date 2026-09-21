@@ -1,4 +1,5 @@
 ﻿using Hospital.API.Data;
+using Hospital.API.Services;
 using Hospital.Core.DTOs;
 using Hospital.Core.Enums;
 using Hospital.Core.Models;
@@ -51,7 +52,6 @@ namespace Hospital.API.Controllers
                 query = query.Where(l => l.isDeleted == IsDeleted.Value);
 
             var totalRecords = await query.CountAsync();
-            var totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
 
             var items = await query
                 .OrderByDescending(l => l.StartDate)
@@ -72,7 +72,13 @@ namespace Hospital.API.Controllers
                     IsDeleted = l.isDeleted
                 }).ToListAsync();
 
-            return Ok(new { Items = items, TotalPages = totalPages, CurrentPage = page });
+            return Ok(new PagedResult<LeaveFullDto>
+            {
+                Items = items,
+                TotalCount = totalRecords,
+                PageSize = pageSize,
+                CurrentPage = page
+            });
         }
 
         [HttpGet("{id}")]
@@ -112,7 +118,7 @@ namespace Hospital.API.Controllers
 
             if (!await _context.Employees.AnyAsync(e => e.Id == dto.SubEmployeeId))
                 return BadRequest(new { message = "لم يتم العثور على الموظف البديل" });
-            if (employee.LeaveBalance < dto.Duration)
+            if (!LeaveBalanceCalculator.CanDeduct(employee.LeaveBalance, dto.Duration))
                 return BadRequest(new { message = "رصيد الأجازات غير كافي" });
             if (dto.EmployeeId == dto.SubEmployeeId)
                 return BadRequest(new { message = "لا يمكن للموظف أن يكون بديلاً لنفسه" });
@@ -129,7 +135,7 @@ namespace Hospital.API.Controllers
             using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
-                employee.LeaveBalance -= dto.Duration;
+                employee.LeaveBalance = LeaveBalanceCalculator.ApplyDeduction(employee.LeaveBalance, dto.Duration);
 
                 _context.Leaves.Add(leave);
 
@@ -183,13 +189,13 @@ namespace Hospital.API.Controllers
                         int difference = newDuration - oldDuration;
                         if (difference > 0) 
                         {
-                            if (employee.LeaveBalance < difference)
+                            if (!LeaveBalanceCalculator.CanDeduct(employee.LeaveBalance, difference))
                                 return BadRequest(new { message = "رصيد الاجازات غير كافي" });
-                            employee.LeaveBalance -= difference;
+                            employee.LeaveBalance = LeaveBalanceCalculator.ApplyDurationDelta(employee.LeaveBalance, oldDuration, newDuration);
                         }
                         else 
                         {
-                            employee.LeaveBalance += Math.Abs(difference);
+                            employee.LeaveBalance = LeaveBalanceCalculator.ApplyDurationDelta(employee.LeaveBalance, oldDuration, newDuration);
                         }
                     }
                 }
@@ -223,7 +229,7 @@ namespace Hospital.API.Controllers
             leave.isDeleted = true;
             Employee E =await _context.Employees.FindAsync(leave.EmployeeId);
             if (E == null) return NotFound(new { message = "لم يتم العثور على الموظف صاحب الأجازة" });
-            E.LeaveBalance += leave.Duration;
+            E.LeaveBalance = LeaveBalanceCalculator.Restore(E.LeaveBalance, leave.Duration);
             await _context.SaveChangesAsync();
             return Ok(new { message = "تم حذف الأجازة بنجاح" });
         }

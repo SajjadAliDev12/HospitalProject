@@ -16,13 +16,14 @@ HospitalProject/                                  WORKSPACE ROOT (git repo `Hosp
 ├── all_classes.txt                          # Concatenated scratch dump of API + Desktop class files (repository artifact)
 ├── Hospital.sql                             # Scripted DB export (SQL Server, database: HospitalManagementDB)
 ├── .gitignore                               # Excludes bin/, obj/, .vs/, *.user, appsettings* (secrets), Logs/, *.sql, DB dumps
-├── .github/                                 # EXISTS but EMPTY — no workflows/, no CI/CD configured
+├── .github/workflows/build.yml            # EXISTS — CI builds `HospitalProject.slnx` on windows-latest (added 2026-09-20, TASK-INF-04)
+├── README.md / LICENSE (MIT) / .editorconfig # EXIST (added 2026-09-20, TASK-INF-01..03)
 ├── Hospital.Core/                           # Class library — shared domain layer (no EF, no HTTP, no Identity beyond ASP.NET Identity stores)
 ├── Hospital.API/                            # Web API (ASP.NET Core, net8.0) — backend; startup project
 └── Hospital.Desktop/                        # WPF (net8.0-windows) — MVVM desktop client; WinExe
 ```
 
-> **Solution format note:** only `.slnx` (XML) is present. There is **no** classic `.sln`, no `README.md`, no LICENSE, no `.editorconfig`, no `.github` content, no test project, no Dockerfile. `dotnet build HospitalProject.slnx` is the canonical build entry.
+> **Solution format note:** only `.slnx` (XML) is present. There is **no** classic `.sln`, no test project, no Dockerfile. `dotnet build HospitalProject.slnx` is the canonical build entry (2026-09-21: **0 errors, 110 warnings** — down from ~258 baseline after TASK-QA-01 Pass A). `README.md`, `LICENSE` (MIT), `.editorconfig`, CI (`build.yml`) exist since 2026-09-20.
 
 ---
 
@@ -40,11 +41,11 @@ HospitalProject/                                  WORKSPACE ROOT (git repo `Hosp
 | Path | Contents |
 |---|---|
 | `Program.cs` | Bootstrap — Identity + JWT auth, Serilog, Swagger, CORS, DbSeeder roles/admin at startup |
-| `Controllers/` | `AuthController`, `EmployeesController`, `DepartmentsController`, `JobTitlesController`, `LeavesController`, `AbsentsController`, `TransferLogController`, `AuditLogsController`, `ShiftsController`, `NightShiftTeamsController` |
+| `Controllers/` | `AuthController`, `EmployeesController`, `DepartmentsController`, `JobTitlesController`, `LeavesController`, `AbsentsController`, `TransferLogController` (+PUT 2026-09-21; no DELETE by design), `AuditLogsController`, `ShiftsController`, `NightShiftTeamsController` (PUT hardened 2026-09-21: DTO + Admin + guards). All paged GETs return `PagedResult<T>` (standardized 2026-09-21; fixes Desktop paging) |
 | `Data/` | `ApplicationDbContext` (Identity + EF, global query filters, `SaveChangesAsync` audit), `DbSeeder` |
 | `Middleware/` | `ExceptionMiddleware` (global handler, Arabic messages) |
-| `Migrations/` | 7 migrations + `ApplicationDbContextModelSnapshot` (schema: Absents, AspNetUsers + Identity, Departments, Employees, Leaves, JobTitles, NightShiftTeams, SystemSettings, TransferLogs, AuditLogs) |
-| `Services/` | `ShiftService.cs` (night-shift team-by-date modulo-4 algorithm, `GetTeamIdByDate`) |
+| `Migrations/` | 9 migrations + `ApplicationDbContextModelSnapshot` (schema: Absents, AspNetUsers + Identity, Departments, Employees, Leaves, JobTitles, NightShiftTeams, SystemSettings, TransferLogs, AuditLogs; latest `20260402181244_newfeature`) |
+| `Services/` | `ShiftService.cs` (delegates rotation math to pure `ShiftCalculator.GetTeamId`), `ShiftCalculator.cs` + `LeaveBalanceCalculator.cs` (pure, unit-tested; used by LeavesController) |
 | `Properties/` | `launchSettings.json` (ports: http 5180 / https 7278) |
 | `Hospital.APIConfig:` `appsettings.json` + `.Development.json` — **gitignored** (local, contains `Jwt:Key`; do NOT commit) |
 | `Hospital.API.csproj` | net8.0; refs Hospital.Core; packages: JwtBearer, Identity, EF (SqlServer/Design/Tools), Serilog.AspNetCore, Swashbuckle |
@@ -55,9 +56,9 @@ HospitalProject/                                  WORKSPACE ROOT (git repo `Hosp
 |---|---|
 | `App.xaml` / `App.xaml.cs` | StartupUri => `Views/LoginView.xaml`, RTL, global styles, static `ApiService`/settings |
 | `MainWindow.xaml(.cs)` | Shell: RTL sidebar nav + `CurrentView` ContentControl host |
-| `Views/` | 21+ XAML views (LoginView, EmployeesView, EmployeeFormView, LeavesView, AbsentsView, DepartmentsView, UsersView, JobTitlesView, ShiftSettingsView, AuditLogs (logs) View, TransferLog, Reports, plus forms/details) |
-| `ViewModels/` | 19 VMs: `BaseViewModel` (MVVM Light style), `LoginViewModel`, `EmployeesViewModel`, `EmployeeFormViewModel`, `LeavesViewModel`, `LeaveFormViewModel`, `AbsentsViewModel`, `DepartmentsViewModel`, `JobTitlesViewModel`, `TransferLogViewModel`, `AuditLogsViewModel`, `ShiftSettingsViewModel`, `LoginViewModel`, + `RelayCommand` (hand-rolled) |
-| `Services/` | `ApiService` (HTTP + JWT token; single shared HTTP client), `EncryptionHelper` (DPAPI/ProtectedData), `ReportGenerator` (WPF FlowDocument) |
+| `Views/` | 21 XAML views, all RTL, all on shared Gov tokens (2026-09-21): `Themes/GovernmentalBrushes.xaml` + `ButtonStyles.xaml` + `DataGridStyles.xaml` merged in `App.xaml`; zero legacy hex left (grep-verified); Segoe MDL2 glyphs retained (system font on Windows target) |
+| `ViewModels/` | 19 VMs (verified 2026-09-21): `BaseViewModel`, `MainViewModel` (NavCommand→CurrentView), `Login`, `Employees`, `EmployeeForm`, `Leaves`, `LeaveForm`, `Absents`, `AbsentForm`, `Departments`, `DepartmentForm`, `JobTitles`, `JobTitleForm`, `Users`, `UserForm`, `TransferLog`, `AddTransfer`, `AuditLogs`, `ShiftSettings` — hand-rolled `RelayCommand`, no DI |
+| `Services/` | `ApiService` (HTTP + JWT; base URL from `Properties/Settings.settings:ApiBaseUrl` = `https://localhost:7278/api/` since TASK-FE-03, single shared client), `EncryptionHelper` (DPAPI), `ReportGenerator` (FlowDocument A4-Landscape RTL, balanced morning/night tables, 2-col internal split) |
 | `Converters/` | 15+ WPF value converters incl. `StatusConverters.cs` (converters 1-15), `BooleanToStatusConverter`, `BoolToVisConverter` |
 | `Properties/` | `Settings.settings` + `Settings.Designer.cs` (SavedUsername/SavedPassword/IsRemembered), `.csproj.user`, `Settings.settings` |
 | `Hospital.Desktop.csproj` | net8.0-windows, WPF; refs Hospital.Core; packages: CommunityToolkit.Mvvm (8.4.1, *not actually used* — hand-rolled MVVM instead), Microsoft.Extensions.Http, Newtonsoft.Json, Serilog, System.Security.Cryptography.ProtectedData |
@@ -123,7 +124,8 @@ Leaves / Absents / Departments / JobTitles / Users / TransferLog / AuditLogs:
 - **Soft-delete everywhere:** domain entities have `isDeleted`; DbContext `HasQueryFilter(e => !e.isDeleted)` + `IgnoreQueryFilters()` for deleted views; controllers pass `IsDeleted` filters; desktop `DeleteCommand` = soft-delete; restore = PUT with `isDeleted=false`.
 - **Arabic-first UI:** all Arabic messaging (`MessageBox.Show("…")`), RTL XAML, `FlowDirection="RightToLeft"`. All API controllers also return Arabic error messages.
 - **DTO naming is inconsistent (real, keep as-is in docs):** mix of `EmployeeFullDTO`, `EmployeeFullDto`, `LeaveFullDto`, `JobTitleViewDTO` (renamed from `JobTitleVeiwDTO` on 2026-09-20), `CreateEmployeeDTO` vs `CreateAbsentDto` - do not "fix" in docs; mind both.
-- **No tests, no CI, no README, no `.editorconfig`, no `LICENSE`:** documented missing pieces; any agent adding them should say so explicitly.
+- **Tests EXIST (2026-09-21):** `Hospital.Tests/` (xUnit + Moq + FluentAssertions, net8.0) — 35/35 green via `dotnet test HospitalProject.slnx`. CI `build.yml` + `README` + `.editorconfig` + `LICENSE` (MIT) exist since 2026-09-20.
+- Build 2026-09-21: `dotnet build HospitalProject.slnx` → 0 errors, 110 warnings (nullable CS8600/8603/8604/8625/8629 + CS0168; CS8981 lowercase `en*` kept as contract).
 - `Hospital.sql` is the **DB seed/backup** (full scripted schema). `Migrations/` are the authoritative EF schema.
 - Serilog `Logs/` is generated at runtime (`Logs/log-.txt` rolling); `.gitignore` has `logs/` (lowercase) — API writes to `Logs/`; watch case.
 
@@ -137,7 +139,7 @@ Leaves / Absents / Departments / JobTitles / Users / TransferLog / AuditLogs:
 | Hospital.API | (repo owner — local) | Desktop client |
 | Hospital.Desktop | (repo owner — local) | Hospital admin users |
 
-> Maintainer identities are **not documented** in the repo (no README/CONTRIBUTING). This table records the owner currently working in the local clone.
+> Maintainer identities are **not documented** in the repo (no CONTRIBUTING). This table records the owner currently working in the local clone.
 
 ---
 

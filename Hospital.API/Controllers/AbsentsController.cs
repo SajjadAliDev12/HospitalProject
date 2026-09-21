@@ -40,7 +40,6 @@ namespace Hospital.API.Controllers
 
             // الحسابات
             var totalRecords = await query.CountAsync();
-            var totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
 
             var items = await query
                 .OrderByDescending(a => a.Date)
@@ -54,7 +53,13 @@ namespace Hospital.API.Controllers
                     IsDeleted = a.isDeleted
                 }).ToListAsync();
 
-            return Ok(new { Items = items, TotalPages = totalPages, CurrentPage = page });
+            return Ok(new PagedResult<AbsentFullDto>
+            {
+                Items = items,
+                TotalCount = totalRecords,
+                PageSize = pageSize,
+                CurrentPage = page
+            });
         }
 
         [HttpGet("{id}")]

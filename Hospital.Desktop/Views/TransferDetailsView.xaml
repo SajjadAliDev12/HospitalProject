@@ -22,7 +22,7 @@
                     <TextBlock Text="{Binding EmployeeName}" 
                                FontSize="22" 
                                FontWeight="Bold" 
-                               Foreground="#1E293B"/>
+                               Foreground="{StaticResource GovSlate}"/>
                     <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
                         <TextBlock Text="تاريخ التنفيذ:" Foreground="#64748B" FontSize="13"/>
                         <TextBlock Text="{Binding TransferDate, StringFormat=' {0:yyyy/MM/dd}'}" 
@@ -72,10 +72,10 @@
                     <TextBlock Text="الوضع الحالي" FontSize="12" FontWeight="Bold" Foreground="#22C55E" Margin="0,0,0,15"/>
 
                     <TextBlock Text="القسم الجديد" FontSize="11" Foreground="#94A3B8" FontWeight="SemiBold"/>
-                    <TextBlock Text="{Binding NewDepartmentName}" FontSize="15" FontWeight="SemiBold" Foreground="#1E293B" Margin="0,4,0,15"/>
+                    <TextBlock Text="{Binding NewDepartmentName}" FontSize="15" FontWeight="SemiBold" Foreground="{StaticResource GovSlate}" Margin="0,4,0,15"/>
 
                     <TextBlock Text="نوع الدوام الجديد" FontSize="11" Foreground="#94A3B8" FontWeight="SemiBold"/>
-                    <TextBlock Text="{Binding NewShiftType, Converter={StaticResource ShiftTypeConverter}}" FontSize="15" FontWeight="SemiBold" Foreground="#1E293B" Margin="0,4"/>
+                    <TextBlock Text="{Binding NewShiftType, Converter={StaticResource ShiftTypeConverter}}" FontSize="15" FontWeight="SemiBold" Foreground="{StaticResource GovSlate}" Margin="0,4"/>
                 </StackPanel>
             </Border>
         </UniformGrid>

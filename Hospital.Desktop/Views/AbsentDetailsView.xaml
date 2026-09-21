@@ -21,7 +21,7 @@
                     <TextBlock Text="{Binding EmployeeName}" 
                                FontSize="24" 
                                FontWeight="Bold" 
-                               Foreground="#1E293B"/>
+                               Foreground="{StaticResource GovSlate}"/>
                     <TextBlock Text="تفاصيل سجل الغياب الرسمي" 
                                Foreground="#64748B" 
                                FontSize="13" 

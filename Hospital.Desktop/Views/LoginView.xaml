@@ -25,10 +25,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="#0078D4"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GovPrimary}"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="#0078D4"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GovPrimary}"/>
                                 <Setter TargetName="border" Property="BorderThickness" Value="2"/>
                                 <Setter TargetName="border" Property="Background" Value="White"/>
                             </Trigger>
@@ -53,7 +53,7 @@
             <StackPanel Margin="40,30">
                 <Border Width="80" Height="80" Background="#F0F7FF" CornerRadius="40" Margin="0,10,0,15">
                     <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="40" 
-                               Foreground="#0078D4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                               Foreground="{StaticResource GovPrimary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Border>
 
                 <TextBlock Text="مرحباً بك" FontSize="26" FontWeight="Bold" Foreground="#1A1A1A" HorizontalAlignment="Center"/>
@@ -73,7 +73,7 @@
                 <Button Command="{Binding LoginCommand}" 
                         CommandParameter="{Binding ElementName=txtPassword}"
                         IsDefault="True" Height="48" Margin="0,30,0,0" 
-                        Background="#0078D4" Foreground="White" BorderThickness="0" Cursor="Hand">
+                        Background="{StaticResource GovPrimary}" Foreground="White" BorderThickness="0" Cursor="Hand">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -88,8 +88,8 @@
                 <Border x:Name="ErrorBorder" Background="#FFF0F0" CornerRadius="6" Margin="0,20,0,0" Padding="10"
                         />
                 <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" Foreground="#E74C3C" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                        <TextBlock Text="{Binding ErrorMessage}" Foreground="#E74C3C" FontSize="12" TextWrapping="Wrap" MaxWidth="280"/>
+                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource GovDanger}" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                        <TextBlock Text="{Binding ErrorMessage}" Foreground="{StaticResource GovDanger}" FontSize="12" TextWrapping="Wrap" MaxWidth="280"/>
                     </StackPanel>
 
 

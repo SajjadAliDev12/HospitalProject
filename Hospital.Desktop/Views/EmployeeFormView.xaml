@@ -4,7 +4,7 @@
         Title="بيانات الموظف بالتفصيل" Height="650" Width="650"
         WindowStartupLocation="CenterScreen" 
         FlowDirection="RightToLeft"
-        Background="#F3F3F3"
+        Background="{StaticResource GovBackground}"
         AllowsTransparency="True"
         WindowStyle="None">
 
@@ -12,7 +12,7 @@
         <Style TargetType="TextBlock" x:Key="SectionHeaderStyle">
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="#0078D4"/>
+            <Setter Property="Foreground" Value="{StaticResource GovPrimary}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
@@ -36,10 +36,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="#0078D4"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GovPrimary}"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="#0078D4"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GovPrimary}"/>
                                 <Setter TargetName="border" Property="BorderThickness" Value="2"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -63,7 +63,7 @@
 
             <Border Grid.Row="0" Background="#F9F9F9" Padding="20,15" CornerRadius="12,12,0,0">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="20" VerticalAlignment="Center" Foreground="#0078D4" Margin="0,0,12,0"/>
+                    <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="20" VerticalAlignment="Center" Foreground="{StaticResource GovPrimary}" Margin="0,0,12,0"/>
                     <TextBlock Text="إدارة ملف الموظف" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Foreground="#333"/>
                 </StackPanel>
             </Border>
@@ -72,7 +72,7 @@
                 <StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,15,0,15">
-                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="#0078D4" Margin="0,0,10,0"/>
+                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="{StaticResource GovPrimary}" Margin="0,0,10,0"/>
                         <TextBlock Text="المعلومات الأساسية" Style="{StaticResource SectionHeaderStyle}"/>
                     </StackPanel>
 
@@ -108,7 +108,7 @@
                     <Separator Margin="0,20" Background="#F0F0F0"/>
 
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
-                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="#0078D4" Margin="0,0,10,0"/>
+                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="{StaticResource GovPrimary}" Margin="0,0,10,0"/>
                         <TextBlock Text="المعلومات الوظيفية" Style="{StaticResource SectionHeaderStyle}"/>
                     </StackPanel>
 
@@ -118,7 +118,7 @@
                             <ComboBox ItemsSource="{Binding Departments}" SelectedValuePath="Id" DisplayMemberPath="Name" 
                                       SelectedValue="{Binding em.DepartmentId , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"
                                       IsEnabled="{Binding IsAddMode}" Height="38" VerticalContentAlignment="Center"/>
-                            <TextBlock Text="* استخدم نظام التنقلات لتغيير القسم" Foreground="#E74C3C" FontSize="10" Margin="0,3,0,0"
+                            <TextBlock Text="* استخدم نظام التنقلات لتغيير القسم" Foreground="{StaticResource GovDanger}" FontSize="10" Margin="0,3,0,0"
                                        Visibility="{Binding IsAddMode, Converter={StaticResource InverseBoolToVis}}"/>
                         </StackPanel>
 
@@ -192,8 +192,8 @@
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="خفارة: " Foreground="#999"/>
-                                                <TextBlock Text="{Binding SupervisorName}" FontWeight="Bold" Foreground="#1E293B"/>
-                                                <TextBlock Text="{Binding Id, StringFormat=' (فريق {0})'}" Foreground="#0078D4"/>
+                                                <TextBlock Text="{Binding SupervisorName}" FontWeight="Bold" Foreground="{StaticResource GovSlate}"/>
+                                                <TextBlock Text="{Binding Id, StringFormat=' (فريق {0})'}" Foreground="{StaticResource GovPrimary}"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>
@@ -205,7 +205,7 @@
                     <Separator Margin="0,20" Background="#F0F0F0"/>
 
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
-                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="#0078D4" Margin="0,0,10,0"/>
+                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="{StaticResource GovPrimary}" Margin="0,0,10,0"/>
                         <TextBlock Text="المؤهلات والإجازات" Style="{StaticResource SectionHeaderStyle}"/>
                     </StackPanel>
 
@@ -258,7 +258,7 @@
 
             <Border Grid.Row="2" Background="#F9F9F9" Padding="20" CornerRadius="0,0,12,12">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Command="{Binding SaveCommand}" Width="160" Height="42" Background="#0078D4" Foreground="White" BorderThickness="0" 
+                    <Button Command="{Binding SaveCommand}" Width="160" Height="42" Background="{StaticResource GovPrimary}" Foreground="White" BorderThickness="0" 
                             Visibility="{Binding IsViewMode, Converter={StaticResource InverseBoolToVis}}" Cursor="Hand">
                         <Button.Resources>
                             <Style TargetType="Border">

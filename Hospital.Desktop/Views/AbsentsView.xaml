@@ -61,7 +61,7 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10,0,0,0">
-                    <Button Content="+ إضافة غياب" Command="{Binding AddCommand}" Background="#2563EB" Foreground="White" Width="130" Height="38" FontWeight="SemiBold" BorderThickness="0">
+                    <Button Content="+ إضافة غياب" Command="{Binding AddCommand}" Background="{StaticResource GovPrimary}" Foreground="White" Width="130" Height="38" FontWeight="SemiBold" BorderThickness="0">
                         <Button.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="6"/>
@@ -153,9 +153,9 @@
                 <Border Background="#F8FAFC" CornerRadius="6" Margin="25,0" Padding="15,0">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <TextBlock Text="صفحة " Foreground="#94A3B8" FontSize="13"/>
-                        <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold" Foreground="#2563EB" FontSize="14"/>
+                        <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold" Foreground="{StaticResource GovPrimary}" FontSize="14"/>
                         <TextBlock Text=" من " Foreground="#94A3B8" FontSize="13"/>
-                        <TextBlock Text="{Binding TotalPages}" FontWeight="Bold" Foreground="#1E293B" FontSize="14"/>
+                        <TextBlock Text="{Binding TotalPages}" FontWeight="Bold" Foreground="{StaticResource GovSlate}" FontSize="14"/>
                     </StackPanel>
                 </Border>
 

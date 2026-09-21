@@ -21,7 +21,7 @@
         <Border Grid.Row="1" Background="#F8FAFC" Padding="15" BorderBrush="#E2E8F0" BorderThickness="0,1,0,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Content="إرسال إلى الطابعة" Click="Print_Click" Padding="20,8" 
-                        Background="#2563EB" Foreground="White" FontWeight="Bold" Cursor="Hand"/>
+                        Background="{StaticResource GovPrimary}" Foreground="White" FontWeight="Bold" Cursor="Hand"/>
                 <Button Content="إغلاق" IsCancel="True" Margin="10,0,0,0" Padding="20,8" Cursor="Hand"/>
             </StackPanel>
         </Border>

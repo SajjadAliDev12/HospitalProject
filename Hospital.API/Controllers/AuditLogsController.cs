@@ -25,7 +25,6 @@ namespace Hospital.API.Controllers
             var query = _context.AuditLogs.Include(a => a.User).AsNoTracking();
 
             var totalRecords = await query.CountAsync();
-            var totalPages = (int)Math.Ceiling(totalRecords / (double)pageSize);
 
             // 1. جلب البيانات الخام من قاعدة البيانات أولاً (بدون switch)
             var rawLogs = await query
@@ -63,7 +62,13 @@ namespace Hospital.API.Controllers
                 RecordId = a.RecordId
             }).ToList();
 
-            return Ok(new { Items = logs, TotalPages = totalPages, CurrentPage = page });
+            return Ok(new PagedResult<AuditLogDTO>
+            {
+                Items = logs,
+                TotalCount = totalRecords,
+                PageSize = pageSize,
+                CurrentPage = page
+            });
         }
     }
 }

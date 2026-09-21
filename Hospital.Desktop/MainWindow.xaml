@@ -16,17 +16,17 @@
                         <Border x:Name="border" Background="Transparent" Margin="8,2" CornerRadius="6" SnapsToDevicePixels="True">
                             <StackPanel Orientation="Horizontal" Margin="15,10">
                                 <TextBlock x:Name="icon" Text="{TemplateBinding Tag}" FontFamily="Segoe MDL2 Assets" 
-                                           FontSize="16" VerticalAlignment="Center" Foreground="#A0A0A0" Margin="0,0,12,0"/>
+                                           FontSize="16" VerticalAlignment="Center" Foreground="{StaticResource GovSidebarDim}" Margin="0,0,12,0"/>
                                 <ContentPresenter VerticalAlignment="Center"/>
                             </StackPanel>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#3D4E5F"/>
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource GovSidebarHover}"/>
                                 <Setter TargetName="icon" Property="Foreground" Value="White"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#0078D4"/>
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource GovSidebarActive}"/>
                                 <Setter Property="Foreground" Value="White"/>
                                 <Setter TargetName="icon" Property="Foreground" Value="White"/>
                             </Trigger>
@@ -34,19 +34,19 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Foreground" Value="#D1D1D1"/>
+            <Setter Property="Foreground" Value="{StaticResource GovSidebarText}"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Cursor" Value="Hand"/>
         </Style>
     </Window.Resources>
 
-    <Grid Background="#F3F3F3">
+    <Grid Background="{StaticResource GovBackground}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="260"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0" Background="#202020">
+        <Border Grid.Column="0" Background="{StaticResource GovNavy}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
@@ -55,7 +55,7 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="32" Foreground="#0078D4" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                    <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="32" Foreground="{StaticResource GovPrimary}" HorizontalAlignment="Center" Margin="0,0,0,8"/>
                     <TextBlock Text="إدارة الموارد البشرية" Foreground="White" FontSize="16" FontWeight="SemiBold"/>
                 </StackPanel>
 
@@ -86,7 +86,7 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
                         <TextBlock Text="تسجيل الخروج" 
-                   Foreground="#E74C3C" 
+                        Foreground="{StaticResource GovDanger}" 
                    FontSize="16" 
                    VerticalAlignment="Center" 
                    FontWeight="Bold"/>
@@ -107,15 +107,15 @@
                 </Border.Effect>
                 <Grid Margin="25,0">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                        <Border Width="4" Height="24" Background="#0078D4" CornerRadius="2" Margin="0,0,12,0"/>
-                        <TextBlock Text="{Binding SelectedMenuTitle}" FontSize="20" FontWeight="Bold" Foreground="#1A1A1A"/>
+                        <Border Width="4" Height="24" Background="{StaticResource GovPrimary}" CornerRadius="2" Margin="0,0,12,0"/>
+                        <TextBlock Text="{Binding SelectedMenuTitle}" FontSize="20" FontWeight="Bold" Foreground="{StaticResource GovInk}"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <Border Background="#F9F9F9" Padding="12,6" CornerRadius="6" Margin="0,0,15,0">
+                        <Border Background="{StaticResource GovBackground}" Padding="12,6" CornerRadius="6" Margin="0,0,15,0">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="" FontFamily="Segoe MDL2 Assets" Foreground="#666" Margin="0,0,8,0" VerticalAlignment="Center"/>
-                                <TextBlock Text="{Binding CurrentTime}" Foreground="#333" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                <TextBlock Text="" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource GovMutedText}" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding CurrentTime}" Foreground="{StaticResource GovBodyText}" FontWeight="SemiBold" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Border>
 
@@ -123,7 +123,7 @@
                                 BorderThickness="0" Foreground="#555" Cursor="Hand" Width="40" Height="40"/>
 
                         <Button Content="" FontFamily="Segoe MDL2 Assets" FontSize="16" Background="Transparent" 
-                                BorderThickness="0" Foreground="#E74C3C" Cursor="Hand" Width="40" Height="40" Click="Logout_Click"/>
+                                BorderThickness="0" Foreground="{StaticResource GovDanger}" Cursor="Hand" Width="40" Height="40" Click="Logout_Click"/>
                     </StackPanel>
                 </Grid>
             </Border>

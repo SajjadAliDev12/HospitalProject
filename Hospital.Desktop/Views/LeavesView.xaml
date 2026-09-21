@@ -54,7 +54,7 @@
 
                 <Button Content="+ إضافة إجازة" 
                         Command="{Binding AddCommand}" 
-                        Background="#2563EB" Foreground="White" 
+                        Background="{StaticResource GovPrimary}" Foreground="White" 
                         Width="130" Height="38" 
                         FontWeight="SemiBold" BorderThickness="0" 
                         Margin="10,0,0,0">
@@ -109,7 +109,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Border Background="#EFF6FF" CornerRadius="4" Padding="8,4" HorizontalAlignment="Center">
-                                    <TextBlock Text="{Binding CurrentBalance}" Foreground="#2563EB" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding CurrentBalance}" Foreground="{StaticResource GovPrimary}" FontWeight="Bold"/>
                                 </Border>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -135,7 +135,7 @@
                                     <Button Content="تعديل" 
                                             Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
                                             CommandParameter="{Binding}" 
-                                            Foreground="#2563EB" Background="Transparent" BorderThickness="0" Cursor="Hand" FontWeight="SemiBold"/>
+                                            Foreground="{StaticResource GovPrimary}" Background="Transparent" BorderThickness="0" Cursor="Hand" FontWeight="SemiBold"/>
 
                                     <Separator Width="1" Height="15" Margin="8,0" Background="#E2E8F0"/>
 
@@ -167,9 +167,9 @@
                 <Border Background="#F8FAFC" CornerRadius="6" Margin="25,0" Padding="20,0">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <TextBlock Text="صفحة " Foreground="#94A3B8" FontSize="13"/>
-                        <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold" Foreground="#2563EB" FontSize="14"/>
+                        <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold" Foreground="{StaticResource GovPrimary}" FontSize="14"/>
                         <TextBlock Text=" من " Foreground="#94A3B8" FontSize="13" Margin="5,0"/>
-                        <TextBlock Text="{Binding TotalPages}" FontWeight="Bold" Foreground="#1E293B" FontSize="14"/>
+                        <TextBlock Text="{Binding TotalPages}" FontWeight="Bold" Foreground="{StaticResource GovSlate}" FontSize="14"/>
                     </StackPanel>
                 </Border>
 

@@ -34,7 +34,7 @@
 
         <Style x:Key="PrimaryBtn" TargetType="Button">
             <Setter Property="Height" Value="45"/>
-            <Setter Property="Background" Value="#2563EB"/>
+            <Setter Property="Background" Value="{StaticResource GovPrimary}"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -69,7 +69,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="0,0,0,25">
-            <TextBlock Text="إدارة حسابات المستخدمين" FontSize="20" FontWeight="Bold" Foreground="#1E293B"/>
+            <TextBlock Text="إدارة حسابات المستخدمين" FontSize="20" FontWeight="Bold" Foreground="{StaticResource GovSlate}"/>
             <TextBlock Text="تعديل بيانات الدخول وصلاحيات النظام" FontSize="12" Foreground="#94A3B8" Margin="0,4,0,0"/>
         </StackPanel>
 

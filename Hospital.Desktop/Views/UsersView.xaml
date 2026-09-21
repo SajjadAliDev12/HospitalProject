@@ -32,7 +32,7 @@
         <Style x:Key="PrimaryBtn" TargetType="Button">
             <Setter Property="Height" Value="38"/>
             <Setter Property="Padding" Value="15,0"/>
-            <Setter Property="Background" Value="#2563EB"/>
+            <Setter Property="Background" Value="{StaticResource GovPrimary}"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -160,7 +160,7 @@
                                         <Button Content="تعديل" 
                                                 Command="{Binding DataContext.EditUserCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
                                                 CommandParameter="{Binding}"
-                                                Foreground="#2563EB" Background="Transparent" BorderThickness="0" FontWeight="SemiBold" Cursor="Hand"/>
+                                                Foreground="{StaticResource GovPrimary}" Background="Transparent" BorderThickness="0" FontWeight="SemiBold" Cursor="Hand"/>
 
                                         <Separator Width="1" Height="15" Margin="8,0" Background="#E2E8F0"/>
 
@@ -180,7 +180,7 @@
                              Height="3" 
                              VerticalAlignment="Top"
                              Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}" 
-                             Foreground="#2563EB" 
+                             Foreground="{StaticResource GovPrimary}" 
                              Background="Transparent" 
                              BorderThickness="0"/>
             </Grid>

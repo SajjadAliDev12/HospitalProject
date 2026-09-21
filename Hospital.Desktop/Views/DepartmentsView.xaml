@@ -52,7 +52,7 @@
                     <Button Content="+ إضافة قسم جديد" 
                             Command="{Binding AddCommand}" 
                             Style="{StaticResource ModernButtonStyle}" 
-                            Background="#2563EB" Foreground="White" Width="150"/>
+                            Background="{StaticResource GovPrimary}" Foreground="White" Width="150"/>
 
                     <Button Content="تحديث البيانات" 
                             Command="{Binding RefreshCommand}" 
@@ -97,7 +97,7 @@
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="FontWeight" Value="SemiBold"/>
-                                        <Setter Property="Foreground" Value="#2563EB"/>
+                                        <Setter Property="Foreground" Value="{StaticResource GovPrimary}"/>
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
@@ -105,7 +105,7 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border Background="#EFF6FF" CornerRadius="4" Padding="8,4" HorizontalAlignment="Center">
-                                            <TextBlock Text="{Binding StaffCount}" Foreground="#2563EB" FontWeight="Bold"/>
+                                            <TextBlock Text="{Binding StaffCount}" Foreground="{StaticResource GovPrimary}" FontWeight="Bold"/>
                                         </Border>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -121,7 +121,7 @@
                                             <Button Content="تعديل" 
                                                     Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
                                                     CommandParameter="{Binding}" 
-                                                    Foreground="#2563EB" Background="Transparent" FontWeight="SemiBold"/>
+                                                    Foreground="{StaticResource GovPrimary}" Background="Transparent" FontWeight="SemiBold"/>
 
                                             <Separator Width="1" Height="15" Margin="8,0" Background="#E2E8F0"/>
 
@@ -140,7 +140,7 @@
                     <ProgressBar IsIndeterminate="True" 
                                  Height="3" 
                                  VerticalAlignment="Top" 
-                                 Foreground="#2563EB"
+                                 Foreground="{StaticResource GovPrimary}"
                                  Background="Transparent"
                                  BorderThickness="0"
                                  Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}"/>

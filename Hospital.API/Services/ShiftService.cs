@@ -21,18 +21,7 @@ namespace Hospital.API.Services
             var setting = await _context.SystemSettings.FirstOrDefaultAsync();
             if (setting == null) throw new Exception("لم يتم ضبط التاريخ المرجعي للنظام.");
 
-            // حساب الفرق بالأيام
-            DateTime start = setting.ShiftReferenceDate.ToDateTime(TimeOnly.MinValue);
-            DateTime end = targetDate.ToDateTime(TimeOnly.MinValue);
-
-            int daysDifference = (end - start).Days;
-
-            // منطق الـ Modulo 4
-            // +4 لضمان عدم الحصول على قيمة سالبة في حال كان التاريخ المطلوب قبل المرجعي
-            int teamIndex = ((daysDifference % 4) + 4) % 4;
-
-            // نتيجتنا هي (0, 1, 2, 3) ونحن نريد الفرق (1, 2, 3, 4)
-            return teamIndex + 1;
+            return ShiftCalculator.GetTeamId(setting.ShiftReferenceDate, targetDate);
         }
 
         public async Task<NightShiftTeam> GetCurrentShiftDetail(DateOnly targetDate)

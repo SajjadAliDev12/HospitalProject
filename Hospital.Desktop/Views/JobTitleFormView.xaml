@@ -68,7 +68,7 @@
             <Button Content="حفظ العنوان" 
                     Command="{Binding SaveCommand}" 
                     Style="{StaticResource PrimaryBtn}" 
-                    Background="#2563EB" 
+                    Background="{StaticResource GovPrimary}" 
                     Foreground="White" 
                     Width="120"
                     Height="40"/>

@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Governmental Enterprise palette (single source of truth).
+         Primary: deep navy slate. Accent: royal blue. Do NOT hardcode hex in views. -->
+
+    <!-- Surfaces -->
+    <SolidColorBrush x:Key="GovNavy" Color="#0F172A"/>
+    <SolidColorBrush x:Key="GovSlate" Color="#1E293B"/>
+    <SolidColorBrush x:Key="GovBackground" Color="#F8FAFC"/>
+    <SolidColorBrush x:Key="GovSurface" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="GovBorder" Color="#E2E8F0"/>
+
+    <!-- Accent -->
+    <SolidColorBrush x:Key="GovPrimary" Color="#2563EB"/>
+    <SolidColorBrush x:Key="GovPrimaryDark" Color="#1D4ED8"/>
+    <SolidColorBrush x:Key="GovPrimarySoft" Color="#EFF6FF"/>
+
+    <!-- Text -->
+    <SolidColorBrush x:Key="GovInk" Color="#0F172A"/>
+    <SolidColorBrush x:Key="GovBodyText" Color="#334155"/>
+    <SolidColorBrush x:Key="GovMutedText" Color="#64748B"/>
+    <SolidColorBrush x:Key="GovSidebarText" Color="#CBD5E1"/>
+    <SolidColorBrush x:Key="GovSidebarDim" Color="#94A3B8"/>
+
+    <!-- Sidebar states -->
+    <SolidColorBrush x:Key="GovSidebarHover" Color="#1E293B"/>
+    <SolidColorBrush x:Key="GovSidebarActive" Color="#2563EB"/>
+
+    <!-- Employment-status states (Arabic HR semantics) -->
+    <SolidColorBrush x:Key="GovSuccess" Color="#166534"/>
+    <SolidColorBrush x:Key="GovSuccessSoft" Color="#F0FDF4"/>
+    <SolidColorBrush x:Key="GovWarning" Color="#B45309"/>
+    <SolidColorBrush x:Key="GovWarningSoft" Color="#FFFBEB"/>
+    <SolidColorBrush x:Key="GovDanger" Color="#991B1B"/>
+    <SolidColorBrush x:Key="GovDangerSoft" Color="#FEF2F2"/>
+
+    <!-- Official Arabic system font (Regular for data, SemiBold for headings) -->
+    <FontFamily x:Key="GovFontFamily">Segoe UI, Tahoma</FontFamily>
+
+    <!-- Color twins for Color-typed properties (e.g. DropShadowEffect.Color) -->
+    <Color x:Key="GovPrimaryColor">#2563EB</Color>
+    <Color x:Key="GovNavyColor">#0F172A</Color>
+    <Color x:Key="GovSlateColor">#1E293B</Color>
+
+</ResourceDictionary>

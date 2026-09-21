@@ -33,7 +33,7 @@
             </Border.Effect>
             <Grid>
                 <StackPanel VerticalAlignment="Center">
-                    <TextBlock Text="سجلات الرقابة والتدقيق" FontSize="20" FontWeight="Bold" Foreground="#1E293B"/>
+                    <TextBlock Text="سجلات الرقابة والتدقيق" FontSize="20" FontWeight="Bold" Foreground="{StaticResource GovSlate}"/>
                     <TextBlock Text="مراقبة نشاط المستخدمين والعمليات الإدارية" FontSize="12" Foreground="#94A3B8" Margin="0,4,0,0"/>
                 </StackPanel>
 
@@ -91,7 +91,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Border Background="#EFF6FF" CornerRadius="4" Padding="8,4" HorizontalAlignment="Left">
-                                    <TextBlock Text="{Binding ActionType}" Foreground="#2563EB" FontWeight="SemiBold" FontSize="12"/>
+                                    <TextBlock Text="{Binding ActionType}" Foreground="{StaticResource GovPrimary}" FontWeight="SemiBold" FontSize="12"/>
                                 </Border>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -120,9 +120,9 @@
                 <Border Background="#F8FAFC" CornerRadius="6" Margin="25,0" Padding="20,0">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <TextBlock Text="صفحة " Foreground="#94A3B8" FontSize="13"/>
-                        <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold" Foreground="#2563EB" FontSize="14"/>
+                        <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold" Foreground="{StaticResource GovPrimary}" FontSize="14"/>
                         <TextBlock Text=" من " Foreground="#94A3B8" FontSize="13" Margin="5,0"/>
-                        <TextBlock Text="{Binding TotalPages}" FontWeight="Bold" Foreground="#1E293B" FontSize="14"/>
+                        <TextBlock Text="{Binding TotalPages}" FontWeight="Bold" Foreground="{StaticResource GovSlate}" FontSize="14"/>
                     </StackPanel>
                 </Border>
 

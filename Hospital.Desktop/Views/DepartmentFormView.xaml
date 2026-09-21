@@ -121,7 +121,7 @@
             <Button Content="حفظ البيانات" 
                     Command="{Binding SaveCommand}" 
                     Style="{StaticResource ActionBtn}" 
-                    Background="#2563EB" 
+                    Background="{StaticResource GovPrimary}" 
                     Foreground="White" 
                     Width="130"
                     Height="42"/>
