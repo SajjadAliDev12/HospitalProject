@@ -14,3 +14,7 @@ Hospital.Core/obj/
 Hospital.Core/bin/
 Hospital.API/obj/
 Hospital.API/bin/
+<<<<<<< HEAD
+Hospital.API/logs/
+=======
+>>>>>>> 20516d388414fd5ee0558d243a815b47f4532e21
