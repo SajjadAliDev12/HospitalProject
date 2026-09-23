@@ -227,7 +227,7 @@ namespace Hospital.API.Controllers
             if (leave == null) return NotFound(new { message = "لم يتم العثور على الأجازة المحددة" });
 
             leave.isDeleted = true;
-            Employee E =await _context.Employees.FindAsync(leave.EmployeeId);
+            Employee? E =await _context.Employees.FindAsync(leave.EmployeeId);
             if (E == null) return NotFound(new { message = "لم يتم العثور على الموظف صاحب الأجازة" });
             E.LeaveBalance = LeaveBalanceCalculator.Restore(E.LeaveBalance, leave.Duration);
             await _context.SaveChangesAsync();

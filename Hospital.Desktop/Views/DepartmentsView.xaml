@@ -6,25 +6,12 @@
              xmlns:converters="clr-namespace:Hospital.Desktop.Converters" 
              mc:Ignorable="d"
              FlowDirection="RightToLeft"
-             FontFamily="Segoe UI"
-             Background="#F8FAFC">
+             FontFamily="{StaticResource AppFontFamily}"
+             Background="{StaticResource PrimaryBackground}">
 
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
         <converters:DeleteRestoreConverter x:Key="DeleteRestoreConverter"/>
-
-        <Style x:Key="ModernButtonStyle" TargetType="Button">
-            <Setter Property="Padding" Value="15,8"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="6"/>
-                </Style>
-            </Style.Resources>
-        </Style>
     </UserControl.Resources>
 
     <Grid Margin="20">
@@ -33,15 +20,15 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Border Background="White" CornerRadius="12" Padding="20" Margin="0,0,0,20">
+        <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="20" Margin="0,0,0,20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.05" Color="Black"/>
             </Border.Effect>
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <TextBlock Text="تصفية الحالة:" VerticalAlignment="Center" Foreground="#64748B" Margin="0,0,12,0"/>
+                    <TextBlock Text="تصفية الحالة:" VerticalAlignment="Center" Foreground="{StaticResource TextMuted}" Margin="0,0,12,0"/>
                     <ComboBox SelectedIndex="{Binding SelectedStatusFilter}" Width="180" Height="38" 
-                              VerticalContentAlignment="Center" BorderBrush="#E2E8F0">
+                              VerticalContentAlignment="Center" BorderBrush="{StaticResource BorderColor}">
                         <ComboBoxItem Content="جميع الأقسام"/>
                         <ComboBoxItem Content="الأقسام الفعالة"/>
                         <ComboBoxItem Content="الأرشيف (المحذوفة)"/>
@@ -51,20 +38,19 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <Button Content="+ إضافة قسم جديد" 
                             Command="{Binding AddCommand}" 
-                            Style="{StaticResource ModernButtonStyle}" 
-                            Background="{StaticResource GovPrimary}" Foreground="White" Width="150"/>
+                            Style="{StaticResource PrimaryButton}" 
+                            Width="150"/>
 
                     <Button Content="تحديث البيانات" 
                             Command="{Binding RefreshCommand}" 
-                            Style="{StaticResource ModernButtonStyle}" 
-                            Background="White" BorderThickness="1" BorderBrush="#E2E8F0" 
-                            Foreground="#64748B" Margin="12,0" Width="120"/>
+                            Style="{StaticResource SecondaryButton}" 
+                            Margin="12,0" Width="120"/>
                 </StackPanel>
             </Grid>
         </Border>
 
         <Grid Grid.Row="1">
-            <Border Background="White" CornerRadius="12" Padding="1">
+            <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.05" Color="Black"/>
                 </Border.Effect>
@@ -77,18 +63,7 @@
                               BorderThickness="0"
                               GridLinesVisibility="None"
                               HeadersVisibility="Column"
-                              HorizontalGridLinesBrush="#F1F5F9">
-
-                        <DataGrid.ColumnHeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="Background" Value="#F8FAFC"/>
-                                <Setter Property="Foreground" Value="#475569"/>
-                                <Setter Property="Padding" Value="15,12"/>
-                                <Setter Property="FontWeight" Value="Bold"/>
-                                <Setter Property="BorderThickness" Value="0,0,0,1"/>
-                                <Setter Property="BorderBrush" Value="#E2E8F0"/>
-                            </Style>
-                        </DataGrid.ColumnHeaderStyle>
+                              HorizontalGridLinesBrush="{StaticResource BorderColor}">
 
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ت" Binding="{Binding Id}" Width="60"/>
@@ -97,15 +72,15 @@
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="TextBlock">
                                         <Setter Property="FontWeight" Value="SemiBold"/>
-                                        <Setter Property="Foreground" Value="{StaticResource GovPrimary}"/>
+                                        <Setter Property="Foreground" Value="{StaticResource PrimaryAccent}"/>
                                     </Style>
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
                             <DataGridTemplateColumn Header="إجمالي المنتسبين" Width="130">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Border Background="#EFF6FF" CornerRadius="4" Padding="8,4" HorizontalAlignment="Center">
-                                            <TextBlock Text="{Binding StaffCount}" Foreground="{StaticResource GovPrimary}" FontWeight="Bold"/>
+                                        <Border Background="{StaticResource RowSelected}" CornerRadius="4" Padding="8,4" HorizontalAlignment="Center">
+                                            <TextBlock Text="{Binding StaffCount}" Foreground="{StaticResource PrimaryAccent}" FontWeight="Bold"/>
                                         </Border>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -121,9 +96,9 @@
                                             <Button Content="تعديل" 
                                                     Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
                                                     CommandParameter="{Binding}" 
-                                                    Foreground="{StaticResource GovPrimary}" Background="Transparent" FontWeight="SemiBold"/>
+                                                    Foreground="{StaticResource PrimaryAccent}" Background="Transparent" FontWeight="SemiBold"/>
 
-                                            <Separator Width="1" Height="15" Margin="8,0" Background="#E2E8F0"/>
+                                            <Separator Width="1" Height="15" Margin="8,0" Background="{StaticResource BorderColor}"/>
 
                                             <Button Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
                                                     CommandParameter="{Binding}" 
@@ -140,7 +115,7 @@
                     <ProgressBar IsIndeterminate="True" 
                                  Height="3" 
                                  VerticalAlignment="Top" 
-                                 Foreground="{StaticResource GovPrimary}"
+                                 Foreground="{StaticResource PrimaryAccent}"
                                  Background="Transparent"
                                  BorderThickness="0"
                                  Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}"/>

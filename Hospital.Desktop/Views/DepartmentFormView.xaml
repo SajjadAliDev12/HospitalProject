@@ -6,15 +6,15 @@
         WindowStartupLocation="CenterScreen" 
         FlowDirection="RightToLeft" 
         ResizeMode="NoResize"
-        Background="#F8FAFC"
-        FontFamily="Segoe UI">
+        Background="{StaticResource PrimaryBackground}"
+        FontFamily="{StaticResource AppFontFamily}">
 
     <Window.Resources>
         <Style x:Key="ModernTextBox" TargetType="TextBox">
             <Setter Property="Padding" Value="10,8"/>
             <Setter Property="FontSize" Value="14"/>
-            <Setter Property="BorderBrush" Value="#E2E8F0"/>
-            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="Background" Value="{StaticResource SurfaceBackground}"/>
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="6"/>
@@ -37,7 +37,7 @@
 
         <Style x:Key="ModernComboBox" TargetType="ComboBox">
             <Setter Property="Height" Value="42"/>
-            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="6"/>
@@ -57,7 +57,7 @@
         <StackPanel Grid.Row="0" Margin="0,0,0,20">
             <TextBlock Text="اسم القسم" 
                        FontWeight="SemiBold" 
-                       Foreground="#64748B" 
+                       Foreground="{StaticResource TextMuted}" 
                        FontSize="13" 
                        Margin="0,0,0,8"/>
             <TextBox Text="{Binding DepartmentName, UpdateSourceTrigger=PropertyChanged}" 
@@ -74,7 +74,7 @@
         <StackPanel Grid.Row="1" Margin="0,0,0,20">
             <TextBlock Text="مسؤول القسم " 
                        FontWeight="SemiBold" 
-                       Foreground="#64748B" 
+                       Foreground="{StaticResource TextMuted}" 
                        FontSize="13" 
                        Margin="0,0,0,8"/>
             <ComboBox ItemsSource="{Binding Employees}" 
@@ -93,7 +93,7 @@
             <StackPanel Margin="0,0,10,0">
                 <TextBlock Text="رقم الأمر الإداري" 
                            FontWeight="SemiBold" 
-                           Foreground="#64748B" 
+                           Foreground="{StaticResource TextMuted}" 
                            FontSize="13" 
                            Margin="0,0,0,8"/>
                 <TextBox Text="{Binding ManagerOrderNumber}" 
@@ -104,7 +104,7 @@
             <StackPanel Margin="10,0,0,0">
                 <TextBlock Text="تاريخ التكليف" 
                            FontWeight="SemiBold" 
-                           Foreground="#64748B" 
+                           Foreground="{StaticResource TextMuted}" 
                            FontSize="13" 
                            Margin="0,0,0,8"/>
                 <DatePicker SelectedDate="{Binding ManagerStartDate}" 
@@ -120,19 +120,13 @@
 
             <Button Content="حفظ البيانات" 
                     Command="{Binding SaveCommand}" 
-                    Style="{StaticResource ActionBtn}" 
-                    Background="{StaticResource GovPrimary}" 
-                    Foreground="White" 
+                    Style="{StaticResource PrimaryButton}" 
                     Width="130"
                     Height="42"/>
 
             <Button Content="إلغاء" 
                     IsCancel="True" 
-                    Style="{StaticResource ActionBtn}" 
-                    Background="Transparent" 
-                    Foreground="#64748B" 
-                    BorderThickness="1"
-                    BorderBrush="#E2E8F0"
+                    Style="{StaticResource SecondaryButton}" 
                     Margin="12,0,0,0" 
                     Width="100"
                     Height="42"/>

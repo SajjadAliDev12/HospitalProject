@@ -89,7 +89,7 @@ namespace Hospital.Desktop.ViewModels
                     }
                 });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
             }
@@ -107,7 +107,7 @@ namespace Hospital.Desktop.ViewModels
         public event Action? RequestClose;
         public ICommand SaveCommand { get; }
 
-        public DepartmentFormViewModel(DepartmentDto department = null)
+        public DepartmentFormViewModel(DepartmentDto? department = null)
         {
             _apiService = new ApiService();
 
@@ -148,7 +148,7 @@ namespace Hospital.Desktop.ViewModels
                 {
                     var dto = new DepartmentDto
                     {
-                        Id = _departmentId.Value,
+                        Id = _departmentId!.Value,
                         Name = DepartmentName,
                         ManagerId = ManagerId,
                         ManagerOrderNumber = ManagerOrderNumber,

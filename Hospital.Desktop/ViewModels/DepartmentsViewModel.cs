@@ -61,7 +61,7 @@ namespace Hospital.Desktop.ViewModels
             finally { IsLoading = false; }
         }
 
-        private void OpenDepartmentForm(DepartmentDto dep)
+        private void OpenDepartmentForm(DepartmentDto? dep)
         {
             var form = new DepartmentFormView();
             var vm = new DepartmentFormViewModel(dep);
@@ -70,7 +70,7 @@ namespace Hospital.Desktop.ViewModels
             form.ShowDialog();
         }
 
-        private async Task HandleDelete(DepartmentDto dep)
+        private async Task HandleDelete(DepartmentDto? dep)
         {
             if (dep == null) return;
             string action = dep.IsDeleted ? "استعادة" : "حذف";

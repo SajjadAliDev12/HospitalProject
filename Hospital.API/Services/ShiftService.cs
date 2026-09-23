@@ -27,9 +27,10 @@ namespace Hospital.API.Services
         public async Task<NightShiftTeam> GetCurrentShiftDetail(DateOnly targetDate)
         {
             int teamId = await GetTeamIdByDate(targetDate);
-            return await _context.NightShiftTeams
+            var team = await _context.NightShiftTeams
                 .Include(t => t.Supervisor)
                 .FirstOrDefaultAsync(t => t.Id == teamId);
+            return team!;
         }
     }
 }

@@ -4,7 +4,7 @@
         Title="بيانات الموظف بالتفصيل" Height="650" Width="650"
         WindowStartupLocation="CenterScreen" 
         FlowDirection="RightToLeft"
-        Background="{StaticResource GovBackground}"
+        Background="{StaticResource PrimaryBackground}"
         AllowsTransparency="True"
         WindowStyle="None">
 
@@ -12,13 +12,13 @@
         <Style TargetType="TextBlock" x:Key="SectionHeaderStyle">
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="{StaticResource GovPrimary}"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryAccent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
         <Style TargetType="TextBlock" x:Key="LabelStyle">
             <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Foreground" Value="#666"/>
+            <Setter Property="Foreground" Value="{StaticResource TextMuted}"/>
             <Setter Property="Margin" Value="0,0,0,5"/>
         </Style>
 
@@ -26,8 +26,8 @@
             <Setter Property="Height" Value="38"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Padding" Value="10,0"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="Background" Value="{StaticResource SurfaceBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
@@ -36,10 +36,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GovPrimary}"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource PrimaryAccent}"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GovPrimary}"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource PrimaryAccent}"/>
                                 <Setter TargetName="border" Property="BorderThickness" Value="2"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -49,7 +49,7 @@
         </Style>
     </Window.Resources>
 
-    <Border Margin="15" Background="White" CornerRadius="12">
+    <Border Margin="15" Background="{StaticResource SurfaceBackground}" CornerRadius="12">
         <Border.Effect>
             <DropShadowEffect BlurRadius="20" ShadowDepth="2" Opacity="0.1"/>
         </Border.Effect>
@@ -61,10 +61,10 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="0" Background="#F9F9F9" Padding="20,15" CornerRadius="12,12,0,0">
+            <Border Grid.Row="0" Background="{StaticResource PrimaryBackground}" Padding="20,15" CornerRadius="12,12,0,0">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="20" VerticalAlignment="Center" Foreground="{StaticResource GovPrimary}" Margin="0,0,12,0"/>
-                    <TextBlock Text="إدارة ملف الموظف" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Foreground="#333"/>
+                    <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="20" VerticalAlignment="Center" Foreground="{StaticResource PrimaryAccent}" Margin="0,0,12,0"/>
+                    <TextBlock Text="إدارة ملف الموظف" Style="{StaticResource Header2}" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
@@ -72,7 +72,7 @@
                 <StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,15,0,15">
-                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="{StaticResource GovPrimary}" Margin="0,0,10,0"/>
+                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="{StaticResource PrimaryAccent}" Margin="0,0,10,0"/>
                         <TextBlock Text="المعلومات الأساسية" Style="{StaticResource SectionHeaderStyle}"/>
                     </StackPanel>
 
@@ -105,10 +105,10 @@
                         </StackPanel>
                     </UniformGrid>
 
-                    <Separator Margin="0,20" Background="#F0F0F0"/>
+                    <Separator Margin="0,20" Background="{StaticResource RowAlternate}"/>
 
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
-                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="{StaticResource GovPrimary}" Margin="0,0,10,0"/>
+                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="{StaticResource PrimaryAccent}" Margin="0,0,10,0"/>
                         <TextBlock Text="المعلومات الوظيفية" Style="{StaticResource SectionHeaderStyle}"/>
                     </StackPanel>
 
@@ -147,7 +147,7 @@
                                         IsEnabled="{Binding IsViewMode, Converter={StaticResource InverseBool}}" Height="38"/>
                         </StackPanel>
                     </UniformGrid>
-                    <Separator Margin="0,15" Background="#F0F0F0"/>
+                    <Separator Margin="0,15" Background="{StaticResource RowAlternate}"/>
 
                     <StackPanel>
                         <StackPanel.Style>
@@ -191,9 +191,9 @@
                                     <ComboBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="خفارة: " Foreground="#999"/>
-                                                <TextBlock Text="{Binding SupervisorName}" FontWeight="Bold" Foreground="{StaticResource GovSlate}"/>
-                                                <TextBlock Text="{Binding Id, StringFormat=' (فريق {0})'}" Foreground="{StaticResource GovPrimary}"/>
+                                                <TextBlock Text="خفارة: " Foreground="{StaticResource TextMuted}"/>
+                                                <TextBlock Text="{Binding SupervisorName}" FontWeight="Bold" Foreground="{StaticResource PrimaryDark}"/>
+                                                <TextBlock Text="{Binding Id, StringFormat=' (فريق {0})'}" Foreground="{StaticResource PrimaryAccent}"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>
@@ -202,10 +202,10 @@
                         </Grid>
                     </StackPanel>
 
-                    <Separator Margin="0,20" Background="#F0F0F0"/>
+                    <Separator Margin="0,20" Background="{StaticResource RowAlternate}"/>
 
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
-                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="{StaticResource GovPrimary}" Margin="0,0,10,0"/>
+                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="18" VerticalAlignment="Center" Foreground="{StaticResource PrimaryAccent}" Margin="0,0,10,0"/>
                         <TextBlock Text="المؤهلات والإجازات" Style="{StaticResource SectionHeaderStyle}"/>
                     </StackPanel>
 
@@ -236,7 +236,7 @@
 
                         <StackPanel Margin="5">
                             <TextBlock Text="الرصيد الحالي (أيام):" Style="{StaticResource LabelStyle}"/>
-                            <TextBox Text="{Binding em.LeaveBalance}" FontWeight="Bold" Foreground="#2980B9" 
+                            <TextBox Text="{Binding em.LeaveBalance}" FontWeight="Bold" Foreground="{StaticResource PrimaryAccent}" 
                                      IsEnabled="{Binding IsViewMode, Converter={StaticResource InverseBool}}"/>
                         </StackPanel>
 
@@ -256,28 +256,18 @@
                 </StackPanel>
             </ScrollViewer>
 
-            <Border Grid.Row="2" Background="#F9F9F9" Padding="20" CornerRadius="0,0,12,12">
+            <Border Grid.Row="2" Background="{StaticResource PrimaryBackground}" Padding="20" CornerRadius="0,0,12,12">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Command="{Binding SaveCommand}" Width="160" Height="42" Background="{StaticResource GovPrimary}" Foreground="White" BorderThickness="0" 
-                            Visibility="{Binding IsViewMode, Converter={StaticResource InverseBoolToVis}}" Cursor="Hand">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="6"/>
-                            </Style>
-                        </Button.Resources>
+                    <Button Command="{Binding SaveCommand}" Width="160" Height="42" Style="{StaticResource PrimaryButton}"
+                            Visibility="{Binding IsViewMode, Converter={StaticResource InverseBoolToVis}}">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="" FontFamily="Segoe MDL2 Assets" VerticalAlignment="Center" Margin="0,0,10,0"/>
                             <TextBlock Text="حفظ التغييرات" VerticalAlignment="Center" FontWeight="SemiBold"/>
                         </StackPanel>
                     </Button>
 
-                    <Button IsCancel="True" Width="100" Height="42" Margin="10,0,0,0" Background="Transparent" BorderBrush="#DDD" BorderThickness="1" Cursor="Hand">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="6"/>
-                            </Style>
-                        </Button.Resources>
-                        <TextBlock Text="إغلاق" VerticalAlignment="Center" Foreground="#666"/>
+                    <Button IsCancel="True" Width="100" Height="42" Margin="10,0,0,0" Style="{StaticResource SecondaryButton}">
+                        <TextBlock Text="إغلاق" VerticalAlignment="Center"/>
                     </Button>
                 </StackPanel>
             </Border>

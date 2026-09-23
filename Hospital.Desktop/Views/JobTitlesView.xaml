@@ -5,24 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              FlowDirection="RightToLeft"
-             Background="#F8FAFC"
-             FontFamily="Segoe UI">
+             Background="{StaticResource PrimaryBackground}"
+             FontFamily="{StaticResource AppFontFamily}">
 
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
-
-        <Style x:Key="ModernButtonStyle" TargetType="Button">
-            <Setter Property="Padding" Value="15,8"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="6"/>
-                </Style>
-            </Style.Resources>
-        </Style>
     </UserControl.Resources>
 
     <Grid Margin="20">
@@ -31,25 +18,24 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Border Background="White" CornerRadius="12" Padding="20" Margin="0,0,0,20">
+        <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="20" Margin="0,0,0,20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.05" Color="Black"/>
             </Border.Effect>
             <StackPanel Orientation="Horizontal">
                 <Button Content="+ إضافة عنوان وظيفي" 
                         Command="{Binding AddCommand}" 
-                        Style="{StaticResource ModernButtonStyle}" 
-                        Background="{StaticResource GovPrimary}" Foreground="White" Width="170"/>
+                        Style="{StaticResource PrimaryButton}" 
+                        Width="170"/>
 
                 <Button Content="تحديث" 
                         Command="{Binding RefreshCommand}" 
-                        Style="{StaticResource ModernButtonStyle}" 
-                        Background="White" BorderThickness="1" BorderBrush="#E2E8F0" 
-                        Foreground="#64748B" Margin="12,0" Width="100"/>
+                        Style="{StaticResource SecondaryButton}" 
+                        Margin="12,0" Width="100"/>
             </StackPanel>
         </Border>
 
-        <Border Grid.Row="1" Background="White" CornerRadius="12" Padding="1">
+        <Border Grid.Row="1" Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="1">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.05" Color="Black"/>
             </Border.Effect>
@@ -61,18 +47,7 @@
                           Background="Transparent"
                           BorderThickness="0"
                           GridLinesVisibility="None"
-                          HorizontalGridLinesBrush="#F1F5F9">
-
-                    <DataGrid.ColumnHeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="#F8FAFC"/>
-                            <Setter Property="Foreground" Value="#475569"/>
-                            <Setter Property="Padding" Value="15,12"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                            <Setter Property="BorderThickness" Value="0,0,0,1"/>
-                            <Setter Property="BorderBrush" Value="#E2E8F0"/>
-                        </Style>
-                    </DataGrid.ColumnHeaderStyle>
+                          HorizontalGridLinesBrush="{StaticResource BorderColor}">
 
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="التسلسل" Binding="{Binding Id}" Width="100"/>
@@ -85,14 +60,14 @@
                                         <Button Content="تعديل" 
                                                 Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
                                                 CommandParameter="{Binding}" 
-                                                Foreground="{StaticResource GovPrimary}" Background="Transparent" FontWeight="SemiBold" Cursor="Hand"/>
+                                                Foreground="{StaticResource PrimaryAccent}" Background="Transparent" FontWeight="SemiBold" Cursor="Hand"/>
 
-                                        <Separator Width="1" Height="15" Margin="10,0" Background="#E2E8F0"/>
+                                        <Separator Width="1" Height="15" Margin="10,0" Background="{StaticResource BorderColor}"/>
 
                                         <Button Content="حذف" 
                                                 Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
                                                 CommandParameter="{Binding}" 
-                                                Foreground="#EF4444" Background="Transparent" FontWeight="SemiBold" Cursor="Hand"/>
+                                                Foreground="{StaticResource GovDanger}" Background="Transparent" FontWeight="SemiBold" Cursor="Hand"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -103,7 +78,7 @@
                 <ProgressBar IsIndeterminate="True" 
                              Height="3" 
                              VerticalAlignment="Top" 
-                             Foreground="{StaticResource GovPrimary}"
+                             Foreground="{StaticResource PrimaryAccent}"
                              Background="Transparent"
                              BorderThickness="0"
                              Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}"/>

@@ -79,7 +79,7 @@ namespace Hospital.Desktop.ViewModels
             form.ShowDialog();
         }
 
-        private void OpenDetails(AbsentFullDto absent)
+        private void OpenDetails(AbsentFullDto? absent)
         {
             if (absent == null) return;
             var details = new Views.AbsentDetailsView();
@@ -87,7 +87,7 @@ namespace Hospital.Desktop.ViewModels
             details.ShowDialog();
         }
 
-        private async Task HandleDelete(AbsentFullDto absent)
+        private async Task HandleDelete(AbsentFullDto? absent)
         {
             if (absent == null) return;
             string action = absent.IsDeleted ? "استعادة" : "حذف";

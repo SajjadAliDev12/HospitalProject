@@ -38,16 +38,16 @@ namespace Hospital.API.Controllers
                 var userRoles = await _userManager.GetRolesAsync(user);
                 var AuthClaims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim(ClaimTypes.Name, user.UserName!),
                     new Claim(ClaimTypes.NameIdentifier, user.Id),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim("FullName", user.FullName),
+                    new Claim("FullName", user.FullName!),
                 };
                 foreach (var UserRole in userRoles)
                 {
                     AuthClaims.Add(new Claim(ClaimTypes.Role, UserRole));
                 }
-                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));
                 var token = new JwtSecurityToken(
                     issuer: _configuration["Jwt:Issuer"],
                     audience: _configuration["Jwt:Audience"],
@@ -145,7 +145,7 @@ namespace Hospital.API.Controllers
                 .Select(user => new UserViewDTO
                 {
                     Id = user.Id,
-                    UserName = user.UserName,
+                    UserName = user.UserName!,
                     FullName = user.FullName,
                     EmployeeId = user.EmployeeId,
                     Role = _context.UserRoles
@@ -154,7 +154,7 @@ namespace Hospital.API.Controllers
                               ur => ur.RoleId,
                               role => role.Id,
                               (ur, role) => role.Name)
-                        .FirstOrDefault(),
+                        .FirstOrDefault()!,
                     IsActive = user.IsActive,
                     IsDeleted = user.IsDeleted,
                 }).ToListAsync();

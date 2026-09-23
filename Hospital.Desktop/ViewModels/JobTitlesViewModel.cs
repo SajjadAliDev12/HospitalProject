@@ -51,7 +51,7 @@ namespace Hospital.Desktop.ViewModels
             finally { IsLoading = false; }
         }
 
-        private void OpenJobTitleForm(JobTitleViewDTO job)
+        private void OpenJobTitleForm(JobTitleViewDTO? job)
         {
             var form = new JobTitleFormView();
             var vm = new JobTitleFormViewModel(job);
@@ -60,7 +60,7 @@ namespace Hospital.Desktop.ViewModels
             form.ShowDialog();
         }
 
-        private async Task HandleDelete(JobTitleViewDTO job)
+        private async Task HandleDelete(JobTitleViewDTO? job)
         {
             if (job == null) return;
             if (MessageBox.Show($"هل أنت متأكد من حذف العنوان الوظيفي: {job.Title}؟", "تأكيد", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)

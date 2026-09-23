@@ -42,7 +42,7 @@ namespace Hospital.Desktop.ViewModels
 
         public ICommand SaveCommand { get; }
 
-        public EmployeeFormViewModel(EmployeeFullDTO employee = null, string mode = "Add")
+        public EmployeeFormViewModel(EmployeeFullDTO? employee = null, string mode = "Add")
         {
             _apiService = new ApiService();
             IsAddMode = mode == "Add";

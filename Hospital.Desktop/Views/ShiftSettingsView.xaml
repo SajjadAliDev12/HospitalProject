@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:conv="clr-namespace:Hospital.Desktop.Converters"
              mc:Ignorable="d" 
-             Background="#F8FAFC" FontFamily="Segoe UI"
+             Background="{StaticResource PrimaryBackground}" FontFamily="{StaticResource AppFontFamily}"
              FlowDirection="RightToLeft"
              d:DesignHeight="800" d:DesignWidth="800">
 
@@ -38,7 +38,7 @@
 
         <Style x:Key="LabelStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Foreground" Value="#64748B"/>
+            <Setter Property="Foreground" Value="{StaticResource TextMuted}"/>
             <Setter Property="Margin" Value="0,0,0,5"/>
         </Style>
     </UserControl.Resources>
@@ -51,13 +51,13 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="0,0,0,25">
-            <TextBlock Text="إعدادات نظام الخفر والدوام" FontSize="24" FontWeight="Bold" Foreground="{StaticResource GovSlate}"/>
-            <TextBlock Text="تحكم في الدورة الزمنية وأسماء المسؤولين عن الفرق الأربعة" Foreground="#64748B" FontSize="14" Margin="0,5,0,0"/>
+            <TextBlock Text="إعدادات نظام الخفر والدوام" Style="{StaticResource Header1}"/>
+            <TextBlock Text="تحكم في الدورة الزمنية وأسماء المسؤولين عن الفرق الأربعة" Foreground="{StaticResource TextMuted}" FontSize="14" Margin="0,5,0,0"/>
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <StackPanel>
-                <Border Background="White" CornerRadius="12" Padding="25" Margin="0,0,0,20" BorderBrush="#E2E8F0" BorderThickness="1">
+                <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="25" Margin="0,0,0,20" BorderBrush="{StaticResource BorderColor}" BorderThickness="1">
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="15" ShadowDepth="2" Opacity="0.03" Color="Black"/>
                     </Border.Effect>
@@ -67,8 +67,8 @@
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel VerticalAlignment="Center">
-                            <TextBlock Text="📅 التاريخ المرجعي (بداية الدورة)" FontWeight="Bold" FontSize="16" Foreground="{StaticResource GovSlate}" Margin="0,0,0,5"/>
-                            <TextBlock Text="هذا التاريخ يمثل اليوم الذي استلم فيه 'الفريق رقم 1' الخفارة لأول مرة." FontSize="12" Foreground="#64748B"/>
+                            <TextBlock Text="📅 التاريخ المرجعي (بداية الدورة)" FontWeight="Bold" FontSize="16" Foreground="{StaticResource PrimaryDark}" Margin="0,0,0,5"/>
+                            <TextBlock Text="هذا التاريخ يمثل اليوم الذي استلم فيه 'الفريق رقم 1' الخفارة لأول مرة." FontSize="12" Foreground="{StaticResource TextMuted}"/>
                         </StackPanel>
                         <DatePicker Grid.Column="1" 
                                     SelectedDate="{Binding ReferenceDate, Converter={StaticResource DateOnlyConverter}}" 
@@ -77,7 +77,7 @@
                     </Grid>
                 </Border>
 
-                <TextBlock Text="توزيع مسؤولي الخفر" FontWeight="Bold" FontSize="16" Foreground="{StaticResource GovSlate}" Margin="5,0,0,15"/>
+                <TextBlock Text="توزيع مسؤولي الخفر" FontWeight="Bold" FontSize="16" Foreground="{StaticResource PrimaryDark}" Margin="5,0,0,15"/>
 
                 <ItemsControl ItemsSource="{Binding Teams}">
                     <ItemsControl.ItemsPanel>
@@ -87,16 +87,16 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border Background="White" CornerRadius="12" Padding="20" Margin="8" BorderBrush="#E2E8F0" BorderThickness="1">
+                            <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="20" Margin="8" BorderBrush="{StaticResource BorderColor}" BorderThickness="1">
                                 <Border.Effect>
                                     <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.02" Color="Black"/>
                                 </Border.Effect>
                                 <StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
-                                        <Border Width="35" Height="35" Background="#EFF6FF" CornerRadius="17.5">
-                                            <TextBlock Text="{Binding Id}" FontWeight="Bold" Foreground="{StaticResource GovPrimary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        <Border Width="35" Height="35" Background="{StaticResource RowSelected}" CornerRadius="17.5">
+                                            <TextBlock Text="{Binding Id}" FontWeight="Bold" Foreground="{StaticResource PrimaryAccent}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                         </Border>
-                                        <TextBlock Text="{Binding Id, StringFormat='الفريق رقم {0}'}" FontWeight="Bold" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="{StaticResource GovSlate}"/>
+                                        <TextBlock Text="{Binding Id, StringFormat='الفريق رقم {0}'}" FontWeight="Bold" VerticalAlignment="Center" Margin="12,0,0,0" FontSize="15" Foreground="{StaticResource PrimaryDark}"/>
                                     </StackPanel>
                                     <TextBlock Text="المسؤول المباشر:" Style="{StaticResource LabelStyle}"/>
                                     <ComboBox ItemsSource="{Binding DataContext.Employees, RelativeSource={RelativeSource AncestorType=UserControl}}"
@@ -110,16 +110,16 @@
                                               StaysOpenOnEdit="True"
                                               Style="{StaticResource ModernComboBox}">
                                     </ComboBox>
-                                    <TextBlock Text="* ابحث عن الموظف (أدخل 3 أحرف)" FontSize="10" Foreground="#94A3B8" Margin="0,5,0,0"/>
+                                    <TextBlock Text="* ابحث عن الموظف (أدخل 3 أحرف)" FontSize="10" Foreground="{StaticResource TextMuted}" Margin="0,5,0,0"/>
                                 </StackPanel>
                             </Border>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
 
-                <Border Background="White" CornerRadius="12" Padding="25" Margin="0,20,0,20" BorderBrush="#E2E8F0" BorderThickness="1">
+                <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="25" Margin="0,20,0,20" BorderBrush="{StaticResource BorderColor}" BorderThickness="1">
                     <StackPanel>
-                        <TextBlock Text="🖨️ مركز التقارير والطباعة" FontSize="18" FontWeight="Bold" Foreground="{StaticResource GovSlate}" Margin="0,0,0,20"/>
+                        <TextBlock Text="🖨️ مركز التقارير والطباعة" Style="{StaticResource Header2}" Margin="0,0,0,20"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -150,33 +150,28 @@
                                 <DatePicker SelectedDate="{Binding ReportMonth}" Height="40"/>
                             </StackPanel>
                         </Grid>
-                        <Separator Margin="0,20" Background="#F1F5F9"/>
+                        <Separator Margin="0,20" Background="{StaticResource RowAlternate}"/>
                         <StackPanel Orientation="Horizontal">
                             <Button Content="معاينة الجدول" Command="{Binding PreviewReportCommand}" 
-                                    Style="{StaticResource ActionBtn}" Background="{StaticResource GovNavy}" Foreground="White" Width="150"/>
+                                    Style="{StaticResource SecondaryButton}" Width="150"/>
                             <Button Content="طباعة فورية" Command="{Binding PrintReportCommand}" 
-                                    Style="{StaticResource ActionBtn}" Background="{StaticResource GovPrimary}" Foreground="White" Width="150" Margin="15,0,0,0"/>
+                                    Style="{StaticResource PrimaryButton}" Width="150" Margin="15,0,0,0"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
             </StackPanel>
         </ScrollViewer>
 
-        <Border Grid.Row="2" Background="White" Padding="20,15" CornerRadius="12" Margin="0,20,0,0" BorderBrush="#E2E8F0" BorderThickness="1">
+        <Border Grid.Row="2" Background="{StaticResource SurfaceBackground}" Padding="20,15" CornerRadius="12" Margin="0,20,0,0" BorderBrush="{StaticResource BorderColor}" BorderThickness="1">
             <StackPanel Orientation="Horizontal">
                 <Button Content="حفظ إعدادات النظام" 
                         Command="{Binding SaveCommand}" 
-                        Style="{StaticResource ActionBtn}" 
-                        Background="{StaticResource GovPrimary}" 
-                        Foreground="White" 
+                        Style="{StaticResource PrimaryButton}" 
                         Width="200" Height="45"/>
                 <Button Content="تحديث البيانات" 
                         Command="{Binding RefreshCommand}" 
-                        Background="Transparent" 
-                        Foreground="#64748B" 
-                        FontWeight="SemiBold"
-                        Margin="20,0,0,0" 
-                        Cursor="Hand"/>
+                        Style="{StaticResource SecondaryButton}" 
+                        Margin="20,0,0,0"/>
             </StackPanel>
         </Border>
     </Grid>

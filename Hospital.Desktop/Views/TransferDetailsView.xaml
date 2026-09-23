@@ -6,8 +6,8 @@
         WindowStartupLocation="CenterScreen" 
         FlowDirection="RightToLeft" 
         ResizeMode="NoResize"
-        Background="#F8FAFC"
-        FontFamily="Segoe UI">
+        Background="{StaticResource PrimaryBackground}"
+        FontFamily="{StaticResource AppFontFamily}">
 
     <Grid Margin="25">
         <Grid.RowDefinitions>
@@ -22,60 +22,60 @@
                     <TextBlock Text="{Binding EmployeeName}" 
                                FontSize="22" 
                                FontWeight="Bold" 
-                               Foreground="{StaticResource GovSlate}"/>
+                               Foreground="{StaticResource PrimaryDark}"/>
                     <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
-                        <TextBlock Text="تاريخ التنفيذ:" Foreground="#64748B" FontSize="13"/>
+                        <TextBlock Text="تاريخ التنفيذ:" Foreground="{StaticResource TextMuted}" FontSize="13"/>
                         <TextBlock Text="{Binding TransferDate, StringFormat=' {0:yyyy/MM/dd}'}" 
-                                   Foreground="#334155" FontSize="13" FontWeight="SemiBold" Margin="5,0"/>
+                                   Foreground="{StaticResource TextPrimary}" FontSize="13" FontWeight="SemiBold" Margin="5,0"/>
                     </StackPanel>
                 </StackPanel>
 
-                <Border Background="#FEF3C7" 
+                <Border Background="{StaticResource GovWarningSoft}" 
                         CornerRadius="6" 
                         Padding="12,6" 
                         HorizontalAlignment="Right" 
                         VerticalAlignment="Top">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="رقم الأمر:" FontSize="12" Foreground="#92400E"/>
+                        <TextBlock Text="رقم الأمر:" FontSize="12" Foreground="{StaticResource GovWarning}"/>
                         <TextBlock Text="{Binding AdOrderNumber}" 
                                    FontSize="13" 
                                    FontWeight="Bold" 
-                                   Foreground="#B45309" 
+                                   Foreground="{StaticResource GovWarning}" 
                                    Margin="5,0,0,0"/>
                     </StackPanel>
                 </Border>
             </Grid>
-            <Separator Margin="0,15,0,0" Background="#E2E8F0" Height="1"/>
+            <Separator Margin="0,15,0,0" Background="{StaticResource BorderColor}" Height="1"/>
         </StackPanel>
 
         <UniformGrid Grid.Row="1" Columns="2">
-            <Border Background="White" CornerRadius="12" Margin="6" Padding="15" BorderBrush="#FEE2E2" BorderThickness="0,4,0,0">
+            <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Margin="6" Padding="15" BorderBrush="{StaticResource GovDangerSoft}" BorderThickness="0,4,0,0">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.05" Color="Black"/>
                 </Border.Effect>
                 <StackPanel>
-                    <TextBlock Text="الوضع السابق" FontSize="12" FontWeight="Bold" Foreground="#EF4444" Margin="0,0,0,15"/>
+                    <TextBlock Text="الوضع السابق" FontSize="12" FontWeight="Bold" Foreground="{StaticResource GovDanger}" Margin="0,0,0,15"/>
 
-                    <TextBlock Text="القسم" FontSize="11" Foreground="#94A3B8" FontWeight="SemiBold"/>
-                    <TextBlock Text="{Binding OldDepartmentName}" FontSize="15" FontWeight="SemiBold" Foreground="#334155" Margin="0,4,0,15"/>
+                    <TextBlock Text="القسم" FontSize="11" Foreground="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding OldDepartmentName}" FontSize="15" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}" Margin="0,4,0,15"/>
 
-                    <TextBlock Text="نوع الدوام" FontSize="11" Foreground="#94A3B8" FontWeight="SemiBold"/>
-                    <TextBlock Text="{Binding OldShiftType, Converter={StaticResource ShiftTypeConverter}}" FontSize="15" FontWeight="SemiBold" Foreground="#334155" Margin="0,4"/>
+                    <TextBlock Text="نوع الدوام" FontSize="11" Foreground="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding OldShiftType, Converter={StaticResource ShiftTypeConverter}}" FontSize="15" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}" Margin="0,4"/>
                 </StackPanel>
             </Border>
 
-            <Border Background="White" CornerRadius="12" Margin="6" Padding="15" BorderBrush="#DCFCE7" BorderThickness="0,4,0,0">
+            <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Margin="6" Padding="15" BorderBrush="{StaticResource GovSuccessSoft}" BorderThickness="0,4,0,0">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.05" Color="Black"/>
                 </Border.Effect>
                 <StackPanel>
-                    <TextBlock Text="الوضع الحالي" FontSize="12" FontWeight="Bold" Foreground="#22C55E" Margin="0,0,0,15"/>
+                    <TextBlock Text="الوضع الحالي" FontSize="12" FontWeight="Bold" Foreground="{StaticResource GovSuccess}" Margin="0,0,0,15"/>
 
-                    <TextBlock Text="القسم الجديد" FontSize="11" Foreground="#94A3B8" FontWeight="SemiBold"/>
-                    <TextBlock Text="{Binding NewDepartmentName}" FontSize="15" FontWeight="SemiBold" Foreground="{StaticResource GovSlate}" Margin="0,4,0,15"/>
+                    <TextBlock Text="القسم الجديد" FontSize="11" Foreground="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding NewDepartmentName}" FontSize="15" FontWeight="SemiBold" Foreground="{StaticResource PrimaryDark}" Margin="0,4,0,15"/>
 
-                    <TextBlock Text="نوع الدوام الجديد" FontSize="11" Foreground="#94A3B8" FontWeight="SemiBold"/>
-                    <TextBlock Text="{Binding NewShiftType, Converter={StaticResource ShiftTypeConverter}}" FontSize="15" FontWeight="SemiBold" Foreground="{StaticResource GovSlate}" Margin="0,4"/>
+                    <TextBlock Text="نوع الدوام الجديد" FontSize="11" Foreground="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding NewShiftType, Converter={StaticResource ShiftTypeConverter}}" FontSize="15" FontWeight="SemiBold" Foreground="{StaticResource PrimaryDark}" Margin="0,4"/>
                 </StackPanel>
             </Border>
         </UniformGrid>
@@ -87,8 +87,8 @@
                 Width="140" 
                 Margin="0,20,0,0" 
                 HorizontalAlignment="Center"
-                Background="#64748B" 
-                Foreground="White" 
+                Background="{StaticResource TextMuted}" 
+                Foreground="{StaticResource SurfaceBackground}" 
                 FontWeight="SemiBold"
                 BorderThickness="0"
                 Cursor="Hand">

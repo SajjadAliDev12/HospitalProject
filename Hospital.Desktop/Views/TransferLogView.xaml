@@ -2,16 +2,16 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              FlowDirection="RightToLeft"
-             Background="#F8FAFC"
-             FontFamily="Segoe UI">
+             Background="{StaticResource PrimaryBackground}"
+             FontFamily="{StaticResource AppFontFamily}">
 
     <UserControl.Resources>
         <Style x:Key="SearchTextBox" TargetType="TextBox">
             <Setter Property="Height" Value="38"/>
             <Setter Property="Padding" Value="10,0"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="BorderBrush" Value="#E2E8F0"/>
-            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="Background" Value="{StaticResource SurfaceBackground}"/>
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="6"/>
@@ -19,18 +19,6 @@
             </Style.Resources>
         </Style>
 
-        <Style x:Key="ModernBtn" TargetType="Button">
-            <Setter Property="Height" Value="38"/>
-            <Setter Property="Padding" Value="15,0"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="6"/>
-                </Style>
-            </Style.Resources>
-        </Style>
     </UserControl.Resources>
 
     <Grid Margin="20">
@@ -40,7 +28,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Border Background="White" CornerRadius="12" Padding="20" Margin="0,0,0,20">
+        <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="20" Margin="0,0,0,20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.05" Color="Black"/>
             </Border.Effect>
@@ -48,12 +36,10 @@
                 <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
                     <Button Content="+ إجراء نقل جديد" 
                             Command="{Binding NewTransferCommand}" 
-                            Style="{StaticResource ModernBtn}"
-                            Background="{StaticResource GovPrimary}" 
-                            Foreground="White" 
+                            Style="{StaticResource PrimaryButton}"
                             Width="160">
                         <Button.Effect>
-                            <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.1" Color="{StaticResource GovPrimaryColor}"/>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.1" Color="{StaticResource PrimaryAccentColor}"/>
                         </Button.Effect>
                     </Button>
                 </StackPanel>
@@ -61,7 +47,7 @@
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock Text="بحث باسم الموظف:" 
                                VerticalAlignment="Center" 
-                               Foreground="#64748B" 
+                               Foreground="{StaticResource TextMuted}" 
                                FontWeight="SemiBold"
                                Margin="0,0,12,0"/>
                     <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
@@ -71,7 +57,7 @@
             </DockPanel>
         </Border>
 
-        <Border Grid.Row="1" Background="White" CornerRadius="12" Padding="1">
+        <Border Grid.Row="1" Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="1">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.05" Color="Black"/>
             </Border.Effect>
@@ -84,24 +70,13 @@
                       BorderThickness="0"
                       Background="Transparent"
                       GridLinesVisibility="None"
-                      HorizontalGridLinesBrush="#F1F5F9">
+                      HorizontalGridLinesBrush="{StaticResource BorderColor}">
 
                 <DataGrid.InputBindings>
                     <MouseBinding MouseAction="LeftDoubleClick" 
                                   Command="{Binding ViewDetailsCommand}" 
                                   CommandParameter="{Binding SelectedLog}"/>
                 </DataGrid.InputBindings>
-
-                <DataGrid.ColumnHeaderStyle>
-                    <Style TargetType="DataGridColumnHeader">
-                        <Setter Property="Background" Value="#F8FAFC"/>
-                        <Setter Property="Foreground" Value="#475569"/>
-                        <Setter Property="Padding" Value="15,10"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
-                        <Setter Property="BorderBrush" Value="#E2E8F0"/>
-                    </Style>
-                </DataGrid.ColumnHeaderStyle>
 
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="الموظف" Binding="{Binding EmployeeName}" Width="1.5*"/>
@@ -113,7 +88,7 @@
                                 <TextBlock Text="{Binding AdOrderNumber}" 
                                            VerticalAlignment="Center" 
                                            FontWeight="SemiBold" 
-                                           Foreground="#B45309"/>
+                                           Foreground="{StaticResource GovWarning}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -122,33 +97,29 @@
             </DataGrid>
         </Border>
 
-        <Border Grid.Row="2" Background="White" CornerRadius="12" Padding="10" Margin="0,15,0,0">
+        <Border Grid.Row="2" Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="10" Margin="0,15,0,0">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.03" Color="Black"/>
             </Border.Effect>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="السابق" 
                         Command="{Binding PrevPageCommand}" 
-                        Style="{StaticResource ModernBtn}"
-                        Width="90" 
-                        Background="#F1F5F9" 
-                        Foreground="#475569"/>
+                        Style="{StaticResource SecondaryButton}"
+                        Width="90"/>
 
-                <Border Background="#F8FAFC" CornerRadius="6" Margin="25,0" Padding="20,0">
+                <Border Background="{StaticResource PrimaryBackground}" CornerRadius="6" Margin="25,0" Padding="20,0">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                        <TextBlock Text="صفحة " Foreground="#94A3B8" FontSize="13"/>
-                        <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold" Foreground="{StaticResource GovPrimary}" FontSize="14"/>
-                        <TextBlock Text=" من " Foreground="#94A3B8" FontSize="13" Margin="5,0"/>
-                        <TextBlock Text="{Binding TotalPages}" FontWeight="Bold" Foreground="{StaticResource GovSlate}" FontSize="14"/>
+                        <TextBlock Text="صفحة " Foreground="{StaticResource TextMuted}" FontSize="13"/>
+                        <TextBlock Text="{Binding CurrentPage}" FontWeight="Bold" Foreground="{StaticResource PrimaryAccent}" FontSize="14"/>
+                        <TextBlock Text=" من " Foreground="{StaticResource TextMuted}" FontSize="13" Margin="5,0"/>
+                        <TextBlock Text="{Binding TotalPages}" FontWeight="Bold" Foreground="{StaticResource PrimaryDark}" FontSize="14"/>
                     </StackPanel>
                 </Border>
 
                 <Button Content="التالي" 
                         Command="{Binding NextPageCommand}" 
-                        Style="{StaticResource ModernBtn}"
-                        Width="90" 
-                        Background="#F1F5F9" 
-                        Foreground="#475569"/>
+                        Style="{StaticResource SecondaryButton}"
+                        Width="90"/>
             </StackPanel>
         </Border>
     </Grid>

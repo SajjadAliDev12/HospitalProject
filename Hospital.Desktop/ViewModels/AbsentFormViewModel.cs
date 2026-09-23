@@ -83,7 +83,7 @@ namespace Hospital.Desktop.ViewModels
                 });
             }
             catch (TaskCanceledException) { /* تجاهل الخطأ عند الإلغاء */ }
-            catch (Exception ex) { /* معالجة الأخطاء الأخرى */ }
+            catch (Exception) { /* معالجة الأخطاء الأخرى */ }
         }
 
         private async Task Save()

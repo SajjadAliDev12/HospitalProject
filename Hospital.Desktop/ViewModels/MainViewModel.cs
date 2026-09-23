@@ -12,8 +12,8 @@ namespace Hospital.Desktop.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private object _currentView = null!;
-        public object CurrentView
+        private object? _currentView = null!;
+        public object? CurrentView
         {
             get => _currentView;
             set { _currentView = value; OnPropertyChanged(nameof(CurrentView)); }
@@ -41,7 +41,7 @@ namespace Hospital.Desktop.ViewModels
             {
                 if (param == null) return;
 
-                string destination = param.ToString();
+                string destination = param?.ToString() ?? string.Empty;
                 switch (destination)
                 {
                     case "Users":
@@ -49,7 +49,7 @@ namespace Hospital.Desktop.ViewModels
                         SelectedMenuTitle = "إدارة المستخدمين";
                         break;
                     case "Dashboard":
-                        CurrentView = null;
+                        CurrentView = new DashboardViewModel((dest) => NavCommand!.Execute(dest));
                         SelectedMenuTitle = "الرئيسية";
                         break;
                     case "Leaves":
@@ -93,6 +93,9 @@ namespace Hospital.Desktop.ViewModels
             var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
             timer.Tick += (s, e) => CurrentTime = DateTime.Now.ToString("yyyy/MM/dd  hh:mm:ss tt");
             timer.Start();
+
+            // الشاشة الابتدائية: لوحة القيادة
+            CurrentView = new DashboardViewModel((dest) => NavCommand!.Execute(dest));
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;

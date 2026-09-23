@@ -13,8 +13,8 @@
     <Window.Resources>
         <Style x:Key="FluentInputStyle" TargetType="Control">
             <Setter Property="Height" Value="42"/>
-            <Setter Property="Background" Value="#F9F9F9"/>
-            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="Background" Value="{StaticResource PrimaryBackground}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
@@ -25,12 +25,12 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GovPrimary}"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource PrimaryAccent}"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GovPrimary}"/>
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource PrimaryAccent}"/>
                                 <Setter TargetName="border" Property="BorderThickness" Value="2"/>
-                                <Setter TargetName="border" Property="Background" Value="White"/>
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource SurfaceBackground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -39,53 +39,48 @@
         </Style>
     </Window.Resources>
 
-    <Border CornerRadius="20" Background="White" Margin="15">
+    <Border CornerRadius="20" Background="{StaticResource SurfaceBackground}" Margin="15">
         <Border.Effect>
             <DropShadowEffect BlurRadius="30" ShadowDepth="2" Opacity="0.2" Color="Black"/>
         </Border.Effect>
 
         <Grid>
-            <Button Content="" FontFamily="Segoe MDL2 Assets" Foreground="#999" 
+            <Button Content="" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource TextMuted}" 
                     Background="Transparent" BorderThickness="0" Cursor="Hand"
                     HorizontalAlignment="Left" VerticalAlignment="Top" 
                     Margin="15" FontSize="14" Click="Close_Click"/>
 
             <StackPanel Margin="40,30">
-                <Border Width="80" Height="80" Background="#F0F7FF" CornerRadius="40" Margin="0,10,0,15">
+                <Border Width="80" Height="80" Background="{StaticResource RowSelected}" CornerRadius="40" Margin="0,10,0,15">
                     <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="40" 
-                               Foreground="{StaticResource GovPrimary}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                               Foreground="{StaticResource PrimaryAccent}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Border>
 
-                <TextBlock Text="مرحباً بك" FontSize="26" FontWeight="Bold" Foreground="#1A1A1A" HorizontalAlignment="Center"/>
-                <TextBlock Text="نظام إدارة الموارد البشرية - المستشفى" FontSize="13" Foreground="#888" HorizontalAlignment="Center" Margin="0,5,0,35"/>
+                <TextBlock Text="مرحباً بك" Style="{StaticResource Header1}" FontSize="26" HorizontalAlignment="Center"/>
+                <TextBlock Text="نظام إدارة الموارد البشرية - المستشفى" FontSize="13" Foreground="{StaticResource TextMuted}" HorizontalAlignment="Center" Margin="0,5,0,35"/>
 
-                <TextBlock Text="اسم المستخدم" FontSize="12" Foreground="#555" Margin="5,0,0,5"/>
+                <TextBlock Text="اسم المستخدم" FontSize="12" Foreground="{StaticResource TextMuted}" Margin="5,0,0,5"/>
                 <TextBox Text="{Binding Username}" Style="{StaticResource FluentInputStyle}" Margin="0,0,0,20"/>
 
-                <TextBlock Text="كلمة المرور" FontSize="12" Foreground="#555" Margin="5,0,0,5"/>
+                <TextBlock Text="كلمة المرور" FontSize="12" Foreground="{StaticResource TextMuted}" Margin="5,0,0,5"/>
                 <PasswordBox x:Name="txtPassword" Style="{StaticResource FluentInputStyle}" Margin="0,0,0,10"/>
 
                 <DockPanel LastChildFill="False" Margin="2,5">
                     <CheckBox Content="تذكر بياناتي" IsChecked="{Binding IsRememberMe}" 
-                              Foreground="#666" VerticalAlignment="Center"/>
+                              Foreground="{StaticResource TextMuted}" VerticalAlignment="Center"/>
                 </DockPanel>
 
                 <Button Command="{Binding LoginCommand}" 
                         CommandParameter="{Binding ElementName=txtPassword}"
                         IsDefault="True" Height="48" Margin="0,30,0,0" 
-                        Background="{StaticResource GovPrimary}" Foreground="White" BorderThickness="0" Cursor="Hand">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10"/>
-                        </Style>
-                    </Button.Resources>
+                        Style="{StaticResource PrimaryButton}">
                     <StackPanel Orientation="Horizontal">
                         
                         <TextBlock Text="تسجيل الدخول" VerticalAlignment="Center" FontSize="16" FontWeight="SemiBold"/>
                     </StackPanel>
                 </Button>
 
-                <Border x:Name="ErrorBorder" Background="#FFF0F0" CornerRadius="6" Margin="0,20,0,0" Padding="10"
+                <Border x:Name="ErrorBorder" Background="{StaticResource GovDangerSoft}" CornerRadius="6" Margin="0,20,0,0" Padding="10"
                         />
                 <StackPanel Orientation="Horizontal">
                         <TextBlock Text="" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource GovDanger}" VerticalAlignment="Center" Margin="0,0,8,0"/>

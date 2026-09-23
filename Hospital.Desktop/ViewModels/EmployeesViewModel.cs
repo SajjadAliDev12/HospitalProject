@@ -142,11 +142,11 @@ namespace Hospital.Desktop.ViewModels
             finally { IsLoading = false; }
         }
 
-        private async void OpenEmployeeForm(object parameter, string mode)
+        private async void OpenEmployeeForm(object? parameter, string mode)
         {
             if (mode == "View" && parameter == null) return; // حماية للنقر المزدوج على فراغ
 
-            EmployeeFullDTO employeeData = null;
+            EmployeeFullDTO? employeeData = null;
             if (parameter is EmployeeSimpleDTO simple)
             {
                 try
@@ -177,7 +177,7 @@ namespace Hospital.Desktop.ViewModels
             if (mode != "View") LoadEmployees();
         }
 
-        private async Task DeleteEmployee(object parameter)
+        private async Task DeleteEmployee(object? parameter)
         {
             if (!(parameter is EmployeeSimpleDTO emp)) return;
 

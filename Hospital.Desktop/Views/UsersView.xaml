@@ -5,8 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" 
              FlowDirection="RightToLeft"
-             Background="#F8FAFC"
-             FontFamily="Segoe UI">
+             Background="{StaticResource PrimaryBackground}"
+             FontFamily="{StaticResource AppFontFamily}">
 
     <UserControl.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
@@ -14,14 +14,14 @@
         <Style x:Key="FilterLabel" TargetType="TextBlock">
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="#64748B"/>
+            <Setter Property="Foreground" Value="{StaticResource TextMuted}"/>
             <Setter Property="Margin" Value="0,0,0,5"/>
         </Style>
 
         <Style x:Key="ModernInput" TargetType="Control">
             <Setter Property="Height" Value="38"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="BorderBrush" Value="#E2E8F0"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="6"/>
@@ -29,19 +29,8 @@
             </Style.Resources>
         </Style>
 
-        <Style x:Key="PrimaryBtn" TargetType="Button">
+        <Style x:Key="PrimaryBtn" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
             <Setter Property="Height" Value="38"/>
-            <Setter Property="Padding" Value="15,0"/>
-            <Setter Property="Background" Value="{StaticResource GovPrimary}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="6"/>
-                </Style>
-            </Style.Resources>
         </Style>
     </UserControl.Resources>
 
@@ -51,7 +40,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Border Background="White" CornerRadius="12" Padding="20" Margin="0,0,0,20">
+        <Border Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="20" Margin="0,0,0,20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.05" Color="Black"/>
             </Border.Effect>
@@ -59,13 +48,12 @@
             <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom">
                 <Button Content="+ إضافة مستخدم" 
                         Command="{Binding AddUserCommand}" 
-                        Style="{StaticResource PrimaryBtn}" 
+                        Style="{StaticResource PrimaryButton}" 
                         Width="150" Margin="0,0,10,0"/>
 
                 <Button Content="تحديث القائمة" 
                         Command="{Binding RefreshCommand}" 
-                        Style="{StaticResource PrimaryBtn}" 
-                        Background="#F1F5F9" Foreground="#475569"
+                        Style="{StaticResource SecondaryButton}"
                         Width="120" Margin="0,0,20,0"/>
 
                 <StackPanel Margin="10,0">
@@ -88,7 +76,7 @@
             </WrapPanel>
         </Border>
 
-        <Border Grid.Row="1" Background="White" CornerRadius="12" Padding="1">
+        <Border Grid.Row="1" Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="1">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.05" Color="Black"/>
             </Border.Effect>
@@ -102,28 +90,17 @@
                           Background="Transparent"
                           BorderThickness="0"
                           GridLinesVisibility="None"
-                          HorizontalGridLinesBrush="#F1F5F9">
-
-                    <DataGrid.ColumnHeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="#F8FAFC"/>
-                            <Setter Property="Foreground" Value="#475569"/>
-                            <Setter Property="Padding" Value="15,10"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
-                            <Setter Property="BorderThickness" Value="0,0,0,1"/>
-                            <Setter Property="BorderBrush" Value="#E2E8F0"/>
-                        </Style>
-                    </DataGrid.ColumnHeaderStyle>
+                          HorizontalGridLinesBrush="{StaticResource BorderColor}">
 
                     <DataGrid.RowStyle>
                         <Style TargetType="DataGridRow">
                             <Setter Property="Background" Value="Transparent"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#F8FAFC"/>
+                                    <Setter Property="Background" Value="{StaticResource PrimaryBackground}"/>
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="True">
-                                    <Setter Property="Background" Value="#EFF6FF"/>
+                                    <Setter Property="Background" Value="{StaticResource RowSelected}"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -140,7 +117,7 @@
                                     <Border Background="{Binding IsActive, Converter={StaticResource StatusColorConverter}}" 
                                             CornerRadius="6" Padding="10,4" HorizontalAlignment="Center">
                                         <TextBlock Text="{Binding IsActive, Converter={StaticResource BooleanToStatusConverter}}" 
-                                                   Foreground="White" FontSize="11" FontWeight="Bold"/>
+                                                   Foreground="{StaticResource SurfaceBackground}" FontSize="11" FontWeight="Bold"/>
                                     </Border>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -153,16 +130,16 @@
                                         <Button Content="عرض" 
                                                 Command="{Binding DataContext.ViewDetailsCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
                                                 CommandParameter="{Binding}"
-                                                Foreground="#64748B" Background="Transparent" BorderThickness="0" FontWeight="SemiBold" Cursor="Hand"/>
+                                                Foreground="{StaticResource TextMuted}" Background="Transparent" BorderThickness="0" FontWeight="SemiBold" Cursor="Hand"/>
 
-                                        <Separator Width="1" Height="15" Margin="8,0" Background="#E2E8F0"/>
+                                        <Separator Width="1" Height="15" Margin="8,0" Background="{StaticResource BorderColor}"/>
 
                                         <Button Content="تعديل" 
                                                 Command="{Binding DataContext.EditUserCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
                                                 CommandParameter="{Binding}"
-                                                Foreground="{StaticResource GovPrimary}" Background="Transparent" BorderThickness="0" FontWeight="SemiBold" Cursor="Hand"/>
+                                                Foreground="{StaticResource PrimaryAccent}" Background="Transparent" BorderThickness="0" FontWeight="SemiBold" Cursor="Hand"/>
 
-                                        <Separator Width="1" Height="15" Margin="8,0" Background="#E2E8F0"/>
+                                        <Separator Width="1" Height="15" Margin="8,0" Background="{StaticResource BorderColor}"/>
 
                                         <Button Command="{Binding DataContext.DeleteUserCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
                                                 CommandParameter="{Binding}"
@@ -180,7 +157,7 @@
                              Height="3" 
                              VerticalAlignment="Top"
                              Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}" 
-                             Foreground="{StaticResource GovPrimary}" 
+                             Foreground="{StaticResource PrimaryAccent}" 
                              Background="Transparent" 
                              BorderThickness="0"/>
             </Grid>

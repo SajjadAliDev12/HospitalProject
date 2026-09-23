@@ -99,7 +99,7 @@ namespace Hospital.API.Data
                         EntityName = auditEntry.EntityName,
                         Type = auditEntry.Type,
                         // الآن نأخذ الـ ID الحقيقي بعد أن قام SQL Server بتوليده
-                        RecordId = auditEntry.Entry.Properties.FirstOrDefault(p => p.Metadata.IsPrimaryKey())?.CurrentValue?.ToString()
+                        RecordId = auditEntry.Entry.Properties.FirstOrDefault(p => p.Metadata.IsPrimaryKey())?.CurrentValue?.ToString()!,
                     };
                     AuditLogs.Add(auditLog);
                 }

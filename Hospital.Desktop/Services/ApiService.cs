@@ -44,7 +44,7 @@ namespace Hospital.Desktop.Services
 
                 if (errorData["errors"] != null)
                 {
-                    var details = string.Join("\n", errorData["errors"]);
+                    var details = string.Join("\n", errorData["errors"]!);
                     cleanMessage += "\n" + details;
                 }
             }
@@ -56,7 +56,7 @@ namespace Hospital.Desktop.Services
             throw new Exception(cleanMessage);
         }
 
-        public async Task<T> PostAsync<T>(string endpoint, object data)
+        public async Task<T> PostAsync<T>(string endpoint, object? data)
         {
             var json = JsonConvert.SerializeObject(data);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -66,11 +66,11 @@ namespace Hospital.Desktop.Services
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(responseContent);
+                return JsonConvert.DeserializeObject<T>(responseContent)!;
             }
 
             await HandleError(response);
-            return default;
+            return default!;
         }
 
         public async Task<T> GetAsync<T>(string endpoint)
@@ -80,10 +80,10 @@ namespace Hospital.Desktop.Services
             {
                 var content = await response.Content.ReadAsStringAsync();
                 // استخدم الـ settings هنا
-                return JsonConvert.DeserializeObject<T>(content, _settings);
+                return JsonConvert.DeserializeObject<T>(content, _settings)!;
             }
             await HandleError(response);
-            return default;
+            return default!;
         }
         public async Task<T> DeleteAsync<T>(string endpoint)
         {
@@ -95,15 +95,15 @@ namespace Hospital.Desktop.Services
 
                 // إذا كانت الاستجابة فارغة (مثل NoContent 204) نرجع القيمة الافتراضية
                 if (string.IsNullOrWhiteSpace(responseContent))
-                    return default;
+                    return default!;
 
-                return JsonConvert.DeserializeObject<T>(responseContent);
+                return JsonConvert.DeserializeObject<T>(responseContent)!;
             }
 
             await HandleError(response);
-            return default;
+            return default!;
         }
-        public async Task<T> PutAsync<T>(string endpoint, object data)
+        public async Task<T> PutAsync<T>(string endpoint, object? data)
         {
             var json = JsonConvert.SerializeObject(data);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -113,11 +113,11 @@ namespace Hospital.Desktop.Services
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(responseContent);
+                return JsonConvert.DeserializeObject<T>(responseContent)!;
             }
 
             await HandleError(response);
-            return default;
+            return default!;
         }
     }
 }

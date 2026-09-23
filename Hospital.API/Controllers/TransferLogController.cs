@@ -71,8 +71,8 @@ namespace Hospital.API.Controllers
                     TransferDate = t.TransferDate,
                     AdOrderNumber = t.AdOrderNumber,
                     // جلب أسماء الأقسام
-                    OldDepartmentName = _context.Departments.FirstOrDefault(d => d.Id == t.OldDepartmentId).Name,
-                    NewDepartmentName = _context.Departments.FirstOrDefault(d => d.Id == t.NewDepartmentId).Name
+                    OldDepartmentName = _context.Departments.FirstOrDefault(d => d.Id == t.OldDepartmentId)!.Name,
+                    NewDepartmentName = _context.Departments.FirstOrDefault(d => d.Id == t.NewDepartmentId)!.Name
                 }).ToListAsync();
 
             // 6. إرجاع كائن يحتوي على البيانات ومعلومات الترقيم (نفس عقد PagedResult لبقية الكنترولرات)

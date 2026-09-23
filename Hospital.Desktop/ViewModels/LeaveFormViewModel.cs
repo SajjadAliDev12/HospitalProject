@@ -76,7 +76,7 @@ namespace Hospital.Desktop.ViewModels
         public event Action? RequestClose;
         public ICommand SaveCommand { get; }
 
-        public LeaveFormViewModel(LeaveFullDto existingLeave = null)
+        public LeaveFormViewModel(LeaveFullDto? existingLeave = null)
         {
             _apiService = new ApiService();
             IsEditMode = existingLeave != null;

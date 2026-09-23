@@ -199,7 +199,7 @@ namespace Hospital.Desktop.ViewModels
         private async Task SaveSettings()
         {
             var supervisorIds = Teams.Where(t => t.SupervisorId.HasValue)
-                                     .Select(t => t.SupervisorId.Value)
+                                     .Select(t => t.SupervisorId!.Value)
                                      .ToList();
 
             if (supervisorIds.Count != supervisorIds.Distinct().Count())
@@ -254,7 +254,7 @@ namespace Hospital.Desktop.ViewModels
                 var shiftCalendar = CalculateMonthlyShifts(ReportMonth.Year, ReportMonth.Month);
 
                 // 4. تحديد عنوان التقرير
-                string deptName = SelectedPrintScope == 0 ?
+                string? deptName = SelectedPrintScope == 0 ?
                     Departments.FirstOrDefault(d => d.Id == SelectedPrintDeptId)?.Name : "كافة الأقسام";
 
                 string title = $"جدول دوام ({deptName}) لشهر {ReportMonth:MMMM yyyy}";
@@ -347,7 +347,7 @@ namespace Hospital.Desktop.ViewModels
         {
             Data = data;
             _parent = parent;
-            _localSearchText = data.SupervisorName;
+            _localSearchText = data.SupervisorName ?? string.Empty;
         }
     }
 }

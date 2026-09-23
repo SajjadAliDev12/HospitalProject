@@ -38,7 +38,7 @@ namespace Hospital.API.Controllers
             {
                 Id = a.Id,
                 Date = a.Date,
-                UserId = a.UserId,
+                UserId = a.UserId!,
                 UserName = a.User?.UserName ?? "غير معروف",
                 ActionType = a.Type switch
                 {

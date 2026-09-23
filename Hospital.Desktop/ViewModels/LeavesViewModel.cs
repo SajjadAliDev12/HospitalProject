@@ -67,7 +67,7 @@ namespace Hospital.Desktop.ViewModels
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void OpenForm(LeaveFullDto leave)
+        private void OpenForm(LeaveFullDto? leave)
         {
             var form = new Views.LeaveFormView();
             var vm = new LeaveFormViewModel(leave);
@@ -76,7 +76,7 @@ namespace Hospital.Desktop.ViewModels
             form.ShowDialog();
         }
 
-        private async Task HandleDelete(LeaveFullDto leave)
+        private async Task HandleDelete(LeaveFullDto? leave)
         {
             if (leave == null) return;
             if (MessageBox.Show("عند حذف الإجازة سيتم إعادة الرصيد للموظف تلقائياً، هل أنت متأكد؟", "تأكيد الحذف", MessageBoxButton.YesNo) == MessageBoxResult.Yes)

@@ -10,19 +10,19 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <FlowDocumentPageViewer Name="FlowDocViewer" Grid.Row="0" Background="#525659">
+        <FlowDocumentPageViewer Name="FlowDocViewer" Grid.Row="0" Background="{StaticResource PrimaryDark}">
             <FlowDocumentPageViewer.Resources>
                 <Style TargetType="FlowDocument">
-                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Background" Value="{StaticResource SurfaceBackground}"/>
                 </Style>
             </FlowDocumentPageViewer.Resources>
         </FlowDocumentPageViewer>
 
-        <Border Grid.Row="1" Background="#F8FAFC" Padding="15" BorderBrush="#E2E8F0" BorderThickness="0,1,0,0">
+        <Border Grid.Row="1" Background="{StaticResource PrimaryBackground}" Padding="15" BorderBrush="{StaticResource BorderColor}" BorderThickness="0,1,0,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Content="إرسال إلى الطابعة" Click="Print_Click" Padding="20,8" 
-                        Background="{StaticResource GovPrimary}" Foreground="White" FontWeight="Bold" Cursor="Hand"/>
-                <Button Content="إغلاق" IsCancel="True" Margin="10,0,0,0" Padding="20,8" Cursor="Hand"/>
+                        Style="{StaticResource PrimaryButton}"/>
+                <Button Content="إغلاق" IsCancel="True" Margin="10,0,0,0" Padding="20,8" Style="{StaticResource SecondaryButton}"/>
             </StackPanel>
         </Border>
     </Grid>

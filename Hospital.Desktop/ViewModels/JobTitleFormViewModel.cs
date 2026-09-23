@@ -21,7 +21,7 @@ namespace Hospital.Desktop.ViewModels
         public event Action? RequestClose;
         public ICommand SaveCommand { get; }
 
-        public JobTitleFormViewModel(JobTitleViewDTO job = null)
+        public JobTitleFormViewModel(JobTitleViewDTO? job = null)
         {
             _apiService = new ApiService();
             if (job != null)
@@ -40,7 +40,7 @@ namespace Hospital.Desktop.ViewModels
             {
                 if (IsEditMode)
                 {
-                    var dto = new JobTitleViewDTO { Id = _jobTitleId.Value, Title = Title };
+                    var dto = new JobTitleViewDTO { Id = _jobTitleId!.Value, Title = Title };
                     await _apiService.PutAsync<dynamic>($"JobTitles/{_jobTitleId}", dto);
                 }
                 else

@@ -56,8 +56,8 @@ HospitalProject/                                  WORKSPACE ROOT (git repo `Hosp
 |---|---|
 | `App.xaml` / `App.xaml.cs` | StartupUri => `Views/LoginView.xaml`, RTL, global styles, static `ApiService`/settings |
 | `MainWindow.xaml(.cs)` | Shell: RTL sidebar nav + `CurrentView` ContentControl host |
-| `Views/` | 21 XAML views, all RTL, all on shared Gov tokens (2026-09-21): `Themes/GovernmentalBrushes.xaml` + `ButtonStyles.xaml` + `DataGridStyles.xaml` merged in `App.xaml`; zero legacy hex left (grep-verified); Segoe MDL2 glyphs retained (system font on Windows target) |
-| `ViewModels/` | 19 VMs (verified 2026-09-21): `BaseViewModel`, `MainViewModel` (NavCommand→CurrentView), `Login`, `Employees`, `EmployeeForm`, `Leaves`, `LeaveForm`, `Absents`, `AbsentForm`, `Departments`, `DepartmentForm`, `JobTitles`, `JobTitleForm`, `Users`, `UserForm`, `TransferLog`, `AddTransfer`, `AuditLogs`, `ShiftSettings` — hand-rolled `RelayCommand`, no DI |
+| `Views/` | 22 XAML views, all RTL, fully canonical (2026-09-21): zero inline hex (grep-verified); `Themes/Colors.xaml`+`Typography.xaml`+`Styles.xaml` (+status-only `GovernmentalBrushes`); all buttons `Primary/SecondaryButton`; titles `Header1/Header2`; dark DataGrid headers; home = `DashboardView` |
+| `ViewModels/` | 20 VMs (verified 2026-09-21): 19 catalogued + `DashboardViewModel` (guarded parallel aggregates; initial `MainViewModel.CurrentView`; nav callback to sections) — hand-rolled `RelayCommand` (nullable-annotated 2026-09-21), no DI |
 | `Services/` | `ApiService` (HTTP + JWT; base URL from `Properties/Settings.settings:ApiBaseUrl` = `https://localhost:7278/api/` since TASK-FE-03, single shared client), `EncryptionHelper` (DPAPI), `ReportGenerator` (FlowDocument A4-Landscape RTL, balanced morning/night tables, 2-col internal split) |
 | `Converters/` | 15+ WPF value converters incl. `StatusConverters.cs` (converters 1-15), `BooleanToStatusConverter`, `BoolToVisConverter` |
 | `Properties/` | `Settings.settings` + `Settings.Designer.cs` (SavedUsername/SavedPassword/IsRemembered), `.csproj.user`, `Settings.settings` |

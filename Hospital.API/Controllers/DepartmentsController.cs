@@ -105,7 +105,7 @@ namespace Hospital.API.Controllers
                 };
                 return CreatedAtAction("GetDepartment", new { id = department.Id },resultDto);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError,new {message = "حدث خطأ في معالجة البيانات"});
             }

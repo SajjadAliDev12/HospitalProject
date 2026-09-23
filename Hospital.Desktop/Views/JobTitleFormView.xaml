@@ -6,15 +6,15 @@
         WindowStartupLocation="CenterScreen" 
         FlowDirection="RightToLeft" 
         ResizeMode="NoResize"
-        Background="#F8FAFC"
-        FontFamily="Segoe UI">
+        Background="{StaticResource PrimaryBackground}"
+        FontFamily="{StaticResource AppFontFamily}">
 
     <Window.Resources>
         <Style x:Key="ModernTextBox" TargetType="TextBox">
             <Setter Property="Padding" Value="10,8"/>
             <Setter Property="FontSize" Value="14"/>
-            <Setter Property="BorderBrush" Value="#E2E8F0"/>
-            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="Background" Value="{StaticResource SurfaceBackground}"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Style.Resources>
                 <Style TargetType="Border">
@@ -23,18 +23,7 @@
             </Style.Resources>
         </Style>
 
-        <Style x:Key="PrimaryBtn" TargetType="Button">
-            <Setter Property="Padding" Value="20,8"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="6"/>
-                </Style>
-            </Style.Resources>
-        </Style>
+        <Style x:Key="PrimaryBtn" TargetType="Button" BasedOn="{StaticResource PrimaryButton}"/>
     </Window.Resources>
 
     <Grid Margin="25">
@@ -46,7 +35,7 @@
 
         <TextBlock Text="اسم العنوان الوظيفي" 
                    FontWeight="SemiBold" 
-                   Foreground="#64748B" 
+                   Foreground="{StaticResource TextMuted}" 
                    FontSize="13" 
                    Margin="0,0,0,8"/>
 
@@ -67,19 +56,13 @@
 
             <Button Content="حفظ العنوان" 
                     Command="{Binding SaveCommand}" 
-                    Style="{StaticResource PrimaryBtn}" 
-                    Background="{StaticResource GovPrimary}" 
-                    Foreground="White" 
+                    Style="{StaticResource PrimaryButton}" 
                     Width="120"
                     Height="40"/>
 
             <Button Content="إلغاء" 
                     IsCancel="True" 
-                    Style="{StaticResource PrimaryBtn}" 
-                    Background="Transparent" 
-                    Foreground="#64748B" 
-                    BorderThickness="1"
-                    BorderBrush="#E2E8F0"
+                    Style="{StaticResource SecondaryButton}" 
                     Margin="12,0,0,0" 
                     Width="100"
                     Height="40"/>

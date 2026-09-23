@@ -1,0 +1,309 @@
+<UserControl x:Class="Hospital.Desktop.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             FlowDirection="RightToLeft"
+             FontFamily="{StaticResource AppFontFamily}">
+
+    <UserControl.Resources>
+        <Style x:Key="Card" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource SurfaceBackground}"/>
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Padding" Value="18"/>
+            <Setter Property="Margin" Value="0,0,0,16"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="18" ShadowDepth="2" Opacity="0.06"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CardTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="{StaticResource TextPrimary}"/>
+        </Style>
+        <Style x:Key="SectionLink" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryAccent}"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="{StaticResource PrimaryBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ProgressBar Grid.Row="0" IsIndeterminate="True" Height="3" VerticalAlignment="Top"
+                     Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}"
+                     Foreground="{StaticResource PrimaryAccent}" Background="Transparent" BorderThickness="0"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="20,16,20,20">
+            <StackPanel>
+
+                <!-- شريط الخطأ -->
+                <Border Background="{StaticResource GovDangerSoft}" BorderBrush="{StaticResource GovDanger}"
+                        BorderThickness="1" CornerRadius="8" Padding="12" Margin="0,0,0,16">
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Visibility" Value="Visible"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ErrorMessage}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="إعادة المحاولة" Command="{Binding RefreshCommand}"
+                                Style="{StaticResource SectionLink}" Margin="12,0,0,0"/>
+                        <TextBlock Text="{Binding ErrorMessage}" Foreground="{StaticResource GovDanger}"
+                                   FontSize="13" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- الترويسة -->
+                <Grid Margin="0,0,0,16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="لوحة القيادة" Style="{StaticResource Header1}"/>
+                        <TextBlock FontSize="13" Foreground="{StaticResource TextMuted}">
+                            <Run Text="نظرة شاملة على الكوادر والدوام — "/>
+                            <Run Text="{Binding TodayDateStr, Mode=OneWay}"/>
+                        </TextBlock>
+                    </StackPanel>
+                    <Button Grid.Column="1" Command="{Binding RefreshCommand}" Width="42" Height="42"
+                            Background="{StaticResource SurfaceBackground}" BorderBrush="{StaticResource BorderColor}"
+                            BorderThickness="1" Cursor="Hand" ToolTip="تحديث البيانات">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                        <TextBlock Text="&#xE149;" FontFamily="Segoe MDL2 Assets" FontSize="17" Foreground="{StaticResource PrimaryAccent}"/>
+                    </Button>
+                </Grid>
+
+                <!-- مؤشرات KPI -->
+                <UniformGrid Columns="5" Margin="0,0,0,16">
+                    <Border Style="{StaticResource Card}" Margin="0,0,8,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="50" Height="50" CornerRadius="12" Background="{StaticResource RowSelected}" Margin="0,0,14,0">
+                                <TextBlock Text="&#xE13D;" FontFamily="Segoe MDL2 Assets" FontSize="22" Foreground="{StaticResource PrimaryAccent}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="{Binding TotalEmployees}" FontSize="26" FontWeight="Bold" Foreground="{StaticResource TextPrimary}"/>
+                                <TextBlock Text="إجمالي الموظفين" FontSize="13" Foreground="{StaticResource TextMuted}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{StaticResource Card}" Margin="8,0,8,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="50" Height="50" CornerRadius="12" Background="{StaticResource PrimaryBackground}" Margin="0,0,14,0">
+                                <TextBlock Text="&#xEACF;" FontFamily="Segoe MDL2 Assets" FontSize="22" Foreground="{StaticResource PrimaryDark}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="{Binding TotalDepartments}" FontSize="26" FontWeight="Bold" Foreground="{StaticResource TextPrimary}"/>
+                                <TextBlock Text="الأقسام والردهات" FontSize="13" Foreground="{StaticResource TextMuted}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{StaticResource Card}" Margin="8,0,8,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="50" Height="50" CornerRadius="12" Background="{StaticResource GovWarningSoft}" Margin="0,0,14,0">
+                                <TextBlock Text="&#xE787;" FontFamily="Segoe MDL2 Assets" FontSize="22" Foreground="{StaticResource GovWarning}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="{Binding TotalLeaves}" FontSize="26" FontWeight="Bold" Foreground="{StaticResource TextPrimary}"/>
+                                <TextBlock Text="الإجازات المسجلة" FontSize="13" Foreground="{StaticResource TextMuted}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{StaticResource Card}" Margin="8,0,8,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="50" Height="50" CornerRadius="12" Background="{StaticResource GovDangerSoft}" Margin="0,0,14,0">
+                                <TextBlock Text="&#xE784;" FontFamily="Segoe MDL2 Assets" FontSize="22" Foreground="{StaticResource GovDanger}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="{Binding TotalAbsents}" FontSize="26" FontWeight="Bold" Foreground="{StaticResource TextPrimary}"/>
+                                <TextBlock Text="الغيابات المسجلة" FontSize="13" Foreground="{StaticResource TextMuted}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{StaticResource Card}" Margin="8,0,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="50" Height="50" CornerRadius="12" Background="{StaticResource GovSuccessSoft}" Margin="0,0,14,0">
+                                <TextBlock Text="&#xEACC;" FontFamily="Segoe MDL2 Assets" FontSize="22" Foreground="{StaticResource GovSuccess}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="{Binding TodayTeamId}" FontSize="26" FontWeight="Bold" Foreground="{StaticResource TextPrimary}"/>
+                                <TextBlock Text="فريق خفر اليوم" FontSize="13" Foreground="{StaticResource TextMuted}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </UniformGrid>
+
+                <!-- خفر اليوم + توزيع الدوام -->
+                <Grid Margin="0,0,0,16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Style="{StaticResource Card}" Margin="0,0,8,0" Background="{StaticResource PrimaryDark}">
+                        <StackPanel>
+                            <TextBlock Text="الخفر المسائي اليوم" FontSize="14" Foreground="{StaticResource SurfaceBackground}"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,6">
+                                <Border Width="56" Height="56" CornerRadius="14" Background="{StaticResource PrimaryAccent}" Margin="0,0,14,0">
+                                    <TextBlock Text="{Binding TodayTeamId}" FontSize="26" FontWeight="Bold" Foreground="{StaticResource SurfaceBackground}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel VerticalAlignment="Center">
+                                    <TextBlock Style="{StaticResource Header2}" Foreground="{StaticResource SurfaceBackground}">
+                                        <Run Text="الفريق رقم "/><Run Text="{Binding TodayTeamId}"/>
+                                    </TextBlock>
+                                    <TextBlock FontSize="13" Foreground="{StaticResource SurfaceBackground}">
+                                        <Run Text="المشرف: "/><Run Text="{Binding TodaySupervisor}"/>
+                                    </TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                            <Button Content="إدارة الخفارات" Command="{Binding NavigateCommand}" CommandParameter="NightShifts"
+                                    Style="{StaticResource PrimaryButton}" HorizontalAlignment="Stretch" Margin="0,8,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="1" Style="{StaticResource Card}" Margin="8,0,0,0">
+                        <StackPanel>
+                            <TextBlock Text="توزيع الدوام" Style="{StaticResource CardTitle}" Margin="0,0,0,14"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                                <TextBlock Text="الدوام الصباحي" FontSize="13" Foreground="{StaticResource TextPrimary}"/>
+                                <TextBlock FontSize="13" FontWeight="Bold" Foreground="{StaticResource TextPrimary}" Margin="8,0,0,0">
+                                    <Run Text="{Binding MorningCount}"/><Run Text=" ("/><Run Text="{Binding MorningPct, Mode=OneWay}"/><Run Text="%)"/>
+                                </TextBlock>
+                            </StackPanel>
+                            <ProgressBar Value="{Binding MorningPct, Mode=OneWay}" Maximum="100" Height="9" Margin="0,0,0,14"
+                                         Foreground="{StaticResource PrimaryAccent}" Background="{StaticResource BorderColor}" BorderThickness="0"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                                <TextBlock Text="الخفارات المسائية" FontSize="13" Foreground="{StaticResource TextPrimary}"/>
+                                <TextBlock FontSize="13" FontWeight="Bold" Foreground="{StaticResource TextPrimary}" Margin="8,0,0,0">
+                                    <Run Text="{Binding NightCount}"/><Run Text=" ("/><Run Text="{Binding NightPct, Mode=OneWay}"/><Run Text="%)"/>
+                                </TextBlock>
+                            </StackPanel>
+                            <ProgressBar Value="{Binding NightPct, Mode=OneWay}" Maximum="100" Height="9"
+                                         Foreground="{StaticResource PrimaryDark}" Background="{StaticResource BorderColor}" BorderThickness="0"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- الأحدث -->
+                <Grid Margin="0,0,0,16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Style="{StaticResource Card}" Margin="0,0,8,0">
+                        <StackPanel>
+                            <DockPanel Margin="0,0,0,10">
+                                <Button Content="عرض الكل" Command="{Binding NavigateCommand}" CommandParameter="Leaves"
+                                        Style="{StaticResource SectionLink}" DockPanel.Dock="Left"/>
+                                <TextBlock Text="أحدث الإجازات" Style="{StaticResource CardTitle}"/>
+                            </DockPanel>
+                            <ItemsControl ItemsSource="{Binding RecentLeaves}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{StaticResource BorderColor}" BorderThickness="0,0,0,1" Padding="0,9">
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding EmployeeName}" FontWeight="SemiBold" FontSize="14" Foreground="{StaticResource TextPrimary}"/>
+                                                <TextBlock FontSize="12" Foreground="{StaticResource TextMuted}">
+                                                    <Run Text="المدة: "/><Run Text="{Binding Duration}"/><Run Text=" أيام • من "/><Run Text="{Binding StartDate, StringFormat={}{0:yyyy/MM/dd}}"/><Run Text=" إلى "/><Run Text="{Binding EndDate, StringFormat={}{0:yyyy/MM/dd}}"/>
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="1" Style="{StaticResource Card}" Margin="8,0,0,0">
+                        <StackPanel>
+                            <DockPanel Margin="0,0,0,10">
+                                <Button Content="عرض الكل" Command="{Binding NavigateCommand}" CommandParameter="Absents"
+                                        Style="{StaticResource SectionLink}" DockPanel.Dock="Left"/>
+                                <TextBlock Text="أحدث الغيابات" Style="{StaticResource CardTitle}"/>
+                            </DockPanel>
+                            <ItemsControl ItemsSource="{Binding RecentAbsents}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{StaticResource BorderColor}" BorderThickness="0,0,0,1" Padding="0,9">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Border Width="38" Height="38" CornerRadius="10" Background="{StaticResource GovDangerSoft}" Margin="0,0,12,0">
+                                                    <TextBlock Text="&#xE784;" FontFamily="Segoe MDL2 Assets" FontSize="16" Foreground="{StaticResource GovDanger}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                                <StackPanel VerticalAlignment="Center">
+                                                    <TextBlock Text="{Binding EmployeeName}" FontWeight="SemiBold" FontSize="14" Foreground="{StaticResource TextPrimary}"/>
+                                                    <TextBlock Text="{Binding Date, StringFormat={}{0:yyyy/MM/dd}}" FontSize="12" Foreground="{StaticResource TextMuted}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+                <!-- الأقسام + إجراءات -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Style="{StaticResource Card}" Margin="0,0,8,0">
+                        <StackPanel>
+                            <DockPanel Margin="0,0,0,10">
+                                <Button Content="عرض الكل" Command="{Binding NavigateCommand}" CommandParameter="Departments"
+                                        Style="{StaticResource SectionLink}" DockPanel.Dock="Left"/>
+                                <TextBlock Text="أكبر الأقسام كادراً" Style="{StaticResource CardTitle}"/>
+                            </DockPanel>
+                            <ItemsControl ItemsSource="{Binding TopDepartments}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel Margin="0,7">
+                                            <Border DockPanel.Dock="Left" Background="{StaticResource RowSelected}" CornerRadius="8" Padding="10,4" Margin="10,0,0,0">
+                                                <TextBlock FontSize="13" FontWeight="Bold" Foreground="{StaticResource PrimaryAccent}">
+                                                    <Run Text="{Binding StaffCount}"/><Run Text=" موظف"/>
+                                                </TextBlock>
+                                            </Border>
+                                            <TextBlock Text="{Binding Name}" FontSize="14" Foreground="{StaticResource TextPrimary}" VerticalAlignment="Center"/>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="1" Style="{StaticResource Card}" Margin="8,0,0,0">
+                        <StackPanel>
+                            <TextBlock Text="إجراءات سريعة" Style="{StaticResource CardTitle}" Margin="0,0,0,14"/>
+                            <UniformGrid Columns="2">
+                                <Button Content="إدارة الموظفين" Command="{Binding NavigateCommand}" CommandParameter="Employees"
+                                        Style="{StaticResource PrimaryButton}" Margin="0,0,6,10"/>
+                                <Button Content="طلب إجازة" Command="{Binding NavigateCommand}" CommandParameter="Leaves"
+                                        Style="{StaticResource SecondaryButton}" Margin="6,0,0,10"/>
+                                <Button Content="تسجيل غياب" Command="{Binding NavigateCommand}" CommandParameter="Absents"
+                                        Style="{StaticResource SecondaryButton}" Margin="0,0,6,0"/>
+                                <Button Content="التنقلات الإدارية" Command="{Binding NavigateCommand}" CommandParameter="Transfers"
+                                        Style="{StaticResource SecondaryButton}" Margin="6,0,0,0"/>
+                            </UniformGrid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

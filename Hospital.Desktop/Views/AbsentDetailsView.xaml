@@ -5,8 +5,8 @@
         WindowStartupLocation="CenterScreen" 
         FlowDirection="RightToLeft" 
         ResizeMode="NoResize"
-        Background="#F8FAFC"
-        FontFamily="Segoe UI">
+        Background="{StaticResource PrimaryBackground}"
+        FontFamily="{StaticResource AppFontFamily}">
 
     <Grid Margin="25">
         <Grid.RowDefinitions>
@@ -21,14 +21,14 @@
                     <TextBlock Text="{Binding EmployeeName}" 
                                FontSize="24" 
                                FontWeight="Bold" 
-                               Foreground="{StaticResource GovSlate}"/>
+                               Foreground="{StaticResource PrimaryDark}"/>
                     <TextBlock Text="تفاصيل سجل الغياب الرسمي" 
-                               Foreground="#64748B" 
+                               Foreground="{StaticResource TextMuted}" 
                                FontSize="13" 
                                Margin="0,4,0,0"/>
                 </StackPanel>
 
-                <Border Background="#F1F5F9" 
+                <Border Background="{StaticResource RowAlternate}" 
                         CornerRadius="6" 
                         Padding="10,5" 
                         HorizontalAlignment="Right" 
@@ -36,42 +36,42 @@
                     <TextBlock Text="{Binding Id, StringFormat='رقم القيد: {0}'}" 
                                FontSize="12" 
                                FontWeight="SemiBold" 
-                               Foreground="#475569"/>
+                               Foreground="{StaticResource TextPrimary}"/>
                 </Border>
             </Grid>
-            <Separator Margin="0,15,0,0" Background="#E2E8F0" Height="1"/>
+            <Separator Margin="0,15,0,0" Background="{StaticResource BorderColor}" Height="1"/>
         </StackPanel>
 
         <UniformGrid Grid.Row="1" Columns="2">
-            <Border Background="White" CornerRadius="10" Margin="5" Padding="15">
+            <Border Background="{StaticResource SurfaceBackground}" CornerRadius="10" Margin="5" Padding="15">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.05" Color="Black"/>
                 </Border.Effect>
                 <StackPanel>
-                    <TextBlock Text="تاريخ الغياب" FontSize="12" Foreground="#94A3B8" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                    <TextBlock Text="تاريخ الغياب" FontSize="12" Foreground="{StaticResource TextMuted}" FontWeight="SemiBold" Margin="0,0,0,8"/>
                     <TextBlock Text="{Binding Date, StringFormat='{}{0:yyyy / MM / dd}'}" 
                                FontSize="16" 
                                FontWeight="Bold" 
-                               Foreground="#334155"/>
+                               Foreground="{StaticResource TextPrimary}"/>
                 </StackPanel>
             </Border>
 
-            <Border Background="White" CornerRadius="10" Margin="5" Padding="15">
+            <Border Background="{StaticResource SurfaceBackground}" CornerRadius="10" Margin="5" Padding="15">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.05" Color="Black"/>
                 </Border.Effect>
                 <StackPanel>
-                    <TextBlock Text="حالة السجل" FontSize="12" Foreground="#94A3B8" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                    <TextBlock Text="حالة السجل" FontSize="12" Foreground="{StaticResource TextMuted}" FontWeight="SemiBold" Margin="0,0,0,8"/>
 
                     <Border CornerRadius="6" Padding="12,5" HorizontalAlignment="Left">
                         <Border.Style>
                             <Style TargetType="Border">
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding IsDeleted}" Value="False">
-                                        <Setter Property="Background" Value="#DCFCE7"/>
+                                        <Setter Property="Background" Value="{StaticResource GovSuccessSoft}"/>
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding IsDeleted}" Value="True">
-                                        <Setter Property="Background" Value="#FEE2E2"/>
+                                        <Setter Property="Background" Value="{StaticResource GovDangerSoft}"/>
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
@@ -83,11 +83,11 @@
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding IsDeleted}" Value="False">
                                             <Setter Property="Text" Value="● فعال "/>
-                                            <Setter Property="Foreground" Value="#166534"/>
+                                            <Setter Property="Foreground" Value="{StaticResource GovSuccess}"/>
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding IsDeleted}" Value="True">
                                             <Setter Property="Text" Value="● سجل محذوف"/>
-                                            <Setter Property="Foreground" Value="#991B1B"/>
+                                            <Setter Property="Foreground" Value="{StaticResource GovDanger}"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
@@ -105,8 +105,8 @@
                 Width="140" 
                 Margin="0,20,0,0"
                 HorizontalAlignment="Center"
-                Background="#64748B" 
-                Foreground="White" 
+                Background="{StaticResource TextMuted}" 
+                Foreground="{StaticResource SurfaceBackground}" 
                 FontWeight="SemiBold"
                 Cursor="Hand">
             <Button.Resources>

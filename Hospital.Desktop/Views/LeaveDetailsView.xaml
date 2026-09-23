@@ -4,8 +4,8 @@
         Title="تفاصيل الإجازة" Height="480" Width="480" 
         WindowStartupLocation="CenterScreen" 
         FlowDirection="RightToLeft"
-        Background="#F8FAFC"
-        FontFamily="Segoe UI"
+        Background="{StaticResource PrimaryBackground}"
+        FontFamily="{StaticResource AppFontFamily}"
         ResizeMode="NoResize">
 
     <Grid Margin="30">
@@ -16,12 +16,12 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="0,0,0,20">
-            <TextBlock Text="تفاصيل الإجازة المسجلة" FontSize="22" FontWeight="Bold" Foreground="{StaticResource GovSlate}"/>
-            <TextBlock Text="معلومات الموظف والبديل وفترة الاجازة" FontSize="13" Foreground="#64748B" Margin="0,4,0,0"/>
-            <Separator Margin="0,15,0,0" Background="#E2E8F0" Height="1"/>
+            <TextBlock Text="تفاصيل الإجازة المسجلة" Style="{StaticResource Header1}"/>
+            <TextBlock Text="معلومات الموظف والبديل وفترة الاجازة" FontSize="13" Foreground="{StaticResource TextMuted}" Margin="0,4,0,0"/>
+            <Separator Margin="0,15,0,0" Background="{StaticResource BorderColor}" Height="1"/>
         </StackPanel>
 
-        <Border Grid.Row="1" Background="White" CornerRadius="12" Padding="20">
+        <Border Grid.Row="1" Background="{StaticResource SurfaceBackground}" CornerRadius="12" Padding="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.05" Color="Black"/>
             </Border.Effect>
@@ -38,22 +38,22 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="اسم الموظف المجاز" Foreground="#94A3B8" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Center"/>
-                <TextBlock Text="{Binding EmployeeName}" Grid.Column="1" Margin="20,8,0,8" FontSize="16" FontWeight="Bold" Foreground="{StaticResource GovSlate}"/>
+                <TextBlock Text="اسم الموظف المجاز" Foreground="{StaticResource TextMuted}" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding EmployeeName}" Grid.Column="1" Margin="20,8,0,8" FontSize="16" FontWeight="Bold" Foreground="{StaticResource PrimaryDark}"/>
 
-                <TextBlock Text="الموظف البديل" Grid.Row="1" Foreground="#94A3B8" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Center"/>
-                <TextBlock Text="{Binding SubEmployeeName}" Grid.Row="1" Grid.Column="1" Margin="20,8,0,8" FontSize="14" Foreground="#334155"/>
+                <TextBlock Text="الموظف البديل" Grid.Row="1" Foreground="{StaticResource TextMuted}" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding SubEmployeeName}" Grid.Row="1" Grid.Column="1" Margin="20,8,0,8" FontSize="14" Foreground="{StaticResource TextPrimary}"/>
 
-                <TextBlock Text="فترة الإجازة" Grid.Row="2" Foreground="#94A3B8" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                <TextBlock Text="فترة الإجازة" Grid.Row="2" Foreground="{StaticResource TextMuted}" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="20,8,0,8">
-                    <TextBlock Text="{Binding StartDate, StringFormat=yyyy / MM / dd}" FontSize="14" FontWeight="SemiBold" Foreground="#334155"/>
-                    <TextBlock Text="←" Margin="10,0" Foreground="#94A3B8"/>
-                    <TextBlock Text="{Binding EndDate, StringFormat=yyyy / MM / dd}" FontSize="14" FontWeight="SemiBold" Foreground="#334155"/>
+                    <TextBlock Text="{Binding StartDate, StringFormat=yyyy / MM / dd}" FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}"/>
+                    <TextBlock Text="←" Margin="10,0" Foreground="{StaticResource TextMuted}"/>
+                    <TextBlock Text="{Binding EndDate, StringFormat=yyyy / MM / dd}" FontSize="14" FontWeight="SemiBold" Foreground="{StaticResource TextPrimary}"/>
                 </StackPanel>
 
-                <TextBlock Text="المدة الإجمالية" Grid.Row="3" Foreground="#94A3B8" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Center"/>
-                <Border Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Margin="20,8,0,8" Background="#FFF7ED" CornerRadius="6" Padding="12,5">
-                    <TextBlock Text="{Binding Duration, StringFormat='{}{0} أيام'}" FontSize="14" FontWeight="Bold" Foreground="#EA580C"/>
+                <TextBlock Text="المدة الإجمالية" Grid.Row="3" Foreground="{StaticResource TextMuted}" FontSize="12" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                <Border Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Margin="20,8,0,8" Background="{StaticResource GovWarningSoft}" CornerRadius="6" Padding="12,5">
+                    <TextBlock Text="{Binding Duration, StringFormat='{}{0} أيام'}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource GovWarning}"/>
                 </Border>
             </Grid>
         </Border>
@@ -64,8 +64,8 @@
                 Width="120" 
                 Height="42" 
                 Margin="0,20,0,0" 
-                Background="#64748B" 
-                Foreground="White" 
+                Background="{StaticResource TextMuted}" 
+                Foreground="{StaticResource SurfaceBackground}" 
                 FontWeight="SemiBold"
                 BorderThickness="0"
                 Cursor="Hand">

@@ -15,7 +15,7 @@ namespace Hospital.Desktop.Converters
             if (value is DateOnly d)
                 return d.ToDateTime(TimeOnly.MinValue);
 
-            return null;
+            return null!;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -148,7 +148,7 @@ namespace Hospital.Desktop.Converters
             => writer.WriteValue(value.ToString("yyyy-MM-dd"));
 
         public override DateOnly ReadJson(JsonReader reader, Type objectType, DateOnly existingValue, bool hasExistingValue, JsonSerializer serializer)
-            => DateOnly.Parse(reader.Value.ToString());
+            => DateOnly.Parse(reader.Value!.ToString()!);
     }
 
     // --- المحولات الجديدة المضافة لشاشة الموظفين والجداول ---

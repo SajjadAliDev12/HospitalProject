@@ -6,51 +6,31 @@
         WindowStartupLocation="CenterScreen" 
         FlowDirection="RightToLeft" 
         ResizeMode="NoResize"
-        Background="#F8FAFC"
-        FontFamily="Segoe UI">
+        Background="{StaticResource PrimaryBackground}"
+        FontFamily="{StaticResource AppFontFamily}">
 
     <Window.Resources>
         <Style x:Key="FieldLabel" TargetType="TextBlock">
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="#64748B"/>
+            <Setter Property="Foreground" Value="{StaticResource TextMuted}"/>
             <Setter Property="Margin" Value="0,0,0,8"/>
         </Style>
 
         <Style x:Key="ModernInput" TargetType="Control">
             <Setter Property="Height" Value="42"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="BorderBrush" Value="#E2E8F0"/>
-            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="Background" Value="{StaticResource SurfaceBackground}"/>
             <Setter Property="Padding" Value="8,0"/>
         </Style>
 
-        <Style x:Key="PrimaryBtn" TargetType="Button">
+        <Style x:Key="PrimaryBtn" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
             <Setter Property="Height" Value="45"/>
-            <Setter Property="Background" Value="{StaticResource GovPrimary}"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="8"/>
-                </Style>
-            </Style.Resources>
         </Style>
 
-        <Style x:Key="SecondaryBtn" TargetType="Button">
+        <Style x:Key="SecondaryBtn" TargetType="Button" BasedOn="{StaticResource SecondaryButton}">
             <Setter Property="Height" Value="45"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="Foreground" Value="#64748B"/>
-            <Setter Property="BorderBrush" Value="#E2E8F0"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="8"/>
-                </Style>
-            </Style.Resources>
         </Style>
     </Window.Resources>
 
@@ -69,7 +49,7 @@
 
             <TextBlock Text="* يرجى إدخال 3 أحرف على الأقل لبدء البحث" 
                        FontSize="11" 
-                       Foreground="#94A3B8" 
+                       Foreground="{StaticResource TextMuted}" 
                        Margin="0,6,0,0"/>
 
             <TextBlock Text="تاريخ الغياب" 

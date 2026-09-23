@@ -49,7 +49,7 @@ namespace Hospital.Desktop.ViewModels
 
         public ICommand SaveCommand { get; }
 
-        public UserFormViewModel(UserFormDTO user = null, string mode = "Add")
+        public UserFormViewModel(UserFormDTO? user = null, string mode = "Add")
         {
             _apiService = new ApiService();
             IsAddMode = mode == "Add";
@@ -118,7 +118,7 @@ namespace Hospital.Desktop.ViewModels
             }
         }
 
-        private async Task SaveUser(object parameter)
+        private async Task SaveUser(object? parameter)
         {
             if (IsAddMode && parameter is PasswordBox passBox)
             {
